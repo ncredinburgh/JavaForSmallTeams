@@ -20,7 +20,7 @@ Strategies include :-
 
 ### The null object pattern
 
-The null object pattern is the classic OO approach to avoiding null. You should use it whenever you think you have a depenency that you think is optional.
+The null object pattern is the classic OO approach to avoiding null. You should use it whenever you think you have a dependency that you think is optional.
 
 The pattern is very simple, just provide an implementation of the interface that that does "nothing" or has a neutral behaviour. This can then be safely referenced by it's clients, with no need to check for null.
 
@@ -42,7 +42,7 @@ Firstly, if your method declares that it returns Optional<Person> then you can i
 
 As importantly if you know that within your codebase you always return Optional when something might not be present then you know at a glance that a method returning Person will always return a value and will never return null.
 
-Finally, the preferred way to use Optionals is not to call the get method or  to explicitly check if it contains a value. Instead the values that are contained (or not contained) in an Optional can besafely  mapped, consumed and filtered by various method on the class.
+Finally, the preferred way to use Optionals is not to call the get method or  to explicitly check if it contains a value. Instead the values that are contained (or not contained) in an Optional can be safely  mapped, consumed and filtered by various method on the class.
 
 In the simplest case a possibly empty Optional can be accessed by calling the `orElse` method which takes a default value to use if the Optional is empty.
 

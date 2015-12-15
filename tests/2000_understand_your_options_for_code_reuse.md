@@ -16,4 +16,4 @@ Code related to assertions is straight forward to reuse outside of class hierarc
 
 For small simple objects the mother pattern can be used, but this can quickly become a maintenance issue if the objects become more complex over time.
 
-A better patten is the Builder pattern, this can have the added advantage of allowing tests to clearly highlight important and unimportant input.
+A better pattern is the Builder pattern, this can have the added advantage of allowing tests to clearly highlight important and unimportant input.

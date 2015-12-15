@@ -45,7 +45,7 @@ class Example {
 
 Tabs may appear differently depending on how an editor is configured. This may result in constant reformatting of the code by different programmers to adapt the file to their editor settings. Spaces avoid this problem.
 
-In some languages (e.g javascript before the rise of code minifiers) tabs have/had an advantage as they reduced the size of the source file compared to using multiple spaces. The increase in size of the source file is of no relevence for Java.
+In some languages (e.g JavaScript before the rise of code minifiers) tabs have/had an advantage as they reduced the size of the source file compared to using multiple spaces. The increase in size of the source file is of no relevance for Java.
 
 #### One true brace style
 

@@ -1,4 +1,4 @@
-    * [Optimise For Readibility](style/10_optimise_for_readibility.md)
+    * [Optimise For Readability](style/10_optimise_for_readability.md)
     * [Prefer Composition](style/20_prefer_composition.md)
     * [Prefer Immutable Objects](style/30_prefer_immutable_objects.md)
     * [Avoid Global State](style/avoid_global_state.md)

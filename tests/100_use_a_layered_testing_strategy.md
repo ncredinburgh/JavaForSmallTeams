@@ -1,4 +1,4 @@
-## Have a layered testing strategarey
+## Have a layered testing strategy
 
 To effectively catch bugs and prevent regression we need to test at several different levels - unit tests are just **one** of these layers. These layers are classically shown as a pyramid.
 

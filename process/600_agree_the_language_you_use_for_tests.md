@@ -14,13 +14,13 @@ Depending on who you speak to a "Unit test" might be anything from a word docume
 
 A fairly tight definition of unit test now in common use in the Java community. To be a Unit test, a test must be
 
-* Fast (miliseconds or less)
+* Fast (milliseconds or less)
 * Isolated (test only one unit)
 * Repeatable (able to be run millions of times on any machine with the same result)
 * Self verifying (either passes or fails)
 * Timely (written first)
 
-It is reccomended that you and your team use this definition with one note on the final point.
+It is recommended that you and your team use this definition with one note on the final point.
 
 Although writing your tests first is often a very good idea, a test that meets the other criteria is still a unit test regardless of when it was written. 
 

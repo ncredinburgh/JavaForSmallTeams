@@ -8,4 +8,4 @@ These suites may require resources not available on a local machine and/or take 
 
 For a maven build these suites are likely to be implemented using profiles or as separate maven modules.
 
-These suites will be run as frequently as possible. Most likely this will mean on a timed basis as it is likely they will consume too much time to be run on commit (too much time is defined as taking longer than the likely interval between commits/pushes to the monitored repository). Timed test runs also have the advantage of sometimes running the suites when no code changes have occurred - this can provide useful information when identifying flakey tests.
+These suites will be run as frequently as possible. Most likely this will mean on a timed basis as it is likely they will consume too much time to be run on commit (too much time is defined as taking longer than the likely interval between commits/pushes to the monitored repository). Timed test runs also have the advantage of sometimes running the suites when no code changes have occurred - this can provide useful information when identifying flaky tests.
