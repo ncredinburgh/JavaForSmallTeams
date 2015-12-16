@@ -42,3 +42,6 @@ Test double that captures indirect outputs from SUT to allow later verification 
 
 Test double that acts as a lightweight stand in for some other component
 
+# Guava
+
+An open source project from Google that provides common utilities for Java such as collections operations, string processing and caching. Originally known as Google Collections.
