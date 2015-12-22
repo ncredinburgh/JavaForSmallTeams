@@ -54,8 +54,43 @@ Static analysis rules exists that can check for code that returns null Optionals
 
 ### Design by contract
 
-We wish for all code that we control to be able to ignore the existence of null (unless it interfaces with some third party code than forces us to consider it). 
+We wish for all code that we control to be able to ignore the existence of null (unless it interfaces with some third party code that forces us to consider it). 
 
 Objects.requireNonNull can be used to add a runtime assertion that null has not been passed to a method.
 
 As your core code should generally assume that null will never be passed around there is little value in documenting this behaviour with tests, but the assertions add value as they ensure that an error occurs close to the point where the mistake was made.
+
+We can also check this contract at build time.
+
+JSR-305 provides annotations that can be used to declare where null is acceptable. 
+
+Although JSR-305 is dormant, and showns no signs of being incorporated into Java in the near future, the annotations are available at the maven co-ordinates :-
+
+```xml
+<dependency>
+    <groupId>com.google.code.findbugs</groupId>
+    <artifactId>jsr305</artifactId>
+    <version>3.0.1</version>
+</dependency>
+```
+
+They are supported by several static analysis tools including :-
+
+* [Findbugs](http://findbugs.sourceforge.net/)
+* [Error Prone](http://errorprone.info/)
+
+These can be configured to break the build when null is passed as a parameter where we do not expect it.
+
+Annotating every class, method or parameter with `@Nonnull` would quickly become tedious and it would be debatable whether the gain would be worth the ammount of noise this would generate.
+
+Fortunately it is possible to make `@Nonnull` the default by annotating a package in its package-info.java file as follows
+
+```java
+@javax.annotation.ParametersAreNonnullByDefault
+package com.example.somepackage ;
+```
+
+Sadly sub-packages do not inherit their parent's annotations, so a package-info.java file must be created for each package.
+
+Once non null parameters have been made the default behaviour any parameters that do accept null can be annotated with `@Nullable`.
+
