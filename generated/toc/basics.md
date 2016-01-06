@@ -1,5 +1,5 @@
     * [Use A Consistent Code Layout](basics/100_use_a_consistent_code_layout.md)
-    * [Arrange Methods Top To Bottom](basics/200_arrange_methods_top_to_bottom.md)
+    * [Group Methods For Easy Comprehension](basics/200_group_methods_for_easy_comprehension.md)
     * [Do Not Reassign Parameters](basics/300_do_not_reassign_parameters.md)
     * [Do Not Use Magic Numbers](basics/400_do_not_use_magic_numbers.md)
     * [Avoid Floats And Doubles](basics/500_avoid_floats_and_doubles.md)

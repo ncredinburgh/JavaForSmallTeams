@@ -6,7 +6,6 @@ The SOLID acronym provides some guidance on design.
 
 Separate your concerns - a class should do one thing and one thing only. To put it another way, a class should have a single reason to change.
 
-[single responsibility principle](https://docs.google.com/file/d/0ByOwmqah_nuGNHEtcU5OekdDMkk/edit)
 
 ### Open / Closed Principle
 
