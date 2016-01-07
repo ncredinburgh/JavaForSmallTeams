@@ -44,7 +44,7 @@ class Foo {
      }
    }
 
-   private inReadyState() {
+   private isApproved() {
      return status == PRE_APPROVED || approved;
    }
 }
