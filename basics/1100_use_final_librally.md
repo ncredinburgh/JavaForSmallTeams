@@ -1,5 +1,11 @@
 ## Use final liberally
 
+### Summary
+
+Consider making any variable or parameter that does not change final. 
+
+### Details
+
 Making parameters and variables that are assigned once final makes a method easier to understand as it constrains the things that could possibly happen within the code.
 
 It would be reasonable to make parameters and assign-once variables final in all methods, but this needs to be weighed against the noise created by inserting the final keyword everywhere.

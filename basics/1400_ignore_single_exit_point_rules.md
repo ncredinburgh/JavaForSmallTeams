@@ -1,5 +1,11 @@
 ## Ignore single exit point rules
 
+### Summary
+
+There is nothing inherently wrong with code that contains more than one return statement.
+
+### Details
+
 Some coding standard mandate that all methods should have a single exit point.
 
 This may have made sense historically for languages that work at a lower level than Java, but for Java it makes no sense. Trying to apply this "best practice" often results in the need to introduce additional local variables to hold return state, nested conditional statements and other bloat.

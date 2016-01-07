@@ -29,7 +29,7 @@ The point of this document is not to say that all code must look like this but t
 
 ## Who is this for?
 
-This document is intended for consumption by anyone involved with writing server side Java code, from developers writing Java for the first time through to technical leads serving multiple teams. 
+This document is intended for consumption by anyone involved with writing server side Java code, from developers writing Java for the first time through to seasoned technical leads serving multiple teams. 
 
 Some sections will be more relevant to some audiences than others but we encourage everyone to at least skim all sections even if you do not read them in depth.
 
