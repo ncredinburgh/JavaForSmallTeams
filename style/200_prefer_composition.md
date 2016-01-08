@@ -1,10 +1,12 @@
 ## Prefer composition to inheritance
 
+### Summary
+
 Composition usually results in more flexible designs. 
 
 First consider using composition, fall back to using inheritance only when composition does not seem to be a good fit.
 
-### What does this mean?
+### Details
 
 Composition means building things by adding other things together. Inheritance is building things by extending behaviour based on an existing class by creating a child classes.
 
@@ -44,7 +46,7 @@ There are several overlapping explanations, we'll start with the most abstract a
 
 #### Inheritance is a strong relationship
 
-Inheritance is used to model an IS-A relationship i.e we are saying that our InheritanceAbuse class is an ArrayList and we should be able to pass one to any piece of code that accepts an ArrayList.
+Inheritance is used to model an IS-A relationship i.e. we are saying that our `InheritanceAbuse` class is an ArrayList and we should be able to pass one to any piece of code that accepts an ArrayList.
 
 Composition creates a HAS-A relationship. This is a weaker relationship, and we should always favour weaker relationships in our code.
 
@@ -99,7 +101,7 @@ class MyClass {
   }
 }
 ```
-It is easy to inject a mock into MyClass. Tricks exist to isolate the code in MyUntestableClass from SomeDependency for the purpose of unit testing, but they are far more involved.
+It is easy to inject a mock into `MyClass`. Tricks exist to isolate the code in `MyUntestableClass` from `SomeDependency` for the purpose of unit testing, but they are far more involved.
 
 #### Inheritance is static
 
@@ -109,7 +111,7 @@ Again composition is inherently more flexible.
 
 ### Interface inheritance
 
-The advice to prefer composition to inheritance refers to *implementation inheritance* (ie extending a class). The disadvantages discussed  above do not apply to *interface inheritance* (i.e implementing an interface).
+The advice to prefer composition to inheritance refers to *implementation inheritance* (i.e. extending a class). The disadvantages discussed  above do not apply to *interface inheritance* (i.e. implementing an interface).
 
 In fact the design choice you often have to make it to choose between implementation inheritance and the combination of composition and interface inheritance.
 
@@ -153,7 +155,7 @@ Many common OO patterns rely on the combination of Composition and interface inh
 
 ### When to use implementation inheritance
 
-Anything that can be achieved with implementation inheritance can also be achieved using the combination of interface inheritance and composition.
+Almost anything that can be achieved with implementation inheritance can also be achieved using the combination of interface inheritance and composition.
 
 So when should implementation inheritance be used?
 

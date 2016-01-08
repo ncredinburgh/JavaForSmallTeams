@@ -1,12 +1,18 @@
 ## Prefer maps and filters to imperative loops
 
+### Summary
+
+Break imperative loops into maps and filters when the patterns are identifiable.
+
+### Details
+
 Most loop based code can be re-written in a more declarative style using filters and maps.
 
-For Java 8 facilitates this by introducing lambdas and the streams api, but the same style can be applied in Java 7 using anonymous inner classes and third party libraries such as Guava.
+Java 8 made this easy by introducing lambdas and the streams api, but the same style can be applied in Java 7 using anonymous inner classes and third party libraries such as Guava.
 
 Filters and maps highlight what the code is intended to achieve. This is less clear in the imperative implementation.
 
-*Bad*
+**Bad**
 ```java
   public List<String> selectValues(List<Integer> someIntegers) {
     List<String> filteredStrings = new ArrayList<String>();
@@ -19,7 +25,7 @@ Filters and maps highlight what the code is intended to achieve. This is less cl
   }
 ```
 
-*Better (Java 8)*
+**Better (Java 8)**
 ```java
   public List<String> selectValues(List<Integer> someIntegers) {
     return someIntegers.stream()
@@ -29,7 +35,7 @@ Filters and maps highlight what the code is intended to achieve. This is less cl
   }
 ```
 
-*Better (Java 7 using Guava)*
+**Better (Java 7 using Guava)**
 ```java
   public List<String> selectValues(List<Integer> someIntegers) {
     return FluentIterable
@@ -49,6 +55,6 @@ Filters and maps highlight what the code is intended to achieve. This is less cl
   }
 ```
 
-Note that although the Java 7 version requires more lines of code (in the form of the ugly boilerplate for the anonymous inner class) the logic of the selectValues method is clearer. If the logic required in the Predicate or mapping Function is required in multiple places it is straightforward to move this to a common location. This is harder to achieve with the imperative version.
+Note that although the Java 7 version requires more lines of code (in the form of the ugly boilerplate for the anonymous inner class) the logic of the `selectValues` method is clearer. If the logic required in the Predicate or mapping Function is required in multiple places it is straightforward to move this to a common location. This is harder to achieve with the imperative version.
 
-Also note that the method that creates the Predicate has been made static. It is a good idea to do this where possible when returning an anonymous class to prevent a long lived instance preventing the parent class from being garbage collected. Although the Predicate is only short lived in this instance applying static in all cases avoids the annoying overhead of thinking.
+Also note that the method that creates the Predicate has been made static. It is a good idea to do this where possible when returning an anonymous class to prevent a long lived instance preventing the parent class from being garbage collected. Although the Predicate is only short lived in this instance applying static in all cases avoids the overhead of thinking.

@@ -1,5 +1,11 @@
 ## Methods should do one and one thing only
 
+### Summary
+
+Methods should do only one thing.
+
+#### Details
+
 A useful guide as to whether a function is doing only one thing is given in "Clean Code" by Robert C Martin.
 
 "another way to know that a function is doing more than “one thing” is if you can extract another function from it with a name that is not merely a restatement of its implementation."

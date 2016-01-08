@@ -1,6 +1,10 @@
 ## Limit variables to the smallest possible scope
 
+### Summary
+
 Variables should be declared as late as possible such that they have the narrowest possible scope.
+
+### Details
 
 *Bad*
 

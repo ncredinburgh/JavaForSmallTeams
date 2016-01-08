@@ -1,6 +1,8 @@
 ## Avoid null where possible
 
-Null is a billion dollar mistake, make sure you know how to avoid it.
+### Summary
+
+Null is a billion dollar mistake, make sure you know how to avoid using it in your code.
 
 Try to limit the times you or your clients need to write
 
@@ -9,6 +11,7 @@ Try to limit the times you or your clients need to write
     ...
   }
 ```
+### Details
 
 Although it is likely that libraries and frameworks you interact with will return null, you should try and ensure that this practice is isolated to the third party code. The core of your application should assume that it does not have to worry about null values. 
 
@@ -56,7 +59,7 @@ Static analysis rules exists that can check for code that returns null Optionals
 
 We wish for all code that we control to be able to ignore the existence of null (unless it interfaces with some third party code that forces us to consider it). 
 
-Objects.requireNonNull can be used to add a runtime assertion that null has not been passed to a method.
+`Objects.requireNonNull` can be used to add a runtime assertion that null has not been passed to a method.
 
 As your core code should generally assume that null will never be passed around there is little value in documenting this behaviour with tests, but the assertions add value as they ensure that an error occurs close to the point where the mistake was made.
 
@@ -64,7 +67,7 @@ We can also check this contract at build time.
 
 JSR-305 provides annotations that can be used to declare where null is acceptable. 
 
-Although JSR-305 is dormant, and showns no signs of being incorporated into Java in the near future, the annotations are available at the maven co-ordinates :-
+Although JSR-305 is dormant, and shows no signs of being incorporated into Java in the near future, the annotations are available at the maven co-ordinates :-
 
 ```xml
 <dependency>
@@ -81,7 +84,7 @@ They are supported by several static analysis tools including :-
 
 These can be configured to break the build when null is passed as a parameter where we do not expect it.
 
-Annotating every class, method or parameter with `@Nonnull` would quickly become tedious and it would be debatable whether the gain would be worth the ammount of noise this would generate.
+Annotating every class, method or parameter with `@Nonnull` would quickly become tedious and it would be debatable whether the gain would be worth the amount of noise this would generate.
 
 Fortunately it is possible to make `@Nonnull` the default by annotating a package in its package-info.java file as follows
 

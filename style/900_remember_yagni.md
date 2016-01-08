@@ -1,8 +1,12 @@
 ## Remember YAGNI
 
-You're not going to need it.
+### Summary
 
-Write the code you need now, not the code you *think* you will need in the future.
+You are not going to need it.
+
+### Details
+
+Write the code you need **now**, not the code you *think* you will need in the future.
 
 You're goal is to write the minimum amount of functionality that will solve the problem you have now.
 

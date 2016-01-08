@@ -1,6 +1,14 @@
 ## Prefer immutable objects
 
-Mutable state makes programs harder to understand and maintain. If a value can be set in one place only then complexity is reduced and a subset of concurrency issues and other bugs can be avoided. For example if a object cannot be modified then you do not need to worry about its hashcode changing after it has been added to a set.
+### Summary
+
+Where possible create objects with state that cannot be changed.
+
+### Details
+
+Mutable state makes programs harder to understand and maintain.
+
+If a value can be set in one place only then complexity is reduced and a subset of concurrency issues and other bugs can be avoided. For example if a object cannot be modified then you do not need to worry about its `hashcode` changing after it has been added to a set.
 
 Objects representing a value should be made immutable by default, falling back to mutability when it is clearly required.
 

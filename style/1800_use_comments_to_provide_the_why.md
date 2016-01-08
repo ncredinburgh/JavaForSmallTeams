@@ -1,6 +1,10 @@
 ## Use comments to provide the why
 
+### Summary
+
 A comment is only useful if it explains something that the code itself cannot.
+
+### Details
 
 This means that comments should provide the **why**, not the what or the how
 
