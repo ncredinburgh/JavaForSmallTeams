@@ -15,7 +15,6 @@
     * [Limit Scope](style/1500_limit_scope.md)
     * [Keep Your Code Dry](style/1600_keep_your_code_dry.md)
     * [Prefer Readable Code To Comments](style/1700_prefer_readable_code_to_comments.md)
-    * [Use Comments To Provide The Why](style/1800_use_comments_to_provide_the_why.md)
     * [Prefer For Each Loops To For Loops](style/1900_prefer_for_each_loops_to_for_loops.md)
     * [Prefer Maps And Filters To Imperative Loops](style/2000_prefer_maps_and_filters_to_imperative_loops.md)
     * [Prefer Pure Functions](style/14500_prefer_pure_functions.md)

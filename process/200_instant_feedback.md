@@ -7,6 +7,6 @@ You can increase the amount of instant feedback you receive by making good use o
 While feedback from the IDE is fast and convenient it has some drawbacks.
 
 * It may differ from machine to depending on the IDE configuration
-* It is often non binary (i.e not simply pass/fail)
+* It is often non binary (i.e. not simply pass/fail)
 * It can be easily ignored / overlooked
 * The expectation of speed limits what it can achieve
