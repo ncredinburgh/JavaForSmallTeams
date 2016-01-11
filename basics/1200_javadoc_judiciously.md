@@ -2,7 +2,8 @@
 
 ### Summary
 
-Javadoc can help document code but often there are better ways to do so. Think carefully before deciding to write it.
+Javadoc can help document code but often there are better ways to do so. 
+Think carefully before deciding to write it.
 
 ### Details
 
