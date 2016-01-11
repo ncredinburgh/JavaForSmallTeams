@@ -4,7 +4,10 @@
 
 The build script provides less immediate feedback than the IDE as it must be explicitly triggered.
 
-Feedback from the build script has a major advantage however as it is repeatable across all machines.
+Feedback from the build script has two major advantages however 
+
+* It is repeatable across all machines
+* With the aid of a CI server we can ensure it is not ignored
 
 As slower feedback is acceptable from the build script a larger set of static analysis tools can be run from here - usually including a repeat of whatever analysis is run as instant feedback.
 
