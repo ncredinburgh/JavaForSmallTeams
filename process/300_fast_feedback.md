@@ -1,6 +1,10 @@
 ## Fast feedback
 
-The build script generally provides slower feedback, but does so in a manner which is repeatable across all machines and can be configured to be binary in nature. As slower feedback is acceptable from the build script a larger set of static analysis tools can be run from here.
+The build script provides less immediate feedback than the IDE as it must be explicitly triggered.
+
+Feedback from the build script has a major advantage however as it is repeatable across all machines.
+
+As slower feedback is acceptable from the build script a larger set of static analysis tools can be run from here - usually including a repeat of whatever analysis is run as instant feedback.
 
 After the compiler itself, the next fastest level of feedback are the test suites.
 
