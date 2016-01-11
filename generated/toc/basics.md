@@ -8,7 +8,7 @@
     * [Know How To Implement Hashcode And Equals](basics/800_know_how_to_implement_hashcode_and_equals.md)
     * [Avoid Apis From Prehistory](basics/900_avoid_apis_from_prehistory.md)
     * [Do Not Use The Assert Keyword](basics/1000_do_not_use_the_assert_keyword.md)
-    * [Use Final Librally](basics/1100_use_final_librally.md)
+    * [Use Final Liberally](basics/1100_use_final_liberally.md)
     * [Javadoc Judiciously](basics/1200_javadoc_judiciously.md)
     * [Avoid Checked Exceptions](basics/1300_avoid_checked_exceptions.md)
     * [Ignore Single Exit Point Rules](basics/1400_ignore_single_exit_point_rules.md)

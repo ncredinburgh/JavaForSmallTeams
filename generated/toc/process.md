@@ -2,6 +2,5 @@
     * [Instant Feedback](process/200_instant_feedback.md)
     * [Fast Feedback](process/300_fast_feedback.md)
     * [Slower Feedback](process/400_slower_feedback.md)
-    * [The Build File Is Truth](process/500_the_build_file_is_truth.md)
     * [Agree The Language You Use For Tests](process/600_agree_the_language_you_use_for_tests.md)
     * [Use Coverage As A Tool Not A Target](process/700_use_coverage_as_a_tool_not_a_target.md)
