@@ -10,3 +10,6 @@ While feedback from the IDE is fast and convenient it has some drawbacks.
 * It is often non binary (i.e. not simply pass/fail)
 * It can be easily ignored / overlooked
 * The expectation of speed limits what it can achieve
+* 
+
+For these reasons purely IDE centric work flows should be avoided. Code should not be considered complete by a developer until tests have been run via the build file.
