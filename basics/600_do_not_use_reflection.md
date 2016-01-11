@@ -6,7 +6,9 @@ Do not use reflection in your code (i.e. anything from the `java.lang.reflect` p
 
 ### Details
 
-Reflection is a powerful tool, it allows Java to do things that would otherwise be either impossible or require large amounts of boilerplate code. But while it is sometimes useful when creating a framework or library it is unlikely to be a good way to solve the types of problem we encounter in normal server side application code.
+Reflection is a powerful tool, it allows Java to do things that would otherwise be either impossible or require large amounts of boilerplate code. 
+
+But while it is sometimes useful when creating a framework or library it is unlikely to be a good way to solve the types of problem we encounter in normal server side application code.
 
 So why would we want to avoid using a powerful tool that Java provides?
 
