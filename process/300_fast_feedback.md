@@ -1,5 +1,7 @@
 ## Fast feedback
 
+## The build file is truth
+
 The build script provides less immediate feedback than the IDE as it must be explicitly triggered.
 
 Feedback from the build script has a major advantage however as it is repeatable across all machines.
