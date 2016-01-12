@@ -4,7 +4,6 @@
     * [Avoid Global State](style/400_avoid_global_state.md)
     * [Inject Dependencies](style/500_inject_dependencies.md)
     * [Avoid Null](style/600_avoid_null.md)
-    * [Everytime You Copy And Paste Flick Yourself In The Eye](style/700_everytime_you_copy_and_paste_flick_yourself_in_the_eye.md)
     * [Kiss](style/800_kiss.md)
     * [Remember Yagni](style/900_remember_yagni.md)
     * [Prefer Reversible Decisions](style/1000_prefer_reversible_decisions.md)

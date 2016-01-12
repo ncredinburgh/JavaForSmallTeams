@@ -113,7 +113,7 @@ Again composition is inherently more flexible.
 
 The advice to prefer composition to inheritance refers to *implementation inheritance* (i.e. extending a class). The disadvantages discussed  above do not apply to *interface inheritance* (i.e. implementing an interface).
 
-In fact the design choice you often have to make it to choose between implementation inheritance and the combination of composition and interface inheritance.
+In fact the design choice you often have to make is to choose between implementation inheritance and the combination of composition and interface inheritance.
 
 In these situations the advice is still to prefer the approach that uses composition.
 
@@ -150,6 +150,8 @@ class InheritanceUpperCaseDecorator extends ConcreteProcessor {
 ```
 
 But again this solution would be less flexible.
+
+With the composition based version we can decorate any `Processor`. With the inheritance version we would need to re-implement the decorator for each concrete type we wished to add the upper case behaviour to.
 
 Many common OO patterns rely on the combination of Composition and interface inheritance.
 

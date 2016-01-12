@@ -2,7 +2,9 @@
 
 ### Summary
 
-Don't optimise your code prematurely. Concentrate on making it simple and understandable instead.
+Don't optimise your code prematurely. 
+
+Concentrate on making it simple and understandable instead.
 
 ### Details
 

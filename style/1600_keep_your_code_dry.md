@@ -2,11 +2,13 @@
 
 ### Summary
 
-Don't Repeat Yourself.
+Don't Repeat Yourself - avoid writing the same logic more than once.
+
+Every time you copy and paste code flick yourself in the eye. This is a great disincentive to doing it again, but over time may cause blindness.
 
 ### Details
 
-If the same logic occurs more than once it should not be duplicated, it should instead be extracted to a well named class or method. 
+If the same logic is required more than once it should not be duplicated, it should instead be extracted to a well named class or method. 
 
 This will be both easier to read and easier to maintain as a change will only be required in one place should the logic need to change.
 
@@ -60,7 +62,7 @@ class Foo {
 
 Things are a little trickier when we have similar but not identical logic.
 
-The worse thing we can do is copy and paste.
+Although it is quick and easy, the worse thing we can do is copy and paste.
 
 **Terrible**
 ```java
@@ -85,7 +87,9 @@ public void doSomethingSimilar(List<Widget> widgets) {
 }
 ```
 
-A straightforward but very limited approach is to introduce boolean flags.
+This seemed quick and easy now, but is the start of a codebase that will suck time each time we try to understand or change it.
+
+A straightforward but very limited approach to re-use code is to introduce boolean flags.
 
 **Not great**
 ```java
@@ -98,7 +102,7 @@ public void doSomethingSimilar(List<Widget> widgets) {
 }
   
 
-private void doThings(List<Widget> widgets, boolean doDifferentSideEffect ) {
+private void doThings(List<Widget> widgets, boolean doDifferentSideEffect) {
   for (Widget widget : widgets) {
     reportExistence(widget);
     if (widget.snortles() > 0) {
@@ -113,7 +117,9 @@ private void doThings(List<Widget> widgets, boolean doDifferentSideEffect ) {
 }
 ```
 
-A much more scalable approach is to use the Strategy pattern to separate the concerns.
+This is ugly and gets worse as the number of possibilities increases.
+
+A much more scalable approach is to use the Strategy pattern.
 
 If we introduce an interface
 
@@ -167,11 +173,9 @@ private void doThings(List<Widget> widgets, WidgetAction action ) {
 
 The Java 7 version is quite verbose due to the anonymous inner class boiler plate. 
 
-Arguably boolean flags might be preferable for very simple cases such as this.  
+Arguably boolean flags might be preferable for very simple cases such as this, but if we extract the logic in `performSideEffect` and `performDifferentSideEffect` methods into top level classes implementing `WidgetAction` then the Strategy version becomes compelling. 
 
-If the logic in the `performSideEffect` and `performDifferentSideEffect` methods is complex enough to be pulled into separate top level classes implementing `WidgetAction` then the Strategy version becomes compelling. 
-
-In Java 8 there is little question that the Strategy pattern is preferable even in the simplest of cases.
+In Java 8 there is little question that the Strategy pattern is preferable in even the simplest of cases.
 
 **Better with Java 8**
 ```java
@@ -194,11 +198,11 @@ private void doThings(List<Widget> widgets, Consumer<Widget> action ) {
 }
 ```
 
-We do not need to introduce our own interface - the built in `Consumer<T>` is enough, but we might consider introducing one if the `doThings` method were exposed publicly or the logic in `performSideEffect` was complex enough to pull into a top level class. 
+We do not need to introduce our own interface - the built in `Consumer<T>` is enough. We should consider introducing one if the `doThings` method were exposed publicly or the logic in `performSideEffect` was complex enough to pull into a top level class. 
 
 The loop might also be converted to a pipeline.
 
-**As a pipline**
+**As a pipeline**
 ```java
 private void doThings(List<Widget> widgets, Consumer<Widget> action ) {
   widgets
