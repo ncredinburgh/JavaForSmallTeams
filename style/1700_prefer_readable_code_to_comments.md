@@ -59,7 +59,8 @@ if (requiresRootPrivileges(port) {
 }
 
 private boolean requiresRootPrivileges(int port) {
-  // port numbers below 1024 (the privileged or "well-known ports") require root access on unix systems
+  // port numbers below 1024 (the privileged or "well-known ports") 
+  // require root access on unix systems
   return port < 1024; 
 }
 ```

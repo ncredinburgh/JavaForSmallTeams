@@ -18,7 +18,7 @@ A useful guide as to whether a function is doing only one thing is given in "Cle
         this.repository(foo.getIdentifier(), this.collaborator.calculate(foo));
      }
 
-  if (importantBusinessLogic()) {
+     if (importantBusinessLogic()) {
        foo.setStatus(FNAGLED);
        this.collaborator.collectFnagledState(foo);
      }
