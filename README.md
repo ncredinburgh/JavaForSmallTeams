@@ -19,13 +19,12 @@ It differentiates itself by being :-
 
 This last point is important. 
 
-We assume you are writing server side Java in *small* teams.
+We assume a number of things about you and the environment you are working in.
 
-We assume your teams are of mixed experience (some experts, some beginners).
-
-We assume you are writing code in a general "business" context. 
-
-We assume you expect the code to still be in use in five years time. 
+* We assume you are writing server side Java in *small* teams.
+* We assume your teams are of mixed experience (some experts, some beginners).
+* We assume you are writing code in a general "business" context. 
+* We assume you expect the code to still be in use in five years time. 
 
 Some of the suggestions may be valid in other contexts, others might constitute terrible advice for those contexts.
 
