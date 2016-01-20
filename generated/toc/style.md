@@ -2,6 +2,7 @@
     * [Prefer Composition](style/200_prefer_composition.md)
     * [Prefer Immutable Objects](style/300_prefer_immutable_objects.md)
     * [Make Dependencies Explicit](style/500_make_dependencies_explicit.md)
+    * [Provide No More Than One Worker Constructor](style/550_provide_no_more_than_one_worker_constructor.md)
     * [Avoid Null](style/600_avoid_null.md)
     * [Remember Kiss And Yagni](style/800_remember_kiss_and_yagni.md)
     * [Prefer Reversible Decisions](style/1000_prefer_reversible_decisions.md)
