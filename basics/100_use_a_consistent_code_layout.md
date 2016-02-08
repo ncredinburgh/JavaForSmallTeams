@@ -16,7 +16,7 @@ Despite this programmers tend to have strong opinions on the matter.
 
 Every codebase should however have a single agreed formatting style which is consistently applied and is understood by everyone working on that codebase. 
 
-This prevents commit wars in which different team members re-format things to their person preference. It also  makes code easier to understand as there is a cognitive cost for the reader if formatting changes radically from file to file.
+This prevents commit wars in which different team members re-format things to their personal preference. It also  makes code easier to understand as there is a cognitive cost for the reader if formatting changes radically from file to file.
 
 Although there is value in consistency, there is also a cost. 
 

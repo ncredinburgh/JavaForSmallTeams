@@ -17,7 +17,9 @@ This leads to unexpected results that may not be caught by simple test cases
     double transationCost = 0.10;
     int numberTransactions = 6;
 
-    System.out.printf("After %s transactions balance is %s",numberTransactions, balance - (transationCost * numberTransactions));
+    System.out.printf("After %s transactions balance is %s"
+                    , numberTransactions
+                    , balance - (transationCost * numberTransactions));
     // Gives After 6 transactions balance is 1.4 :-)
 ```
 
@@ -28,7 +30,9 @@ But
     double transationCost = 0.10;
     int numberTransactions = 7;
 
-    System.out.printf("After %s transactions balance is %s",numberTransactions, balance - (transationCost * numberTransactions));
+    System.out.printf("After %s transactions balance is %s"
+                     , numberTransactions
+                     , balance - (transationCost * numberTransactions));
     // Gives After 7 transactions balance is 1.2999999999999998 :-(
 ```
 

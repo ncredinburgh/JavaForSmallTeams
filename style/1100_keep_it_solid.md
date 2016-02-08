@@ -4,6 +4,12 @@
 
 The SOLID acronym provides some guidance on design that you should follow.
 
+* **S**ingle Responsibility Principle
+* **O**pen Closed Principle
+* **L**iskov Substitution Principle
+* **I**nterface Segregation Principle
+* **D**ependency Inversion Principle
+
 ### Details
 
 #### Single Responsibility Principle

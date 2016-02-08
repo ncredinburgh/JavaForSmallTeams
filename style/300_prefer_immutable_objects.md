@@ -8,7 +8,7 @@ Where possible create objects that cannot be changed - especially if those objec
 
 Mutable state makes programs harder to understand and maintain.
 
-When objects are short lived, and do not leave method scope, mutable state causes few problems. Writes and reads will be close together and there will be clear the order in which this happens.
+When objects are short lived, and do not leave method scope, mutable state causes few problems. Writes and reads will be close together and there will be a clear order in which this happens.
 
 For longer lived objects things are more complex.
 

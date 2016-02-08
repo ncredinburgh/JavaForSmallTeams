@@ -10,14 +10,15 @@ If a particular value is not important indicate this to the reader by using well
 
 Supplying values via a method call makes them less visible.
 
-In the example below, while we additional context to understand why `3` is an invalid value, it should be clear the first to parameters to the `process` method are not important to the behaviour we are specifying. 
+In the example below, while we need additional context to understand why `3` is an invalid value, it should be clear the first to parameters to the `process` method are not important to the behaviour we are specifying. 
 
 ```java
   @Test
   public void shouldXXX() {
     int invalidValue = 3;
     MyClass testee = new MyClass();
-    assertThat(testee.process(anInt(), aString(), invalidValue)).isEqualTo(Status.FAIL);
+    assertThat(testee.process(anInt(), aString(), invalidValue))
+      .isEqualTo(Status.FAIL);
   }
   
 ```

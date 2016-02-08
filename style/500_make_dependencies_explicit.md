@@ -78,7 +78,7 @@ These are evil.
 
 They are pulled in from `Singletons`, `ThreadLocals`, static method calls or by simply calling `new`. 
 
-**Terrible**
+**Bad**
 ```java
 public class HiddenDependencies {
   public void doThings() {

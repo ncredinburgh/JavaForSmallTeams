@@ -62,7 +62,7 @@ class Foo {
 
 Things are a little trickier when we have similar but not identical logic.
 
-Although it is quick and easy, the worse thing we can do is copy and paste.
+Although it is quick and easy, the worst thing we can do is copy and paste.
 
 **Terrible**
 ```java

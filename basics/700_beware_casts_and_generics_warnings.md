@@ -72,7 +72,7 @@ for (Integer each : list) {
 
 #### Poor design
 
-Sometimes removing a cast or fixing a warning is non trivial. We have bumped into issue 2 - poor design.
+Sometimes removing a cast or fixing a warning is non trivial. We have bumped into issue two - poor design.
 
 For example
 
