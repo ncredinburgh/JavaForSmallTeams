@@ -42,12 +42,13 @@ Some sections will be more relevant to some audiences than others but we encoura
 
 ## Structure
 
-The document is split into four sections
+The document is split into five sections
 
 * Process - Discussion on development philosophy and workflow 
 * Style - Good style and design at a high level
-* Basic good practice and gotchas - Specific advice on Java language features and know gotchas 
+* Specifics - More specific advice on Java language features and gotchas 
 * Good tests - How to write good tests
+* Bad advice - Discussion of some commonly circulated bad advice and patterns
 
 ## History
 

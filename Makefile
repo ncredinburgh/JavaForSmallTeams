@@ -17,8 +17,9 @@ $(IMGDIR)/%.png : %.svg
 tocs :
 	./toc.sh style
 	./toc.sh process
-	./toc.sh basics
+	./toc.sh specifics 
 	./toc.sh tests
+	./toc.sh badadvice
 
 cover :
 	inkscape --export-png cover.png cover.svg

@@ -4,7 +4,9 @@
 {% include "./generated/toc/process.md" %}
 * [Style](style.md)
 {% include "./generated/toc/style.md" %}
-* [Basics and gotchas](basics.md)
-{% include "./generated/toc/basics.md" %}
+* [Specifics](specifics.md)
+{% include "./generated/toc/specifics.md" %}
 * [Tests](tests.md)
 {% include "./generated/toc/tests.md" %}
+* [Bad advice](badadvice.md)
+{% include "./generated/toc/badadvice.md" %}
