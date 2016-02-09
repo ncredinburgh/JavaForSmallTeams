@@ -44,7 +44,7 @@ Test double that acts as a lightweight stand in for some other component
 
 # Guava
 
-An open source project from Google that provides common utilities for Java such as collections operations, string processing and caching. Originally known as Google Collections.
+An open source project from Google originally known as Google Collections. It provides common utilities for Java such as collections operations, string processing and caching. See <a href='https://github.com/google/guava/'>Guava</a>
 
 # TDD
 
