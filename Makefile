@@ -32,4 +32,3 @@ clean :
 	rm book.pdf
 
 rebuild : clean all
-
