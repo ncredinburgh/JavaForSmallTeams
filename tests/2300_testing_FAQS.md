@@ -32,6 +32,12 @@ A bad solution is to use a static method (such as joda time's `setCurrentMillisF
 
 A good solution is inject a strategy for retrieving the date/time into your class as a dependency. 
 
+Java 8 provides the `java.time.Clock` class which can be used for this purpose.
+
+The static factory method `fixed` will create an instance that represents a constant time. Other methods provide implementations suitable for production use.
+
+Java 7 does not provide an out of the box class for this purpose so you will need to roll your own. 
+
 ### Do I need to implement a teardown method for my test?
 
 This used to be a requirement for all JUnit 3 tests. If you didn't nullify all members of a test class in a teardown your test suite began to eat memory as it grew.
