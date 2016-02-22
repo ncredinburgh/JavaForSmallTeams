@@ -23,7 +23,7 @@ Given two solutions to a problem which one is simpler?
 * The one where the logic is most explicit?
 * The one which is consistent with a solution used elsewhere?
 
-All of the above are reasonable definitions of *simple* but none of them is the single definition that it will always make sense to follow.
+All of the above are reasonable definitions of *simple*. None of them is the single definition that it will always make sense to follow.
 
 Recognising simple isn't easy and keeping things simple takes a lot of work. 
 

@@ -26,13 +26,15 @@ A global preferred reference should therefore be set, but teams should be free t
 
 ### Suggested formatting rules
 
-For teams that do not have their own strong preferences, the following layout guidelines are suggested. 
+If your do not have your own strong preferences we suggest you follow the [Google Java Style](https://google.github.io/styleguide/javaguide.html).
 
-They are described only briefly here, the attached eclipse settings file provides more detail. 
+These formatting rules are well thought out, clearly documented and not overly prescriptive.
+
+We will not describe them in any detail here, but code formatted to these rules will look something like the following :-
 
 ```java
 class Example {
-  int[] myArray = { 1, 2, 3, 4, 5, 6 };
+  int[] myArray = {1, 2, 3, 4, 5, 6};
   int theInt = 1;
   String someString = "Hello";
   double aDouble = 3.0;
@@ -45,15 +47,15 @@ class Example {
     }
 
     switch (a) {
-    case 0:
-      Other.doFoo();
-      break;
-    default:
-      Other.doBaz();
+      case 0:
+        Other.doFoo();
+        break;
+      default:
+        Other.doBaz();
     }
   }
 
-  void bar(List v) {
+  void bar(List<Integer> v) {
     for (int i = 0; i < 10; i++) {
       v.add(new Integer(i));
     }
@@ -61,14 +63,19 @@ class Example {
 }
 ```
 
+We suggest however that the guidance in the Google guide on when to write Javadoc is ignored in favour of our own.
+
+#### Notable points about this style
+
 ##### Spaces not tabs
 
 Tabs may appear differently depending on how an editor is configured. This will result in constant reformatting as different programmers to adapt the file to their editor settings. Spaces avoid this problem.
 
-In some languages (e.g JavaScript before the rise of code minifiers) tabs have/had an advantage as they reduced the size of the source file compared to using multiple spaces. The increase in size of the source file is of no relevance for Java.
+In some languages (e.g. JavaScript before the rise of code minifiers) tabs have/had an advantage as they reduced the size of the source file compared to using multiple spaces. The increase in size of the source file is of no relevance for Java.
 
 ##### One true brace style
 
 There are various arguments about the supposed advantages of this style, but we suggest its use mainly because it is common in the Java community.
 
 Although simple if else statements can be more concisely written by omitting the braces we suggest that they are always included. This reduces the chance of a statement being placed outside the conditional when this was not the intent.
+

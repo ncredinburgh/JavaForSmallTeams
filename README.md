@@ -68,7 +68,7 @@ This work is Copyright &copy; NCR, but may be read and shared with others under 
 
 ## Author
 
-This document was written by Henry Coles and numerous contributors.
+This document was written by [Henry Coles](https://twitter.com/0hjc) and numerous contributors.
 
 {% include "./contributors.md" %}
 
