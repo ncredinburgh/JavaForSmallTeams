@@ -10,7 +10,7 @@ Multiple assertions within a test may be an indicator that the test is testing m
      ArrayDeque<String> testee = new ArrayDeque<String>();
      
      testee.add("foo");
-     testee.add("bar"   );
+     testee.add("bar");
      
      assertEquals("foo",testee.pop());
      assertEquals("bar",testee.pop());     
