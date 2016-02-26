@@ -51,7 +51,7 @@ Filters and maps highlight what the code is intended to achieve. This is less cl
       public boolean apply(Integer input) {
         return input > limit;
       }
-    }
+    };
   }
 ```
 
