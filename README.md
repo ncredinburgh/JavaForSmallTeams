@@ -56,6 +56,24 @@ Most of the content of this book began life as internal wiki pages at [NCR Edinb
 
 Rather than keep this as an internal document we decided to open it up to everyone in the hope that together we could make it better. 
 
+## A word on trade offs
+
+There are no right answers in software engineering. 
+
+It is a balancing act in which we must trade off one concern against another and make a judgement call about which balance is better for the specific scenario we have found ourselves in.
+
+One of the most common mistakes we've seen experienced programmers make is to blindly consider only one or two concerns (often the ones with catchy acronyms) without thought for others. 
+
+We've very carefully set out the context in which we think the advice in this book will be useful, but the context is still very broad. Slightly different situations might benefit from very different trade offs. What worked well for you in one project might not work so well in the next.
+
+For this reason we will very rarely use words like *always* or *never*.
+
+When we do use them we will have thought carefully before doing so, but what we really mean is almost-always or almost-never.
+
+Having said this if you find yourself discounting any of the recommendations in this book please stop and think first. Don't fall into the trap of thinking certain advice cannot apply to you. We often make our worst mistakes when we believe we are being elegant or clever. The full horror of our ineptitude sometimes does not become apparent for months or years.
+
+Advice is here to save us from ourselves.
+
 ## A note on Java versions
 
 This document is intended to apply to Java 7 and 8, but will be largely applicable to Java 5 and 6.
