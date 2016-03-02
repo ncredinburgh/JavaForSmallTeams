@@ -28,9 +28,9 @@ We assume a number of things about you and the environment you are working in.
 
 Some of the suggestions may be valid in other contexts, others might constitute terrible advice for those contexts.
 
-It is also just one opinion from many valid alternatives. To be useful it needs to be an opinion that you can agree with and sign up to. If you disagree with its content you are encouraged to make your own thoughts know so the document can be improved.
+It is also just one opinion from many valid alternatives. To be useful it needs to be an opinion that you can agree with and sign up to. If you disagree with its content you are encouraged to make your own thoughts known so the document can be improved.
 
-Finally not all the code we work on is perfect. Sometimes we inherit our own mistakes, sometimes we inherit other peoples. 
+Finally, not all the code we work on is perfect. Sometimes we inherit our own mistakes, sometimes we inherit other peoples. 
 
 The point of this document is not to say that all code must look like this but to have an agreed destination that we are aiming for.
 
@@ -42,7 +42,7 @@ Some sections will be more relevant to some audiences than others but we encoura
 
 ## Structure
 
-The document is split into five sections
+The document is split into five sections:
 
 * Process - Discussion on development philosophy and workflow 
 * Style - Good style and design at a high level
