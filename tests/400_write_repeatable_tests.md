@@ -9,4 +9,4 @@ In practice this means unit tests must not
 * Write to disk
 * Modify static state
 
-If your test does any of these things then it is not a **unit** test.
+If your test does any of these things then it is not a **unit** test. This is not to say that your is not valuable. 

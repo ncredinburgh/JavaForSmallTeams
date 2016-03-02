@@ -1,4 +1,3 @@
-    * [Use A Layered Testing Strategy](tests/100_use_a_layered_testing_strategy.md)
     * [Write Testable Code](tests/200_write_testable_code.md)
     * [Write Executable Speficiations](tests/300_write_executable_speficiations.md)
     * [Write Repeatable Tests](tests/400_write_repeatable_tests.md)
