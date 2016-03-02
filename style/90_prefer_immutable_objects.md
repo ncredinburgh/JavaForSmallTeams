@@ -190,7 +190,9 @@ Mutable objects require slightly less boilerplate to create than immutable ones.
 
 If you know that a class will only ever be used to create short lived local objects you might consider making it mutable. But you must weigh this against the additional work required to ensure that the class is only ever used in this fashion as the codebase grows.
 
-Mutable objects also used to be the norm in Java. As a result many common frameworks require mutable objects. Persistence and serialisation frameworks often require Java beans with no args constructors and setters. Other frameworks might require you to use two stage construction with a lifecycle method such as init.
+Options exist to auto-generate both immutable and mutable classes, thereby removing mutable objects' main advantage. Two of these options are discussed further in "Know how to implement hashcode and equals".
+
+Mutable objects used to be the norm in Java. As a result many common frameworks require mutable objects. Persistence and serialisation frameworks often require Java beans with no args constructors and setters. Other frameworks might require you to use two stage construction with a lifecycle method such as init.
 
 It is not always highlighted in the documentation but some long standing frameworks have been updated to support immutable objects. 
 

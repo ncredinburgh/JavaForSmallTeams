@@ -1,3 +1,4 @@
+    * [Consider Code Generators Carefully](style/5_consider_code_generators_carefully.md)
     * [Optimise For Readability](style/10_optimise_for_readability.md)
     * [Prefer Readable Code To Comments](style/20_prefer_readable_code_to_comments.md)
     * [Javadoc Judiciously](style/30_javadoc_judiciously.md)
