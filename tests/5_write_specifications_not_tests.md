@@ -4,11 +4,11 @@ Before you sit down to write a test it's important to understand *why* you are d
 
 What is it that you want to achieve?
 
-Tests have an unfortunate tendency to be seen as a thing you have to do. Some extra work to be performed after the real work is done. A chore.
+There is an unfortunate tendency for developers to look at tests as a thing you have to do because it's "best practice". Some extra work to be performed after the real work is done. A chore.
 
-The reason for writing them becomes lost.
+The reason for writing them has become lost.
 
-### How do tests help?
+### Why write tests?
 
 The reason to write tests is to make our lives easier.
 
@@ -33,25 +33,23 @@ Tests written with this mindset can have a negative value.
 
 This first problem causes the most pain. 
 
-If you have a test that is tied to the code's implementation, to change the way the code implements its functionality you have to spend effort changing the test.
+If you have a test that is tied to the code's implementation, to change the way the code is implemented you have to spend effort changing the test.
 
 If the test must change whenever the implementation changes then the test will not help stop regression.
 
 ### Executable specifications
 
-So how do we make sure we do not write negative value tests? 
-
-How do we make sure we write tests that provide the benefits in our list?
+So how do we make sure we do not write negative value tests? How do we make sure we write tests that provide the benefits in our list?
 
 The first thing to do is let go of the idea that we are testing.
 
 We are not testing, we're *specifying*.
 
-To test something you only need to verify that it does what it does. To specify you need to describe what it must do in a way that can be clearly understood.
+To test something you only need to verify that it does what it does. To specify you need to describe the important things that it must do in a way that can be clearly understood.
 
-A good specification also describes only the important things. 
+A good specification describes *only* the important things. 
 
-It describes what something *must* do describing the way in which it must do it. It allows for multiple implementations. If a specification is tied to one implementation then it is *over-specified*.
+It describes what something *must* do without making assumptions about how it will do it. It allows for multiple implementations. If a specification is tied to one implementation then it is *over-specified*.
 
 So this is what we must aim for - an executable specification of our code.
 
