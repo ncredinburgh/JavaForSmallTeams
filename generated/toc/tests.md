@@ -1,5 +1,5 @@
+    * [Write Specifications Not Tests](tests/5_write_specifications_not_tests.md)
     * [Write Testable Code](tests/200_write_testable_code.md)
-    * [Write Executable Speficiations](tests/300_write_executable_speficiations.md)
     * [Write Repeatable Tests](tests/400_write_repeatable_tests.md)
     * [Name Tests With A Specification Style](tests/500_name_tests_with_a_specification_style.md)
     * [Use Example Style When Specification Style Does Not Work](tests/600_use_example_style_when_specification_style_does_not_work.md)
