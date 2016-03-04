@@ -28,14 +28,14 @@ Often it is not achieved.
 Tests written with this mindset can have a negative value. 
 
 * Instead of enabling refactoring they can increase its cost.
-* Instead of catching bugs in the code as we write it, the code reveals bugs in the tests.
-* Instead of documenting what the code does, they are harder to understand than the code itself.
+* Instead of documenting what the code does, the tests are harder to understand than the code itself.
+* Instead of aiding development they increase the work that must be done
 
 This first problem causes the most pain. 
 
 If you have a test that is tied to the code's implementation, to change the way the code is implemented you have to spend effort changing the test.
 
-If the test must change whenever the implementation changes then the test will not help stop regression.
+If the test must change whenever the implementation changes then we cannot trust that the test will stop regression. How do we know we did not introduce a bug into the test when we changed it?
 
 ### Executable specifications
 
@@ -45,11 +45,11 @@ The first thing to do is let go of the idea that we are testing.
 
 We are not testing, we're *specifying*.
 
-To test something you only need to verify that it does what it does. To specify you need to describe the important things that it must do in a way that can be clearly understood.
+To test something you only need to verify that it "does what it does". To specify you need to describe the important things that it must do in a way that can be clearly understood.
 
 A good specification describes *only* the important things. 
 
-It describes what something *must* do without making assumptions about how it will do it. It allows for multiple implementations. If a specification is tied to one implementation then it is *over-specified*.
+It describes what something *must* do without making assumptions about how it will do it. It allows for multiple implementations. If a specification is tied to one implementation then it is *over-specified* and will have to change when the implementation does.
 
 So this is what we must aim for - an executable specification of our code.
 
@@ -69,16 +69,27 @@ Take a moment to see if there is a sensible refactoring that would improve the c
 
 This has several advantages
 
-* As there is no implementation when the test is written it is harder to write a test that is tied to one
 * It guarantees that all the code *can* be tested
+* As there is no implementation when the test is written it is harder to write a test that is tied to one
 * It guarantees that all behaviour is covered by tests
 * It discourages writing superfluous code
 
+There are two important aspects to TDD
+
+1. Writing the specification first
+2. Moving in very small steps
+
+Both of these practices are a good idea individually, even if they are not combined.
+
+If we wrote our specification first, but moved in larger steps (possibly because we believed we knew what our implementation should look like) we would realise our first advantage - a guarantee that the code we wrote could be tested. We might not achieve the other benefits however.
+
+If we were to write our code without first writing a test we would have more success if we were to execute it regularly - observing the result of each small code change to see if was what we expected. 
+
 TDD has many advantages but it is not magic.
 
-It is entirely possible to write terrible code and specifications while rigorously applying TDD. 
+Even if it is applied rigorously it is entirely possible to write terrible code and specifications. TDD doesn't mean you can stop thinking. 
 
-Although it does not guarantee good tests, if you have a good understanding of the technologies and domain in which you are working, TDD is usually the best approach.
+Despite this, if you have a good understanding of the technologies and domain in which you are working, TDD is usually the best approach if you wish to optimise for quality.
 
 If you do not understand your domain or technology well you may find writing a specification first hard. 
 
@@ -94,7 +105,7 @@ Once you have learnt what you can from the spike it should be thrown away and th
 
 ### Spike and stabilise
 
-Traditionally spikes are thrown away as they are inherently of low quality. Discarding the spike is done to optimise code quality at the expense of a (probably but not necessarily) slower delivery.
+Traditionally spikes are thrown away as they are inherently of low quality. Discarding the spike is done to optimise code quality at the expense of a (probably) slower delivery.
 
 Sometimes this is not the tradeoff you want.
 

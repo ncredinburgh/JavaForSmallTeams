@@ -1,10 +1,12 @@
 ## Think units, not methods
 
-Each behaviour that a unit test describes should normally relate to the overall unit rather than the responsibilities of an individual method. 
+Each behaviour that a unit test describes should normally relate to the overall *unit* rather than the responsibilities of an individual method. 
 
-To think in terms of units we have to first answer the difficult question of what a unit actually is.
+### What is a unit?
 
-Testing in terms of methods is effectively the same as saying that a unit is a method. It is easy to show why this does not work.
+To think in terms of units we have to first answer the difficult question of what a *unit* actually is.
+
+Testing in terms of methods is effectively the same as saying that a *unit* is a method. It is easy to show why this does not always work.
 
 If we were to try and write a unit test for the `push` method of `java.util.Stack` we might end up with something like
 
@@ -30,9 +32,9 @@ public void testPop() {
 
 Oh. That looks kind of familiar.
 
-The problem we are hitting is that we have defined too small a unit. We are trying to describe the behaviour of something that is only useful when it collaborates with other "units" of the same size.
+The problem we are hitting is that we have defined too small a *unit*. We are trying to describe the behaviour of something that is only useful when it collaborates with other *units* of the same size.
 
-If we start thinking of `java.util.Stack` as our unit tests become much easier to write.
+If we start thinking of `java.util.Stack` as our *unit* then tests become much easier to write.
 
 ```java
 @Test
@@ -45,23 +47,23 @@ public void shouldRetieveValuesInOrderTheyAreAdded() {
 }
 ```
 
+We have written a test that, instead of trying to describe what a method does, describes the behaviour of the class as a whole.
+
 The idea that our job is to test methods is common with developers that are new to unit testing and is unfortunately re-enforced by some IDEs and tools that provide templates to generate tests for each method of a class.
 
 As we have seen, for `Stack` it makes far more sense to consider the behaviour of the class of a whole.
 
-So does this mean that a unit is always a class?
+### Are classes units?
 
-No.
+It often does make sense to treat a class as a *unit* so this is a good default definition, but it isn't always the right granularity.
 
-It often does make sense to treat a class as a unit so this is a good default definition, but it doesn't always fit.
+If we were to try to test the `java.util.Collections` class we would find that it is perfectly reasonable to treat the `sort`, `reverse` , `singleton` methods etc as separate *units*. Each one represents a self contained logical behaviour.  
 
-If we were to try to test the `java.util.Collections` class we would find that it is perfectly reasonable to treat the `sort`, `reverse` , `singleton` methods etc as separate units. Each one represents a self contained logical behaviour.  
-
-So sometimes units are as small as methods.
+So sometimes *units* are as small as methods.
 
 Sometimes they are also larger than a single class.
 
-If we were to inherit the code below without tests what tests might we write for it?
+If we were to inherit the code below without any tests what tests might we write for it?
 
 ```java
 public class ThingaMeBob {
@@ -149,7 +151,7 @@ public class ThingaMeBobTest {
 
 ```
 
-If at some point we question why there is so much code and refactor to something simpler.
+At some point we would hopefully question why this code is so over-engineered and consider refactoring to something simpler like.
 
 ```java
 public class ThingaMeBob {
@@ -173,11 +175,9 @@ What happens to our tests?
 
 Which ones were most valuable?
 
-The answer of course is that the test which exercised all three classes through the public interface of `ThingaMeBob` proved the most useful. We did not have to change it at all and it confirmed that everything still worked.
+The answer of course is that the test which exercised all three classes through the public interface of `ThingaMeBob` proved the most useful. We did not have to change it at all. When it ran green we knew our refactoring was successful and everything still works.
 
-We deleted the ones for `Addition` and `Subtraction`.
-
-So the `ThingaMeBob` unit is stable. The smaller units we created were just implementation detail.
+We deleted the ones for `Addition` and `Subtraction`. The smaller units we created were just implementation detail.
 
 Lets re-wind and imagine things happened differently. 
 
@@ -185,7 +185,7 @@ What if we were asked to test drive the desired behaviour from scratch? What wou
 
 We would most likely write something that looked like our 2nd simpler version of `ThingaMeBob` and a test that looked something like `ThingAMeBobTest`.
 
-Perhaps we'd are then asked to add support for another 10 operations. We might leave our design fundamentally the same.
+If we were then asked to add support for another 10 operations, we might leave our design fundamentally the same.
 
 What if a new requirement came for the behaviour in `ThingAMeBob` to be more dynamic, with different operations being enabled and disabled at runtime?
 
@@ -195,21 +195,19 @@ What should we do with the tests?
 
 We would already have tests written in terms of `ThingaMeBob` that describe all supported behaviours. Should we also fully describe `Addition`, `Subtraction` and the other 10 operations with tests as we extract them into classes?
 
-There is no right answer here, but I hope it is clear that the most most *useful* unit that we have identified is `ThingaMeBob`. The smaller units are part of just one implementation of the functionality we require.
+There is no right answer here, but I hope it is clear that the most most useful *unit* that we have identified is `ThingaMeBob`. The smaller *units* are part of just one implementation of the functionality we require.
 
 If we choose to write tests for each extracted class those tests would have some value. 
 
 The test written in terms of `ThingaMeBob` would do a poor job of describing what each of the small extracted units does. If a test was failing it wouldn't be instantly obvious which class the bug was in. If we had to change one of the extracted classes it wouldn't be instantly obvious which test to run.
 
-So there is definitely value in writing tests for each of the extracted classes. At the same time, if we were not to do so that would also be a reasonable decision.
+So there is definitely value in writing tests for each of the extracted classes. At the same time, if we were not to do so that would also be a reasonable decision and it would reduce the cost of the refactoring.
 
-The `ThingaMeBob` tests will be fast and repeatable and allow us to work easily with th code. 
+The `ThingaMeBob` tests will be fast and repeatable and allow us to work easily with the code. If we could only have tests at one level, the level we would choose is `ThingaMeBob`.
 
-If we could only have tests at one level, the level we would choose is `ThingaMeBob`.
+So as a starting point assume that a *unit* will be a class, but recognise that this is not a hard rule.
 
-So as a starting point assume that a unit will be a class, but recognise that this is not a hard rule.
-
-A unit is really a ''single self contained logical concern'' - it may make sense to have several classes collaborate in order to capture that concern - as long as that collaboration provides a single well defined entry point.
+A *unit* is really a "single self contained logical concern" - it may make sense to have several classes collaborate in order to capture that concern - as long as that collaboration provides a single well defined entry point.
 
 Making units too small may be a form of over specifying.
 
