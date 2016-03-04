@@ -1,7 +1,6 @@
     * [Write Specifications Not Tests](tests/5_write_specifications_not_tests.md)
     * [Think Units Not Methods](tests/10_think_units_not_methods.md)
     * [Name Tests With A Specification Style](tests/15_name_tests_with_a_specification_style.md)
-    * [Write Testable Code](tests/200_write_testable_code.md)
     * [Write Repeatable Tests](tests/400_write_repeatable_tests.md)
     * [Test One Thing At A Time](tests/900_test_one_thing_at_a_time.md)
     * [Test Each Thing Only Once](tests/1000_test_each_thing_only_once.md)

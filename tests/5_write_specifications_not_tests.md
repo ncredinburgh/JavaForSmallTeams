@@ -81,9 +81,24 @@ There are two important aspects to TDD
 
 Both of these practices are a good idea individually, even if they are not combined.
 
-If we wrote our specification first, but moved in larger steps (possibly because we believed we knew what our implementation should look like) we would realise our first advantage - a guarantee that the code we wrote could be tested. We might not achieve the other benefits however.
+If we wrote our specification first, but moved in larger steps (possibly because we believed we knew what our implementation should look like) we would realise our first advantage - a guarantee that the code we wrote could be tested. 
 
-If we were to write our code without first writing a test we would have more success if we were to execute it regularly - observing the result of each small code change to see if was what we expected. 
+What do we mean by this?
+
+If code is not written with testing in mind it can be difficult to write a test for it that fits our definition of a *unit* test. 
+
+We can make our code more likely to be testable by following simple rules such as :-
+
+* Always inject dependencies
+* Avoid global state (singletons, static variables, ThreadLocals, registries etc)
+
+But even if we follow these rules we can still find that it is difficult to test our code if we have not designed for it. Writing our specification first requires our design to consider testing.
+
+Although we ensured our code was testable, because we moved in large steps with an implementation in mind we might not achieve the other benefits.
+
+If we were to write our code without first writing a test we might discover we were finished that our code was difficult to test. The process of writing that code would however have been easier if we had applied the second technique - moving in small steps.
+
+If we wrote only a small amount of code before executing it and observing the result of each small code change, we would probably spend less time debugging, be less likely to write code we did not need and move faster over all.
 
 TDD has many advantages but it is not magic.
 
