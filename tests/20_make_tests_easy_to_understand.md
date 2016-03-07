@@ -6,7 +6,6 @@ We achieve this in part by choosing clear specification style names for each tes
 
 Some techniques that help achieve this are discussed below.
 
-
 ### Follow standard TEA naming convention for test variables
 
 Establishing simple conventions can make some very basic things about a test clear to a reader.
@@ -18,7 +17,6 @@ If you need to store an expected value in a variable, call it `expected` (but do
 If you need to store a result that you will compare against an expected value in variable, name it `actual` (but don't store it in a variable just for the sake of it).
 
 If you have stubbed a participant consider naming it `stubbedFoo`, if it is acting as a mock name it `mockedFoo`. This rule is less hard than the others - decide on a case by case basis whether you think it makes your test more or less readable. 
-
 
 ### Highlight what is important, hide what is not
 
@@ -45,7 +43,6 @@ What is important in the test below?
 ```
 
 How about this version?
-
 
 **Better**
 ```java
@@ -122,4 +119,24 @@ Test code **is** different from production code however.
 Test code must tell more of a story - highlighting what is important and hiding what is not. Test code should not be as DRY ( **D**on't **R**epeat **Y**ourself ) as production code. It should be DAMP ( contain **D**escriptive **A**nd **M**eaningful **P**hrases ).
 
 If refactoring a small amount of code out a test method into a shared method hides what is happening, accept the duplication and leave it in place. If it does not affect readability then refactor mercilessly.
+
+## Choose the right assertion method
+
+When a test fails a good assertion tells you what is wrong. 
+
+Although JUnit allows you to supply an assertion message this adds noise to the test. Like comments these messages should be saved for those occasions when you cannot communicate using code alone.
+
+Bad
+
+```java
+assertTrue("Expected 2 but got " + actual, actual == 2);
+```
+
+Good
+
+```java
+assertEquals(2, actual);
+```
+
+The built in assertions are however fairly limited. Alternative assertion libraries such as AssertJ provider richer functionality and result in more readable code.
 

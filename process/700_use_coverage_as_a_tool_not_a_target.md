@@ -2,6 +2,8 @@
 
 Code coverage is a useful tool for catching your mistakes. 
 
+The tool that should work for you. You do not work for the tool.
+
 It is most useful when run at the point at which the code and tests are being written, rather than on a CI server some hours later.
 
 Gaps in code coverage highlight areas of code that have not been tested. Some of these may be expected and intentional, others may be a surprise. It is these latter ones that provide useful information.
