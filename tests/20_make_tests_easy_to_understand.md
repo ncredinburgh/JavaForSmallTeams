@@ -138,5 +138,5 @@ Good
 assertEquals(2, actual);
 ```
 
-The built in assertions are however fairly limited. Alternative assertion libraries such as AssertJ provider richer functionality and result in more readable code.
+The built in assertions are however fairly limited. Alternative assertion libraries such as AssertJ provide richer functionality and result in more readable code.
 
