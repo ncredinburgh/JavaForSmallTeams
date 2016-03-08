@@ -6,6 +6,52 @@ We achieve this in part by choosing clear specification style names for each tes
 
 Some techniques that help achieve this are discussed below.
 
+### Make test structure clear
+
+A test can be viewed as having three parts
+
+* Given - create the values and objects required for the test
+* When - executes the code under test 
+* Then - verifies the output/behaviour as as expected
+
+These stages are also sometimes called *arrange*, *act* and *assert* by people particularly attached to the letter 'a'.
+
+Although it is important that these three stages are visible, trying to rigorously separate them or label them with comments adds noise to a test. 
+
+**Bad**
+```java
+  @Test
+  public void shouldRetieveValuesInOrderTheyAreAdded() {
+    
+    // given
+    Stack<String> testee = new Stack<String>();
+    String expectedFirstValue = "a";
+    String expectedSecondValue = "b";
+  
+    // when
+    testee.push(expectedFirstValue);
+    testee.push(expectedSecondValue);
+    String actualFirstValue = testee.pop();  
+    String actualSecondValue = testee.pop();  
+
+    // then
+    assertThat(actualFirstValue).isEqualTo(secondValue);
+    assertThat(actualSecondValue).isEqualTo(firstValue);
+  }
+```
+
+**Better**
+```java
+  @Test
+  public void shouldRetieveValuesInOrderTheyAreAdded() {
+    Stack<String> testee = new Stack<String>();
+    testee.push("a");
+    testee.push("b");
+    assertThat(testee.pop()).isEqualTo("b");
+    assertThat(testee.pop()).isEqualTo("a");
+  }
+```
+
 ### Follow standard TEA naming convention for test variables
 
 Establishing simple conventions can make some very basic things about a test clear to a reader.
