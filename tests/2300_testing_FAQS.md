@@ -63,23 +63,52 @@ Is concise and suffices for simple scenarios, but has a gotcha. If the test meth
 
 If data held within the exception is important it is also not possible to assert on it with this method.
 
-The 'ExpectedException' method rule allows for more specific exception checking, but care must be taken when using it with customer runners as this may result in false positives.
-
-The simple approach of
+The traditional solution is to use a try catch block.
 
 ```java
 @Test
-  public void shouldThrowFooExceptionWhenFeelsLikeIt() {
-      try {
-          testee.doStuff();
-          fail("Expected an exception");
-      } catch (FooException expectedException) {
-          assertThat(expectedException.getMessage(), is("felt like it"));
-      }
+public void shouldThrowFooExceptionWhenFeelsLikeIt() {
+  try {
+    testee.doStuff();
+    fail("Expected an exception");
+  } catch (FooException expectedException) {
+    assertThat(expectedException.getMessage(), is("felt like it"));
   }
+}
 ```
 
-May be preferable for these reasons, or the https://code.google.com/p/catch-exception/ library may provide a cleaner solution.
+This is easy to follow, but a little verbose. It is also easy to forget to include the call to `fail()` if you are not test driving your code.
+
+JUnit now provides an alternate solution in the form of the 'ExpectedException' method rule. This allows for more fine grained exception checking.
+
+```java
+@Rule
+public ExpectedException thrown= ExpectedException.none();
+  
+@Test
+public void foo() throws IOException {
+  thrown.expect(FooException.class);
+  thrown.expectMessage("felt like it");
+    
+  testee.doStuff();
+}
+```
+
+This is more concise, but breaks the usual given/when/then flow of a test by moving the then part to the start of the method.
+
+For Java 8 AssertJ provides some custom assertions that can be used without breaking this flow.
+
+```java
+@Test
+public void testException() {
+  assertThatThrownBy(() -> { testee.doStuff(); })
+   .isInstanceOf(Exception.class)
+   .hasMessageContaining("felt like it"); 
+}
+```
+Although it maintains the flow, the lambda in which the testee is called looks a little ugly.
+
+When it can be used we recommend sticking with the concise `expected =` format. For more complex situations it is largely a matter of taste.
 
 ### How do I test an abstract class?
 
