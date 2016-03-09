@@ -2,7 +2,7 @@
 
 ## What is this? 
 
-This document is an attempt to capture what *"good"* Java code looks like and the practices that help produce it.
+This book is an attempt to capture what *"good"* Java code looks like and the practices that help produce it.
 
 This is a problematic document to write. 
 
