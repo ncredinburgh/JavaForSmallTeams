@@ -15,7 +15,7 @@ This scheme tries to achieve two goals:
 
 To achieve the 2nd goal, methods should be arranged into logical groups, with methods always appearing above the ones they call. 
 
-The two goals clearly conflict because grouping the public API methods together the top of the file prevents grouping them with the implementation methods that they used. If this causes a large problem it may be an indication that the class has too many responsibilities and could be refactored into one or more smaller classes. 
+The two goals clearly conflict because grouping the public API methods together at the top of the file prevents grouping them with the implementation methods that they used. If this causes a large problem it may be an indication that the class has too many responsibilities and could be refactored into one or more smaller classes. 
 
 Questions of the "correct" location of a method will also occur when a implementation method is called from multiple locations or methods have recursive relationships. There is, of course, no one right answer and any ordering that broadly meets the second goal may be used.
 
@@ -25,6 +25,9 @@ Constructors and static factory methods should usually be placed first in the cl
 
 ```java
 public class Layout {
+
+  private int a;
+
   Layout() {...}
   
   public static Layout create() {...}
@@ -63,3 +66,5 @@ public class Layout {
 }
 
 ```
+
+Fields should always be placed at the top of the class before any methods.

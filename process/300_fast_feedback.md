@@ -9,7 +9,7 @@ Feedback from the build script has two major advantages, however:
 * It is repeatable across all machines
 * With the aid of a CI server, you can ensure it is not ignored
 
-Because slower feedback is acceptable from the build script, a larger set of static and dynamic analysis can be run from here. This will usually include a repeat of your instant feedback (whatever analysis is run).
+Because slower feedback is acceptable from the build script, a larger set of static and dynamic analysis can be run from here. This will usually include a repeat of your instant feedback.
 
 ## Locally Runnable Tests
 

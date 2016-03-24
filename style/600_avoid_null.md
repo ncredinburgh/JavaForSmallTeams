@@ -63,7 +63,7 @@ We wish for all code that we control to be able to ignore the existence of null 
 
 `Objects.requireNonNull` can be used to add a runtime assertion that null has not been passed to a method.
 
-Because your core code should generally assume that null will never be passed, around there is little value in documenting this behavior with tests; assertions add value because they ensure that an error occurs close to the point where the mistake was made.
+Because your core code should generally assume that null will never be passed around, there is little value in documenting this behavior with tests; assertions add value because they ensure that an error occurs close to the point where the mistake was made.
 
 We can also check this contract at build time.
 

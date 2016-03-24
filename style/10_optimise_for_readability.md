@@ -17,4 +17,3 @@ Within the context in which we work, performance should be one of the concerns c
 If a performance issue arises, profiling should be used to identify where the problems actually lie.
 
 This does not mean the performance should be disregarded completely, but it should always be trumped by code readability and simplicity until it can be proven that there is a real benefit to optimization. Where code can be written in a more efficient manner without **any** increase in complexity or trade-off with readability then the (presumed) more efficient code should be preferred.
-

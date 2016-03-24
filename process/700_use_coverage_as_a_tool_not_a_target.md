@@ -26,7 +26,7 @@ For a test to be of value, it must enable refactoring; tests that are tied to on
 
 By concentrating on the one property that is easy to measure, the others are de-emphasized. But, much worse than this, trying to meet a coverage target can actively push developers towards writing tests that are tied to the implementation. Bad tests are easier to write than good tests.
 
-It is probably fair to say that there is a problem when code has only 30% unit test coverage. On the other hand, if coverage is achieved by setting a target, code with 30% coverage may be easier to work with than code with 100% coverage.
+It is probably fair to say that there is a problem when code has only 30% unit test coverage. On the other hand, if coverage is achieved by setting a target, code with 80% coverage may be harder to work with than code with a lower figure.
 
 So don't set targets, instead make sure your team is committed to writing good tests. 
 

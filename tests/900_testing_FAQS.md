@@ -4,7 +4,7 @@
 
 You don't test methods (private or public), you test the behavior of a unit as a whole. 
 
-If you cannot exercise the logic of a private method via the public interfac,e is that logic actually required? If it is required, and is sufficiently complex that it is causing you testing pain, then perhaps you should extract that concern into a separate unit that can be tested in isolation and injected in via the constructor?.
+If you cannot exercise the logic of a private method via the public interface, is that logic actually required? If it is required, and is sufficiently complex that it is causing you testing pain, then perhaps you should extract that concern into a separate unit that can be tested in isolation and injected in via the constructor?.
 
 ### How Do I Test a Void Method?
 

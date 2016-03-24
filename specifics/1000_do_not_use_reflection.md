@@ -24,7 +24,7 @@ The compiler is our first form of defense against defects and the type system is
 
 Refactoring and code analysis tools are blind to reflection.
 
-Although they may make some attempt to take it into account, the additional possibilities they create for how a program might behave mean the tools can no longer provide rigorous guarantees that they have understood the program. Otherwise, safe refactorings may change program behavior in the presence of reflection and analysis tools may report incorrect results.
+Although they may make some attempt to take it into account, the additional possibilities reflection creates for how a program might behave means the tools can no longer provide rigorous guarantees that they have understood the program. In the presence of reflection refactorings that would otherwise be safe may change program and analysis tools may report incorrect results.
 
 #### Harder Code Comprehension
 
