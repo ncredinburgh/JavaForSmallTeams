@@ -1,4 +1,4 @@
-# Good tests
+# Good Tests
 
 The testing pyramid and different levels of tests are discussed in "Agree the language you use for tests".
 

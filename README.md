@@ -1,16 +1,16 @@
 # Introduction
 
-## What is this? 
+## What is This? 
 
 This book is an attempt to capture what *"good"* Java code looks like and the practices that help produce it.
 
 This is a problematic document to write. 
 
-There is no one right answer to what good code looks like and there are many well respected books that serve the same purpose such as Effective Java, Clean Code and others.
+There is no one right answer to what good code looks like and there are many well-respected books that serve the same purpose such as *Effective Java*, *Clean Code* and others.
 
 So why this document?
 
-It differentiates itself by being :-
+It differentiates itself by being :
 
 * Freely distributable
 * Open for update - contributions, corrections and updates are encouraged
@@ -34,7 +34,7 @@ Finally, not all the code we work on is perfect. Sometimes we inherit our own mi
 
 The point of this document is not to say that all code must look like this but to have an agreed destination that we are aiming for.
 
-## Who is this for?
+## Who is This For?
 
 This document is intended for consumption by anyone involved with writing server side Java code. From developers writing Java for the first time through to seasoned technical leads serving multiple teams. 
 
@@ -56,7 +56,7 @@ Most of the content of this book began life as internal wiki pages at [NCR Edinb
 
 Rather than keep this as an internal document we decided to open it up to everyone in the hope that together we could make it better. 
 
-## A word on trade offs
+## A word on Trade-Offs
 
 There are no right answers in software engineering. 
 
@@ -74,13 +74,13 @@ Having said this if you find yourself discounting any of the recommendations in 
 
 Advice is here to save us from ourselves.
 
-## A note on Java versions
+## A note on Java Versions
 
 This document is intended to apply to Java 7 and 8, but will be largely applicable to Java 5 and 6.
 
 Where there are differences between Java 8 and 7 we will point them out. If you are unlucky enough to be working with an earlier version of Java you will have to discover any differences to Java 7 on your own. 
 
-## Licence
+## License
 
 This work is Copyright &copy; NCR, but may be read and shared with others under the terms of the Creative Commons Attribution Share Alike licence v4.0.   
 

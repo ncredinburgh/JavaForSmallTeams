@@ -1,32 +1,32 @@
-## Make dependencies explicit and visible
+## Make Dependencies Explicit and Visible
 
 ### Summary
 
 Make sure that the dependencies of a class are clearly visible.
 
-Always inject dependencies into a class via it's constructor. Do not use other methods such as setters or annotations on fields.
+Always inject dependencies into a class using it's constructor. Do not use other methods such as setters or annotations on fields.
 
-Never introduce dependencies via hidden routes such as `Singletons` or `ThreadLocals`.
+Never introduce dependencies using hidden routes such as `Singletons` or `ThreadLocals`.
 
 ### Details
 
-Code is easier to understand if the interfaces and classes each object depends on are conspicuous and visible.
+Code is easier to understand if the interfaces and classes that each object depends on are conspicuous and visible.
 
 The most visible dependencies are the ones that are injected into a method as a parameter.
 
 Less visible are the ones stored as fields but, depending on how those fields are populated, the dependencies can still be relatively easy to discover.
 
-#### Constructor injection
+#### Constructor Injection
 
 Constructor dependency injection clearly communicates an object's dependencies in a single location and ensures objects are only ever created in valid states. It allows fields to be made **final** so that their life cycle is unambiguous.
 
 This is the only way in which dependencies should be injected.
 
-#### Setter injection
+#### Setter Injection
 
 Setter injection increases the number of possible states an object could be in. Many of those states will be invalid.
 
-If setter injection is used a class can be constructed in a half initialised state. What constitutes a fully initialised state can only be determined by examining the code.
+If setter injection is used, a class can be constructed in a half-initialized state. What constitutes a fully-initialized state can only be determined by examining the code.
 
 **Bad**
 ```java
@@ -43,7 +43,7 @@ public class Foo() {
 }
 ```
 
-Here a `NullPointerException` will be thrown if `Foo` is constructed without calling `setBar`.
+Here, a `NullPointerException` will be thrown if `Foo` is constructed without calling `setBar`.
 
 **Better**
 ```java
@@ -60,19 +60,19 @@ public class Foo() {
 }
 ```
 
-Here it is clear that we must supply a `Bar` as we are unable to construct the class without it.
+Here, it is clear that we must supply a `Bar` as we are unable to construct the class without it.
 
-#### Field annotations
+#### Field Annotations
 
-While annotations on fields seem convenient they mean that the dependency will not be visible in the public api. They also tie construction of your class to the frameworks that understand them and prevent fields from being made final. 
+While annotations on fields seem convenient they mean that the dependency will not be visible in the public API. They also tie construction of your class to the frameworks that understand them and prevent fields from being made final. 
 
 Field annotations should not be used.
 
-If you are working with a dependency injection framework such as Spring either move construction of your objects into configuration classes or restrict the use on annotations to constructors. Both methods allow your classes to be constructed normally and ensure that all dependencies are visible.
+If you are working with a dependency injection framework such as Spring, either move construction of your objects into configuration classes or restrict the use on annotations to constructors. Both methods allow your classes to be constructed normally and ensure that all dependencies are visible.
 
-#### Hidden dependencies 
+#### Hidden Dependencies 
 
-Anything that is not injected into a class via a constructor or as a method parameter is a hidden dependency.
+Anything that is not injected into a class using a constructor or as a method parameter is a hidden dependency.
 
 These are evil.
 
@@ -110,15 +110,15 @@ public class HiddenDependencies {
 
 Injecting via the constructor makes the dependency clearly visible.
 
-By definition hidden dependencies are hard to discover but they have a second issue. They are also hard to replace.
+By definition, hidden dependencies are hard to discover but they have a second issue - they are also hard to replace.
 
 #### Seams
 
 Seams are a concept introduced by Michael Feathers in "Working Effectively with legacy code"
 
-He defines it as
+He defines it as:
 
-> "a place where you can alter behaviour in your program without editing in that place."
+> "a place where you can alter behavior in your program without editing in that place."
 
 In the original version of `HiddenDependencies`  if we wanted to replace `Database` with a mock or stub we could only do so if the singleton provided some method to modify the instance it returns. 
 
@@ -140,7 +140,7 @@ public class Database implements IDatabase {
 
 This approach introduces a seam but does not address our concerns around visibility. The dependency remains hidden.
 
-If we used this approach our codebase would remain hard to understand and we would find ourselves constantly fighting test order dependencies.
+If we used this approach, our codebase would remain hard to understand and we would find ourselves constantly fighting test order dependencies.
 
-With constructor injection we gain a seam and make the dependency visible. Even if `Database` is a singleton we are still able to isolate our code from it for testing.
+With constructor injection, we gain a seam and make the dependency visible. Even if `Database` is a singleton, we are still able to isolate our code from it for testing.
 

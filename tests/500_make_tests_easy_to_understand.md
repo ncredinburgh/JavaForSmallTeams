@@ -1,4 +1,4 @@
-## Make tests easy to understand
+## Make Tests Easy to Understand
 
 One of our goals when writing a test is to document what the code under tests does.
 
@@ -6,13 +6,13 @@ We achieve this in part by choosing clear specification style names for each tes
 
 Some techniques that help achieve this are discussed below.
 
-### Make test structure clear
+### Make Test Structure Clear
 
-A test can be viewed as having three parts
+A test can be viewed as having three parts:
 
 * Given - create the values and objects required for the test
 * When - executes the code under test 
-* Then - verifies the output/behaviour as as expected
+* Then - verifies the output/behavior as as expected
 
 These stages are also sometimes called *arrange*, *act* and *assert* by people particularly attached to the letter 'a'.
 
@@ -52,7 +52,7 @@ Although it is important that these three stages are visible, trying to rigorous
   }
 ```
 
-### Follow standard TEA naming convention for test variables
+### Follow Standard TEA Naming Convention for Test Variables
 
 Establishing simple conventions can make some very basic things about a test clear to a reader.
 
@@ -64,15 +64,15 @@ If you need to store a result that you will compare against an expected value in
 
 If you have stubbed a participant consider naming it `stubbedFoo`, if it is acting as a mock name it `mockedFoo`. This rule is less hard than the others - decide on a case by case basis whether you think it makes your test more or less readable. 
 
-### Highlight what is important, hide what is not
+### Highlight What is Important, Hide What is Not
 
 It should be possible to read each test case at a glance - so make things clear by highlighting what is important for that test case and hiding what is not.
 
-If an aspect of the input is important to the test case highlight it by setting it **explicitly** in the test case - don't rely on that value being set in a generic setup method. 
+If an aspect of the input is important to the test case, highlight it by setting it **explicitly** in the test case - don't rely on that value being set in a generic setup method. 
 
 Even if the same value is set by default, it is better to re-supply it in the test so it is clearly visible.
 
-If a particular value is not important indicate this to the reader by using well known neutral values such as `"foo"` for strings, or use clear names such as `someInt` or `anInt` for variables and methods that supply values.
+If a particular value is not important, indicate this to the reader by using well-known neutral values such as `"foo"` for strings, or use clear names such as `someInt` or `anInt` for variables and methods that supply values.
 
 Supplying values via a method call makes them less visible.
 
@@ -102,7 +102,7 @@ How about this version?
   
 ```
 
-While we need additional context to understand why `3` is an invalid value, it should be clear that the first two parameters to the `process` method are not important to the behaviour we are specifying. 
+While we need additional context to understand why `3` is an invalid value, it should be clear that the first two parameters to the `process` method are not important to the behavior we are specifying. 
 
 Why is it important that the testee below returns the enum `CONTINUE`?
 
@@ -114,7 +114,7 @@ Why is it important that the testee below returns the enum `CONTINUE`?
   }
 ```
 
-If we look through the rest of the class we might find
+If we look through the rest of the class we might find:
 
 ```java
   @Before
@@ -124,7 +124,7 @@ If we look through the rest of the class we might find
   }
 ```
 
-Other tests might not need to care about what the default state is, but this test does so we should write.
+Other tests might not need to care about what the default state is, but this test does so we should write:
 
 **Better**
 ```java
@@ -135,28 +135,28 @@ Other tests might not need to care about what the default state is, but this tes
   }
 ```
 
-As we start to deal with more complex domain objects it becomes harder to separate the important values from the ones that are required to construct valid objects but not of particular interest to our test. 
-Fortunately we can use the builder pattern to ease the pain, reduce duplication, and keep the tests readable.
+As we start to deal with more complex domain objects, it becomes harder to separate the important values from the ones that are required to construct valid objects but not of particular interest to our test. 
+Fortunately, we can use the builder pattern to ease the pain, reduce duplication, and keep the tests readable.
 
-### Name values meaningfully
+### Name Values Meaningfully
 
-If a value has an important meaning, make that meaning clear e.g
+If a value has an important meaning, make that meaning clear e.g.:
 
 ```java
   Foo testee = new Foo(PERFORM_VALIDATION);
 ```
 
-instead of
+instead of:
 
 ```java
   Foo testee = new Foo(true);
 ```
 
-### Write DAMP test code
+### Write DAMP Test Code
 
-As we have seen, in order to highlight that a value is important to a test we need to keep it within the test method that uses it. This may introduce duplication which we might not accept in normal code - but test code is a little different.
+As we have seen, in order to highlight that a value is important to a test, we need to keep it within the test method that uses it. This may introduce duplication which we might not accept in normal code - but test code is a little different.
 
-Copy and paste coding is bad in tests as well as production code - the more code there is the harder it is to read and a change to a concern will result in shotgun surgery if it has been duplicated throughout the tests.
+Copy and paste coding is bad in tests as well as production code - the more code there is, the harder it is to read and a change to a concern will result in shotgun surgery if it has been duplicated throughout the tests.
 
 Repetition should therefore generally be avoided in test code.
 
@@ -164,13 +164,13 @@ Test code **is** different from production code however.
 
 Test code must tell more of a story - highlighting what is important and hiding what is not. Test code should not be as DRY ( **D**on't **R**epeat **Y**ourself ) as production code. It should be DAMP ( contain **D**escriptive **A**nd **M**eaningful **P**hrases ).
 
-If refactoring a small amount of code out a test method into a shared method hides what is happening, accept the duplication and leave it in place. If it does not affect readability then refactor mercilessly.
+If refactoring a small amount of code out, a test method into a shared method hides what is happening, accept the duplication and leave it in place. If it does not affect readability then refactor mercilessly.
 
-## Choose the right assertion method
+## Choose the Right Assertion Method
 
-When a test fails a good assertion tells you what is wrong. 
+When a test fails, a good assertion tells you what is wrong. 
 
-Although JUnit allows you to supply an assertion message this adds noise to the test. Like comments these messages should be saved for those occasions when you cannot communicate using code alone.
+Although JUnit allows you to supply an assertion message this adds noise to the test. Like comments, these messages should be saved for those occasions when you cannot communicate using code alone.
 
 Bad
 
@@ -184,5 +184,5 @@ Good
 assertEquals(2, actual);
 ```
 
-The built in assertions are however fairly limited. Alternative assertion libraries such as AssertJ provide richer functionality and result in more readable code.
+The built in assertions are fairly limited. Alternative assertion libraries such as AssertJ provide richer functionality and result in more readable code.
 

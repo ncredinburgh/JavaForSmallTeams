@@ -1,10 +1,10 @@
-## Prefer readable code to comments
+## Prefer Readable Code to Comments
 
 ### Summary
 
 Use comments only to explain what you cannot make the code itself explain. 
 
-If you are about to write a comment first think if there is a way you could change the code so that it would be understandable without comments.
+If you are about to write a comment, first think if there is a way you could change the code so that it would be understandable without comments.
 
 ### Details
 
@@ -12,7 +12,7 @@ From Clean Code by Robert C Martin.
 
 *"Nothing can be quite so helpful as a well-placed comment. Nothing can clutter up a module more than frivolous dogmatic comments. Nothing can be quite so damaging as an old crufty comment that propagates lies and misinformation."*
 
-Comments should be used only to explain the intent behind code that cannot be refactored to instead explain itself. 
+Comments should be used only to explain the intent behind code that cannot be refactored to explain itself. 
 
 *Bad*
 
@@ -65,7 +65,7 @@ private boolean requiresRootPrivileges(int port) {
 }
 ```
 
-Here the functional intent has been captured in the method name, the comment has been used solely to provide some context as to why the logic makes sense.
+Here, the functional intent has been captured in the method name, the comment has been used solely to provide some context as to why the logic makes sense.
 
 The magic number might also be replaced with a constant. 
 
