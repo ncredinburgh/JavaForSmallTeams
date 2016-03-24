@@ -1,12 +1,12 @@
-## Beware casts and generics warnings
+## Beware Casts and Generics Warnings
 
 ### Summary
 
 Casts dilute the benefit of Java's type system, making code both less readable and less safe.
 
-Avoid casts where ever possible.
+Avoid casts whereever possible.
 
-If you find yourself writing one stop and ask yourself why you are writing it. 
+If you find yourself writing one, stop and ask yourself why you are writing it. 
 
 What would need to be changed in your code so you did not need to write that cast? 
 
@@ -14,23 +14,23 @@ Why can't you make that change?
 
 ### Detail
 
-Java's type system is there to help us - it catches bugs at compile time and documents our code making it easier to understand and navigate.
+Java's type system is there to help us - it catches bugs at compile-time and documents our code, making it easier to understand and navigate.
 
-When we add a cast to out code we loose both these benefits.
+When we add a cast to our code, we lose both these benefits.
 
-Casts get introduced into code for three main reasons
+Casts get introduced into code for three main reasons:
 
 1. We have reached the limits of Java's type system and the programmer must take control
 2. The overall design of the code is poor
 3. The code uses raw generic types
 
-We'll look at these in reverse order
+We'll look at these in reverse order.
 
-#### Code with raw types
+#### Code with Raw Types
 
-If code contains raw generic types (either because the code pre-dates Java 5 or the programmer is not familiar with Java) it will create the need to cast.
+If code contains raw generic types (either because the code pre-dates Java 5 or the programmer is not familiar with Java) then it will create the need to cast.
 
-For example
+For example:
 
 ```java
 List list = numberList();
@@ -46,14 +46,14 @@ The compiler will not be happy that we have failed to fully declare the type of 
 List is a raw type. References to generic type List<E> should be parameterized
 ```
 
-Similarly for errant code such as
+Similarly, for errant code such as:
 
 ```java
 List l = new ArrayList<Number>();
 List<String> ls = l;
 ```
 
-The compiler will issue 
+The compiler will issue: 
 
 ```
 Type safety: The expression of type List needs unchecked conversion to conform to List<String>`
@@ -61,7 +61,7 @@ Type safety: The expression of type List needs unchecked conversion to conform t
 
 Make sure that all such warnings should be addressed, either by imposing a zero compiler warnings policy or by configuring the compiler to treat them as errors.
 
-In this case removing both the cast and the warning is straight forward
+In this case, removing both the cast and the warning is straight forward:
 
 ```java
 List<Integer> list = numberList();
@@ -70,11 +70,11 @@ for (Integer each : list) {
 }
 ```
 
-#### Poor design
+#### Poor Design
 
-Sometimes removing a cast or fixing a warning is non trivial. We have bumped into issue two - poor design.
+Sometimes, removing a cast or fixing a warning is non-trivial. We have bumped into issue two - poor design.
 
-For example
+For example:
 
 ```java
 List<Widget> widgets = getWidgets();
@@ -90,9 +90,9 @@ for (Object each : results) {
 }
 ```
 
-Normally objects placed into a collection should be of a single type, or of multiple types related by a common superclass or interface.   
+Normally, objects placed into a collection should be of a single type or of multiple types related by a common superclass or interface.   
 
-Here unrelated types have been placed into the same list with a String used to communicate some sort of information about how "processing" of a widget has failed.
+Here, unrelated types have been placed into the same list with a String used to communicate some sort of information about how "processing" of a widget has failed.
 
 The classic OO fix for this code would be to introduce a `ProcessResult` interface with two concrete implementations.
 
@@ -125,7 +125,7 @@ class Failure implements ProcessResult {
   
 ```
 
-The original code can then be fixed as follows
+The original code can then be fixed as follows:
 
 ```java
 List<Widget> widgets = getWidgets();
@@ -137,18 +137,18 @@ for (ProcessResult each : results) {
 }
 ```
 
-Or more concisely in Java 8
+Or, more concisely in Java 8:
 
 ```java
  List<ProcessResult> results = process(widgets);
  results.stream().forEach(ProcessResult::doSomething); 
 ```
 
-It may also sometimes make sense to use a disjoint union type aka `Either` 
+It may also sometimes make sense to use a disjoint union type aka `Either`.
 
 This technique can be particularly useful as an interim step when reworking legacy code that uses mixed type raw collections, but can also be a sensible approach when dealing with error conditions.
 
-Unfortunately Java does not provide an `Either` type out of the box but at its simplest it looks something like :-
+Unfortunately, Java does not provide an `Either` type out of the box but at its simplest it looks something like:
 
 ```java
 public class Either<L,R> {
@@ -185,7 +185,7 @@ public class Either<L,R> {
 
 Libraries such as Atlassian's Fugue provide implementations with much richer functionality.
 
-Using the simplistic form of `Either` with Java 7 the code could be re-written as
+Using the simplistic form of `Either` with Java 7 the code could be re-written as:
 
 ```java
 List<Widget> widgets = getWidgets();
@@ -200,20 +200,20 @@ for (Either<ProcessResult,String> each : results) {
 }
 ```
 
-While most Java programmers will prefer the earlier OO version, this version has two advantages
+While most Java programmers will prefer the earlier OO version, this version has two advantages:
 
 1. It requires no change to the *structure* of the original code - all we have really done is make the types document what is happening
 2. It requires less code
 
 This pattern can help quickly tame a legacy code base that is difficult to comprehend.
 
-#### Limits of the type system
+#### Limits of the Type System
 
 Sometimes we do reach the limits of Java's type system and need to cast. 
 
-Before we do this we must make certain that the cast is safe and there is not better solution to our problem. 
+Before we do this, we must make certain that the cast is safe and there is no better solution to our problem. 
 
-Similarly we may need to sometimes suppress a Generics warning, this can be done by annotating with `@SuppressWarnings` e.g. 
+Similarly, we may need to sometimes suppress a Generics warning, this can be done by annotating with `@SuppressWarnings` e.g. 
 
 ```java
 @SuppressWarnings("unchecked")
@@ -227,5 +227,5 @@ Object fromXml(final String xml) {
 
 ```
 
-Here the compiler has no way of knowing what type has been serialised to the String. Hopefully the programmer does or else a runtime error will occur.
+Here, the compiler has no way of knowing what type has been serialized to the String. Hopefully the programmer does or else a runtime error will occur.
 

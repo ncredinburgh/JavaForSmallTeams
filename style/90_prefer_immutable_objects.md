@@ -1,16 +1,16 @@
-## Prefer immutable objects
+## Prefer Immutable Objects
 
 ### Summary
 
-Where possible create objects that cannot be changed - especially if those objects will be long lived or globally accessible.
+Where possible, create objects that cannot be changed - especially if those objects will be long-lived or globally accessible.
 
 ### Details
 
 Mutable state makes programs harder to understand and maintain.
 
-When objects are short lived, and do not leave method scope, mutable state causes few problems. Writes and reads will be close together and there will be a clear order in which this happens.
+When objects are short-lived, and do not leave method scope, mutable state causes few problems. Writes and reads will be close together and there will be a clear order in which this happens.
 
-For longer lived objects things are more complex.
+For longer-lived objects, things are more complex.
 
 If an object escapes from a method then it may be accessed from more than one location within the code.
 
@@ -18,11 +18,11 @@ We must start by assuming that anything that can happen to these objects will. W
 
 The set of things that might happen to an immutable object is far smaller than for a mutable one. By constraining how long lived objects can behave we have made things simpler. There are fewer possibilities that we must consider.
 
-Unfortunately it is not always easy to tell from a class definition what the lifecycle of objects of that type will be. Perhaps only short lived instances will be created. Perhaps only long lived ones. Perhaps a mixture of the two.
+Unfortunately, it is not always easy to tell from a class definition what the lifecycle of objects of that type will be. Perhaps only short-lived instances will be created. Perhaps only long-lived ones. Perhaps a mixture of the two.
 
 If we design immutable classes by default we do not need to worry about this.
 
-#### The problem with mutable objects
+#### The Problem With Mutable Objects
 
 If we have a very simple class such as `Foo`
 
@@ -56,9 +56,9 @@ public class Foo {
   }
 }
 ```
-We would need to search our codebase for all usages of it to establish the following :-
+We would need to search our codebase for all usages of it to establish the following :
 
-##### It is never accessed from multiple threads
+##### It is Never Accessed from Multiple Threads
 
 `Foo` is not thread safe.
 
@@ -66,19 +66,17 @@ Writes to longs are not atomic and nothing within `Foo` itself establishes a hap
 
 If `setId` and `getId` are ever called from different threads we might get back stale or garbage values.
 
-##### `setId` is never called after `Foo` has been placed in a set
+##### `setId` Is Never Called After `Foo` Has Been Placed in a Set
 
 The `hashcode` of this class relies on a mutable field. If we modify it after we place it in a set then our program will not behave as we expect.
 
-##### The flow of our data
+##### The Flow of Our Data
 
-Even if our program behaves correctly we need to do work in order to understand how it functions.
+Even if our program behaves correctly, we need to do work in order to understand how it functions.
 
-`setId` can be called at any point after the object is created. We can therefore only understand how data flows through our program by looking for all calls to `setId`.
+`setId` can be called at any point after the object is created. We can, therefore, only understand how data flows through our program by looking for all calls to `setId` - perhaps there are several, perhaps there is only one. The only way we can discover this is by examining the entire program.
 
-Perhaps there are several. Perhaps there is only one. The only way we can discover this is by examining the entire program.
-
-#### Immutable objects
+#### Immutable Objects
 
 If we can make our objects immutable we gain guarantees that mean we do not need to worry about how our objects are used.
 
@@ -116,9 +114,9 @@ public final class Foo {
 
 It no longer matters if `Foo` is long or short lived.
 
-It is inherently thread safe. 
+It is inherently thread-safe. 
 
-We know that whatever value we construct it with will remain until it dies, there is only one possible point where data is written so we do not need to search for others.
+We know that whatever value we construct it with will remain until it dies. There is only one possible point where data is written so we do not need to search for others.
 
 ##### Annotations
 
@@ -128,11 +126,11 @@ This does not in any way change the object's functionality but provides a way to
 
 We can tell at a glance that `Foo` is immutable as it has final fields of a well known immutable type. 
 
-The final keyword ensures only that the reference a field points to will not change. 
+The `final` keyword ensures only that the reference a field points to will not change. 
 
-If the field were of type `Bar` we would not know if it were mutable or not without examining `Bar` to see if it too were immutable. Even if we were not using a static analysis tool the use of the `Immutable` annotation would make this assessment faster. 
+If the field were of type `Bar` then we would not know if it were mutable or not without examining `Bar` to see if it too were immutable. Even if we were not using a static analysis tool the use of the `Immutable` annotation would make this assessment faster. 
 
-Instead of updating the state of immutable objects we create new instances that retain the state we do not wish to modify.
+Instead of updating the state of immutable objects, we create new instances that retain the state we do not wish to modify.
 
 This pattern seems strange to some Java programmers at first, but the programming model is similar to how the familiar `String` class works.
 
@@ -173,7 +171,7 @@ public Bar doThings(Bar bar) {
 }
 ```
 
-The call here to `withAnInt` achieves nothing as the return value is not stored. Most likely the programmer intended to write
+The call here to `withAnInt` achieves nothing because the return value is not stored. Most likely, the programmer intended to write:
 
 ```java
 public Bar doThings(Bar bar) {
@@ -184,15 +182,15 @@ public Bar doThings(Bar bar) {
 }
 ```
 
-#### When to use mutable objects
+#### When to Use Mutable Objects
 
 Mutable objects require slightly less boilerplate to create than immutable ones.
 
-If you know that a class will only ever be used to create short lived local objects you might consider making it mutable. But you must weigh this against the additional work required to ensure that the class is only ever used in this fashion as the codebase grows.
+If you know that a class will only ever be used to create short-lived, local objects then you might consider making it mutable. But you must weigh this against the additional work required to ensure that the class is only ever used in this fashion as the codebase grows.
 
-Options exist to auto-generate both immutable and mutable classes, thereby removing mutable objects' main advantage. Two of these options are discussed further in "Know how to implement hashcode and equals".
+Options exist to auto-generate both immutable and mutable classes, thereby removing mutable objects' main advantage. Two of these options are discussed further in "Know How to Implement Hashcode and Equals".
 
-Mutable objects used to be the norm in Java. As a result many common frameworks require mutable objects. Persistence and serialisation frameworks often require Java beans with no args constructors and setters. Other frameworks might require you to use two stage construction with a lifecycle method such as init.
+Mutable objects used to be the norm in Java. As a result, many common frameworks require mutable objects. Persistence and serialization frameworks often require Java beans with no args constructors and setters. Other frameworks might require you to use two-stage construction with a lifecycle method such as init.
 
 It is not always highlighted in the documentation but some long standing frameworks have been updated to support immutable objects. 
 
@@ -211,7 +209,7 @@ public class Foo  {
 }
 ```
 
-Other frameworks such as Hibernate can only be used with classes that provide a default constructor. Although they can be configured to set fields directly without the need for setters this causes more problems than it solves. 
+Other frameworks, such as Hibernate, can only be used with classes that provide a default constructor. Although they can be configured to set fields directly without the need for setters this causes more problems than it solves. 
 
-If you are tied to a framework that requires mutability you will need to use mutable objects where you interface with that framework.
+If you are tied to a framework that requires mutability then you will need to use mutable objects where you interface with that framework.
 

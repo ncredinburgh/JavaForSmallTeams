@@ -1,4 +1,4 @@
-## Do not re-assign parameters
+## Do Not Re-Assign Parameters
 
 ### Summary
 
@@ -6,11 +6,11 @@ Parameters to methods should never be re-assigned.
 
 ### Detail 
 
-Reassigning to parameters makes code harder to understand but provides no meaningful advantage over creating a new variable. 
+Reassigning to parameters makes code harder to understand and provides no meaningful advantage over creating a new variable. 
 
-If the method is large it can be difficult to track the lifecycle of parameter, but even within short methods re-using parameters will cause problem. As the variable is being used to represent two separate concepts it is often not possible to name it meaningfully. 
+If the method is large, it can be difficult to track the lifecycle of a parameter. Even within short methods, re-using parameters will cause problem. As the variable is being used to represent two separate concepts, it is often not possible to name it meaningfully. 
 
-If another variable of the same type is a parameter is needed it should be declared locally. 
+If another variable of the same type is a parameter is needed, it should be declared locally. 
 
 **Bad**
 

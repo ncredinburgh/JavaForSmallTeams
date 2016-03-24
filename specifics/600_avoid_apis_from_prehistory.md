@@ -1,4 +1,4 @@
-## Avoid apis from pre-history
+## Avoid APIs from Pre-History
 
 ### Summary
 
@@ -6,9 +6,9 @@ Do not use `Vector`, `StringBuffer` and other archaic part of the JDK.
 
 ### Details
 
-Java has been around for over 20 years. In order to maintain backwards compatibility it has hoarded all manner of apis that no longer make sense to use. Some of there are handily marked with @Deprecated annotation, others are not.
+Java has been around for over 20 years. In order to maintain backwards compatibility, it has hoarded all manner of APIs that no longer make sense to use. Some of them are handily marked with @Deprecated annotation, others are not.
 
-Unfortunately many are still used in university courses and online examples. New Java programmers may not be aware they have been replaced - a few to watch out for include :
+Unfortunately, many are still used in university courses and online examples. New Java programmers may not be aware they have been replaced - a few to watch out for include:
 
 * `java.util.Vector` - use `ArrayList` instead
 * `java.lang.StringBuffer` - use `StringBuilder` instead

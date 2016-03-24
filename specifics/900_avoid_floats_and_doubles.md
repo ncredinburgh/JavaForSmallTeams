@@ -1,4 +1,4 @@
-## Avoid floats and doubles
+## Avoid Floats and Doubles
 
 ### Summary
 
@@ -6,7 +6,7 @@ Avoid using floats and doubles (both the primitives and their wrappers).
 
 ### Detail
 
-Floats and doubles introduce a minefield of rounding and comparison issues. While they are a sensible choice for some domains where you do not care about rounding errors, for server side business code integers or `BigDecimal` are usually a better choice.
+Floats and doubles introduce a minefield of rounding and comparison issues. While they are a sensible choice for some domains where you do not care about rounding errors, integers or `BigDecimal` are usually a better choice for server-side business code.
 
 The core issue is that floating point numbers are not able to represent many numbers (e.g. `0.1`).
 
@@ -51,7 +51,7 @@ This simplest solution in this case would be to replace the floats with integer 
    // Gives After 7 transactions balance is 1.30 :-)
 ```
 
-Note that although `BigDecimal` can be constructed from a float, this takes us back to where we started.
+Note that, although `BigDecimal` can be constructed from a float, this takes us back to where we started.
 
 
 ```java

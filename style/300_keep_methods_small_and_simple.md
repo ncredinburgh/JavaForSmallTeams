@@ -1,4 +1,4 @@
-## Keep methods small and simple
+## Keep Methods Small and Simple
 
 ### Summary
 
@@ -12,19 +12,19 @@ One way to measure the size of a method is via the number of lines of code it co
 
 As a guide methods should not usually be longer than 7 lines in length. This is not a hard rule - just a guide of when to feel uncomfortable with a method's size. 
 
-Another way to gauge the size of a method is to see how many possible paths there are through it. The `Cyclomatic complexity` of a method gives a measure of this - it will increase as the amount of conditional logic and number of loops grows.
+Another way to gauge the size of a method is to see how many possible paths there are through it. The *Cyclomatic complexity* of a method gives a measure of this - it will increase as the amount of conditional logic and number of loops grows.
 
-As a guide methods should not usually have a complexity above 5. Again, this is not a hard rule - just a guide of when to feel uncomfortable.
+As a guide, methods should not usually have a complexity above 5. Again, this is not a hard rule, just a guide of when to feel uncomfortable.
 
 Your code will naturally contain some methods that are larger than others - some concepts are inherently more complex than others and the implementation will not become simpler if broken down further or expressed in a different way.
 
-But most large methods can be made smaller in one of three ways :-
+But most large methods can be made smaller in one of three ways :
 
 * Refactoring into a number of smaller methods
 * Re-expressing the logic  
 * Using appropriate language features
 
-#### Splitting a method into smaller concerns
+#### Splitting a Method into Smaller Concerns
 
 Many large methods have smaller methods within them trying to find a way out.
 
@@ -94,7 +94,7 @@ public boolean isFnardy(String item) {
 }
 ```
 
-This can be easily re-expressed with less noise as :-
+This can be easily re-expressed with less noise as :
 
 **Better**
 ```java
@@ -106,7 +106,7 @@ public boolean isFnardy(String item) {
 }
 ```
 
-Or with a move to a more declarative style :-
+Or with a move to a more declarative style :
 
 ```java
 private final static Set<String> FNARDY_STRINGS 
@@ -122,7 +122,7 @@ public boolean isFnardy(String item) {
 
 Neither of the above changes alter the structure of our program or even affect the signature of the method. Both still reduce both line count and complexity while increasing readability.
 
-Simplifying things with a series of higher impact changes that extract a model of our domain is however often the best approach.
+Simplifying things with a series of higher impact changes that extract a model of our domain is, however, often the best approach.
 
 It is difficult to guess what this model might look like for our contrived example, but is likely that this conditional logic could be replaced with polymorphism.
 
@@ -146,11 +146,11 @@ enum ADomainConcept {
 }
 ```
 
-#### Using appropriate language features
+#### Using Appropriate Language Features
 
 Methods are sometimes bloated by boilerplate that solves common programming problems. The need for some of this boilerplate has been removed by new language features. 
 
-Some of these *new* features aren't all that new, but code is still written without them.
+Some of these *new* features aren't all that new, but code is still written without them:
 
 * Java 5 Generics removes the need for ugly casts
 * The Java 5 for-each-loop can replace code using iterators and indexed loops
