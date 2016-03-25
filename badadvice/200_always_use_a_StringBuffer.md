@@ -38,7 +38,8 @@ The eclipse compiler generates the following bytecode for `concat`:
     LDC "Foo"
     INVOKESPECIAL java/lang/StringBuilder.<init> (Ljava/lang/String;)V
     ALOAD 1
-    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    INVOKEVIRTUAL java/lang/StringBuilder.append /
+       (Ljava/lang/String;)Ljava/lang/StringBuilder;
     ILOAD 2
     INVOKEVIRTUAL java/lang/StringBuilder.append (I)Ljava/lang/StringBuilder;
     INVOKEVIRTUAL java/lang/StringBuilder.toString ()Ljava/lang/String;
