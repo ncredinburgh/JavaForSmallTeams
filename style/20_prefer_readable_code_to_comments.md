@@ -54,7 +54,7 @@ if (port < 1024) {
 *Better still*
 
 ```java
-if (requiresRootPrivileges(port) {
+if (requiresRootPrivileges(port)) {
   throw new InvalidPortError(port);
 }
 
