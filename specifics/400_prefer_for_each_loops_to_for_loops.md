@@ -13,6 +13,7 @@ The `for each` loop introduced with Java 5 avoids the potential out-by-one error
   public List<String> selectValues(List<Integer> someIntegers) {
     List<String> filteredStrings = new ArrayList<String>();
     for (int i = 0; i != someIntegers.size(); i++) {
+      Integer value = someIntegers.get(i);
       if (value > 20) {
         filteredStrings.add(value.toString());
       }
