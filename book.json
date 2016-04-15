@@ -1,1 +1,1 @@
-{}
+{  "plugins" : ["printlinks", "ga"],  "pluginsConfig": {        "ga": {            "token": "UA-76476232-1"        }    }}
