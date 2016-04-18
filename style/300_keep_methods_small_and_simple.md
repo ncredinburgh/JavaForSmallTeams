@@ -31,7 +31,6 @@ Many large methods have smaller methods within them trying to find a way out.
 We can make our code easier to maintain by freeing them.
 
 **Bad**
-
 ```java
 protected static Map<String, String> getHttpHeaders(HttpServletRequest request) {
   Map<String, String> httpHeaders = new HashMap<String, String>();
@@ -53,7 +52,6 @@ protected static Map<String, String> getHttpHeaders(HttpServletRequest request) 
 ```
 
 **Better**
-
 ```java
 protected static Map<String, String> getHttpHeaders(HttpServletRequest request) {
   if ( isInValidHeader(request) ) {
