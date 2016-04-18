@@ -26,6 +26,7 @@ We recommend that the first type are using sparingly, if at all. This is discuss
 
 Generating code from a model (such as a schema or grammar) can be a useful approach as long as the generated code is not modified and is packaged separately. If generated and non-generated code are packaged within the same module then this can start to cause friction (see below).
 
+<!-- nopb -->
 ### Compile Time Annotation Processors
 
 JSR 269 introduced a standard framework for processing annotations at build time. Several tools exist that use JSR 269  to generate code.
@@ -33,6 +34,7 @@ JSR 269 introduced a standard framework for processing annotations at build time
 Most use the annotated classes purely as input, from which new classes are generated. Often, the new classes extend or implement the annotated class or interface but remain separate. These are really just a subset of model based boilerplate generators where the model input model is annotated Java classes. 
 
 Some (such as project Lombok) update the annotated classes themselves, adding additional behaviour. This is likely to increase both surprise and fiction which are discussed below. 
+<!-- endnopb -->
 
 ### Downsides
 

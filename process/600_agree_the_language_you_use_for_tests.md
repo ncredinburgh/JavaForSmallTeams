@@ -46,9 +46,12 @@ The only difference is that the compile suite does not care about isolation.
 
 If we choose to write a test that tests two (or more) *units* in tandem, it still belongs in the compile suite if it meets the other criteria.
 
+<!-- nopb -->
 ### System Tests
 
 System tests are also fairly well-defined. They are tests that exercise the overall system - i.e all your code and all the code it interacts with in a realistic environment.
+
+<!-- endnopb -->
 
 ### Integration Tests
 

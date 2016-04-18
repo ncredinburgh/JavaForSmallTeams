@@ -75,6 +75,7 @@ private static boolean isInValidHeader(HttpServletRequest request) {
 }
 ```
 
+<!-- nopb -->
 #### Re-expressing logic
 
 **Terrible**
@@ -93,6 +94,7 @@ public boolean isFnardy(String item) {
   }
 }
 ```
+<!-- endnopb -->
 
 This can be easily re-expressed with less noise as :
 
