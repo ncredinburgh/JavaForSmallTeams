@@ -1,4 +1,4 @@
-# Always Use a StringBuffer to Concatenate 
+# Bad Advice - Always Use a StringBuffer to Concatenate 
 
 This advice is doubly wrong. 
 

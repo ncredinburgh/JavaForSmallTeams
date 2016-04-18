@@ -1,4 +1,4 @@
-# Hungarian Notation
+# Bad Advice - Hungarian Notation
 
 The idea of Hungarian notation and similar schemes is to reflect the type, scope or other attribute of a variable in its name.
 

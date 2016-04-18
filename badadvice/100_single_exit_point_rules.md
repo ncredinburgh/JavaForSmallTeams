@@ -1,4 +1,4 @@
-## Single Exit Point Rules
+## Bad Advice - Single Exit Point Rules
 
 Some coding standards mandate that all methods should have a single exit point.
 
