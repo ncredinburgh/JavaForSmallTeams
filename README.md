@@ -50,6 +50,12 @@ The document is split into five sections:
 * Good tests - How to write good tests
 * Bad advice - Discussion of some commonly circulated bad advice and patterns
 
+## Version
+
+This book is updated often, the latest version is available for free from [the book's website](https://javabook.ncredinburgh.com).
+
+You are currently reading version '{{ "" | gitLong }}' from the {{ "" | gitBranch }} branch. 
+
 ## History
 
 Most of the content of this book began life as internal wiki pages at [NCR Edinburgh](http://ncredinburgh.com). We started to convert the wiki into this book at the end of 2015 so that it could be easily shared with other parts of our company. 
