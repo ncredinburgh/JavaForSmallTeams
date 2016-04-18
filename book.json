@@ -1,1 +1,1 @@
-{  "plugins" : ["printlinks", "ga"],  "pluginsConfig": {        "ga": {            "token": "UA-76476232-1"        }    },    "pdf": {        "headerTemplate": "_TITLE_ _SECTION"    }}
+{  "plugins" : ["printlinks", "ga"],  "pluginsConfig": {        "ga": {            "token": "UA-76476232-1"        }    },    "pdf": {        "headerTemplate": "_TITLE_ _SECTION_"    }}
