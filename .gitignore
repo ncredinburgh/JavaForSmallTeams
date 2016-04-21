@@ -1,8 +1,10 @@
 *.swp
 *.bak
-*.pdf
 cover.png
 back.png
 back.jpg
 _book
 node_modules
+svg/*.pdf
+book.pdf
+print_version.pdf

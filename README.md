@@ -52,9 +52,11 @@ The document is split into five sections:
 
 ## Version
 
-This book is updated often, the latest version is available for free from [the book's website](http://javabook.ncredinburgh.com).
+This book is updated often. The latest changes to the book can be viewed online at [gitbook.com](https://ncrcoe.gitbooks.io/java-for-small-teams/content/).
 
-You are reading the '{{ book.release }}' version of this book.
+Versioned releases are available for free from [the book's website](http://javabook.ncredinburgh.com).
+
+If you are reading a PDF or print copy of this book the release version will be displayed on the inside cover. If there is no inside cover then you are reading an unrelased version of the book. 
 
 ## History
 

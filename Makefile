@@ -29,6 +29,9 @@ back :
 	inkscape --export-png back.png back.svg
 	convert back.png -background white -flatten back.jpg
 
+publish :
+	pdftk A=book.pdf B=inner.pdf C=blank.pdf cat A1 B1 C1 A2-end output print_version.pdf
+
 clean :
 	rm $(SVGS)
 	rm generated/toc/*.md
