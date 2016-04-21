@@ -3,6 +3,7 @@ IMGDIR = generated/images
 # svgs to be converted to png 
 SVGS := $(patsubst %.svg,$(IMGDIR)/%.png,$(wildcard svg/*.svg))
 
+hash := $(shell git rev-parse HEAD)
 
 # one rule to make them all
 all : main
@@ -30,7 +31,8 @@ back :
 	convert back.png -background white -flatten back.jpg
 
 publish :
-	pdftk A=book.pdf B=inner.pdf C=blank.pdf cat A1 B1 C1 A2-end output print_version.pdf
+	curl https://www.gitbook.com/download/pdf/book/ncrcoe/java-for-small-teams/v/${hash} > rendered.pdf
+	pdftk A=rendered.pdf B=inner.pdf C=blank.pdf cat A1 B1 C1 A2-end output print_version.pdf
 
 clean :
 	rm $(SVGS)
