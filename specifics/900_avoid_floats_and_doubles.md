@@ -64,6 +64,7 @@ Note that, although `BigDecimal` can be constructed from a float, this takes us 
                      , numberTransactions
                      , balance.subtract(transationCost.multiply(numberTransactions)));
 
-   // Gives After 7 transactions balance is 1.2999999999999999611421941381195210851728916168212890625
+   // Gives After 7 transactions 
+   // balance is 1.2999999999999999611421941381195210851728916168212890625
 ```
 
