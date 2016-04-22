@@ -5,3 +5,6 @@ cover.png
 back.png
 back.jpg
 _book
+_site
+*.lock
+
