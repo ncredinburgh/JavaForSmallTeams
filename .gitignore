@@ -9,3 +9,6 @@ svg/*.pdf
 book.pdf
 rendered.pdf
 print_version.pdf
+_site
+Gemfile.lock
+
