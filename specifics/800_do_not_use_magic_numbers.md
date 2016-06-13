@@ -11,7 +11,7 @@ Placing numeric or string literals directly into source code causes two problems
 1. It is unlikely that the **meaning** of the literal will be clear
 2. If the value changes updates are required where ever the literal has been duplicated
 
-Literals should therefore be replaced with well-named constants methods and Enums.
+Literals should therefore be replaced with well-named constants and Enums.
 
 **Bad**
 ```java
@@ -60,7 +60,7 @@ Sometimes 0 and 1 will have a clear local meaning as they are being used as part
   if (list.size() == 0) {...}
 ```
 
-But 0 and 1 may also also have domain-specific values that should be extracted into constants like any other literal.
+But 0 and 1 may also have domain-specific values that should be extracted into constants like any other literal.
 
 Server-side Java can also often be re-written in a cleaner fashion without the use of numeric literals, e.g.:
 
