@@ -16,7 +16,7 @@ Usually these are created using a mocking framework.
 
 ### Mocking Frameworks
 
-Although it is common to refer to all objects created by a mocking framework this is inaccurate.
+Although it is common to refer to all objects created by a mocking framework as mocks this is inaccurate.
 
 A more correct generic term for these objects is *test double*.
 
@@ -25,7 +25,7 @@ These can be subdivided based on they behave:
 * Dummy object - needs to be present to satisfy a type signature but is never actually used
 * Stub - must be present and may supply *indirect inputs*
 * Mock - verifies that expected interactions take place
-* Fake - like a real thing but less heavy - e.g in memory database
+* Fake - like a real thing but less heavy - e.g a in memory database
 * Spy  - object that records its interactions with others
 
 Of these only stubs, mocks and spies might be created by a mocking framework.
@@ -154,7 +154,7 @@ This pattern of being lenient when supplying values, but specific when verifying
 
 By definition, state-based testing will never include mocks (in the strict sense of the word), but they may use stubs to supply indirect values.
 
-It can be tempting to use a mocking framework to create stub values for state based tests. For complex objects this can appear easier than constructing real ones.
+It can be tempting to also use a mocking framework to stub values instead of using their constructors and modifier methods. For complex objects using stubs can appear easier than constructing real ones.
 
 Don't do this.
 
@@ -164,7 +164,7 @@ Mocking frameworks should be used only to isolate our tests from objects with be
 
 Sometimes there is no choice about which to use. For example, it is not possible to meaningfully specify how a cache should behave from its inputs and outputs alone. Other times we must weigh the pros and cons.
 
-A state-based test for manager code is likely to be less easy to read and understand as it must rely on the behaviors of the objects the SUT interacts with. The test will also be coupled to these behaviors and may require changes if those behaviors change - you have effectively increased the size of the "unit" you are testing as discussed in "Think units nots methods".
+A state-based test for manager code is likely to be less easy to read and understand as it must rely on the behaviors of the objects the SUT interacts with. The test will also be coupled to these behaviors and will require changes if those behaviors change - you have effectively increased the size of the "unit" you are testing as discussed in "Think units not methods".
 
 Interaction-based testing requires us to peek beyond the unit's external interface and into its implementation. This carries the risk that we might over-specify and create an implementation-specific test.
 
