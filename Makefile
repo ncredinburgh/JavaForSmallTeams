@@ -31,7 +31,10 @@ back :
 	inkscape --export-png back.png back.svg
 	convert back.png -background white -flatten back.jpg
 
-publish :
+inner :
+	inkscape inner.svg --export-pdf=inner.pdf
+
+publish : inner
 	curl https://www.gitbook.com/download/pdf/book/ncrcoe/java-for-small-teams/v/${hash} > rendered.pdf
 	pdftk A=rendered.pdf B=inner.pdf C=blank.pdf cat A1 B1 C1 A2-end output print_version.pdf
 
@@ -41,5 +44,6 @@ clean :
 	rm back.png
 	rm cover.png
 	rm book.pdf
+	rm inner.pdf
 
 rebuild : clean all
