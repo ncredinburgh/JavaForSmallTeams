@@ -22,7 +22,7 @@ Code coverage is easy to measure. Other properties of tests that are desirable (
 
 This last point is particularly important.
 
-For a test to be of value, it must enable refactoring; tests that are tied to one particular way of solving the problem often have negative value because they must be modified or rewritten whenever the code is changed. Unfortunately, it is easy to write tests in this way for a number of months or years before you realise you were doing it wrong.
+For a test to be of value, it must enable refactoring; tests that are tied to one particular way of solving the problem often have negative value because they must be modified or rewritten whenever the code is changed. Unfortunately, it is easy to write tests in this way for a number of months or years before you realize you were doing it wrong.
 
 By concentrating on the one property that is easy to measure, the others are de-emphasized. But, much worse than this, trying to meet a coverage target can actively push developers towards writing tests that are tied to the implementation. Bad tests are easier to write than good tests.
 
