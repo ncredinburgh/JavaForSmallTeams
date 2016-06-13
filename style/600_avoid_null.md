@@ -29,9 +29,9 @@ The null object pattern is the classic OO approach to avoiding null. You should 
 
 The pattern is very simple, just provide an implementation of the interface that does "nothing" or has a neutral behavior. This can then be safely referenced by it's clients, with no need to check for null.
 
-### Type-Safe Nulls (Optional)
+### Type-Safe Nulls (aka Optional)
 
-The type-safe null pattern is familiar in most functional programming languages where is variously known as Maybe, Option or Optional. Java 8 finally adds an Optional type, but implementations are available for earlier versions via Guava and other libraries.
+The type-safe null pattern is familiar in most functional programming languages where it is variously known as Maybe, Option or Optional. Java 8 finally adds an Optional type, but implementations are available for earlier versions via Guava and other libraries.
 
 It is a simple pattern. An Optional is basically just a box that can hold either one or zero values. You can check if the box is empty (using `isPresent`) and retrieve its value via a get method.
 
