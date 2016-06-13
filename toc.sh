@@ -1,5 +1,5 @@
 #!/bin/bash
-tocfile="generated/toc/$1.md"
+tocfile="temp/toc/$1.md"
 : > $tocfile
 echo $tocfile
 for f in $(ls -v $1/*.md); do

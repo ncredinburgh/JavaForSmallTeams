@@ -1,6 +1,0 @@
-    * [Build Fast Feedback Loops](process/100_build_fast_feedback_loops.md)
-    * [Instant Feedback](process/200_instant_feedback.md)
-    * [Fast Feedback](process/300_fast_feedback.md)
-    * [Slower Feedback](process/400_slower_feedback.md)
-    * [Agree The Language You Use For Tests](process/600_agree_the_language_you_use_for_tests.md)
-    * [Use Coverage As A Tool Not A Target](process/700_use_coverage_as_a_tool_not_a_target.md)

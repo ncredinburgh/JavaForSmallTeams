@@ -8,13 +8,14 @@ hash := $(shell git rev-parse HEAD)
 # one rule to make them all
 all : main
 
-main : $(SVGS) tocs cover back
+main : $(SVGS) cover back
 	gitbook pdf
 
 # convert svg to png not using -D so exports the page
 $(IMGDIR)/%.png : %.svg
 	inkscape --export-png $@ $<
 
+# no longer performed as part of build, but can be used to create toc markdown
 tocs :
 	./toc.sh style
 	./toc.sh process
