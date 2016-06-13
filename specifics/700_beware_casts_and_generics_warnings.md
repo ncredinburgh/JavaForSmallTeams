@@ -4,7 +4,7 @@
 
 Casts dilute the benefit of Java's type system, making code both less readable and less safe.
 
-Avoid casts whereever possible.
+Avoid casts wherever possible.
 
 If you find yourself writing one, stop and ask yourself why you are writing it. 
 
