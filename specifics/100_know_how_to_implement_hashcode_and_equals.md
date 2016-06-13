@@ -26,7 +26,7 @@ This is the simplest strategy and the one you should adopt by default in the int
 
 Most classes do not need an equals method. Unless your class represents some sort of value it makes little sense to compare it with another so stick with the inherited implementation from Object.
 
-An irritating gray area is value classes where the production code never has a requirement to compare equality but the test code does have a requirement to. The dilemma here is whether to implement the methods purely for the benefit of the tests or to complicate the test code with custom equality checks.
+An irritating gray area are classes where the production code never has a requirement to compare equality but the test code does. The dilemma here is whether to implement the methods purely for the benefit of the tests or to complicate the test code with custom equality checks.
 
 There is, of course, no right answer here; we would suggest first trying the compare-it-in-the test approach before falling back to providing a custom equals method. 
 
@@ -178,7 +178,7 @@ The brevity of these implementations is attractive, but their performance is mea
 
 ### Code Generators 
 
-A number of projects exist which can auto-generate value objects at build-time. Two of the better known options are :
+A number of projects exist that can auto-generate value objects at build-time. Two of the better known options are :
 
 * [Google auto](https://github.com/google/auto/tree/master/value)
 * [Project Lombok](https://projectlombok.org/)
