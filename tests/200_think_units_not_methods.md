@@ -195,7 +195,7 @@ What should we do with the tests?
 
 We would already have tests written in terms of `ThingaMeBob` that describe all supported behaviors. Should we also fully describe `Addition`, `Subtraction` and the other 10 operations with tests as we extract them into classes?
 
-There is no right answer here, but I hope it is clear that the most most useful *unit* that we have identified is `ThingaMeBob`. The smaller *units* are part of just one implementation of the functionality we require.
+There is no right answer here, but I hope it is clear that the most useful *unit* that we have identified is `ThingaMeBob`. The smaller *units* are part of just one implementation of the functionality we require.
 
 If we choose to write tests for each extracted class those tests would have some value. 
 
