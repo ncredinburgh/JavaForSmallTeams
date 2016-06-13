@@ -59,7 +59,7 @@ The compiler will issue:
 The expression of type List needs unchecked conversion to conform to List<String>
 ```
 
-Make sure that all such warnings should be addressed, either by imposing a zero compiler warnings policy or by configuring the compiler to treat them as errors.
+Make sure that all such warnings are addressed, either by imposing a zero compiler warnings policy or by configuring the compiler to treat them as errors.
 
 In this case, removing both the cast and the warning is straight forward:
 
