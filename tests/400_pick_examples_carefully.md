@@ -35,7 +35,7 @@ One obvious issue is that it introduces randomness, although most frameworks pro
 
 ## Follow the Zero, One and Many Rule
 
-If your components deals with numbers or collections of things, make sure you use sufficient examples to describe it's behavior.
+If your components deals with numbers or collections of things, make sure you use sufficient examples to describe its behavior.
 
 A good rule thumb is that test cases covering 0 (or empty), 1 and "many" are likely to be necessary. There will also be important edge cases, e.g. algorithmic code dealing with integers might need to consider `Integer.MAX` and `Integer.MIN`.
 
