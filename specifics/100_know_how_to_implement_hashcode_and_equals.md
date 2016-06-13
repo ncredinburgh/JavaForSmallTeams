@@ -183,7 +183,7 @@ A number of projects exist that can auto-generate value objects at build-time. T
 * [Google auto](https://github.com/google/auto/tree/master/value)
 * [Project Lombok](https://projectlombok.org/)
 
-But many other exist.
+But many others are available.
 
 #### Google Auto
 
