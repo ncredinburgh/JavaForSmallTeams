@@ -158,7 +158,7 @@ It can be tempting to use a mocking framework to create stub values for state ba
 
 Don't do this.
 
-Mocking frameworks should be used only to isolate our tests from objects with behavior. If you have values that are difficult to construct consider the test data builder pattern instead·
+Mocking frameworks should be used only to isolate our tests from objects with behavior. If you have values that are difficult to construct consider the test data builder pattern instead
 
 ### Choosing Between State and Interaction Testing
 
