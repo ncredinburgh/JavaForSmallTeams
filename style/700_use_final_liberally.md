@@ -8,7 +8,7 @@ Consider making final any variable or parameter that does not change.
 
 Making parameters and variables that are assigned once final makes a method easier to understand because it constrains the things that could possibly happen within the code.
 
-It would be reasonable to make parameters and assign-once variables final in all methods, but this needs to be weighed against the noise created by inserting the `final` keyword everywhere.
+It would be reasonable to make all parameters and assign-once variables final, but this needs to be weighed against the noise created by inserting the `final` keyword everywhere.
 
 For short methods, whether the benefit outweighs the cost is arguable, but if a method is large and unwieldy then the case for making things final is much stronger.
 
