@@ -133,7 +133,7 @@ Equals verifier project provides a good (partial) solution:
 
 http://www.jqno.nl/equalsverifier/
 
-It checks that a class fulfils the hashcode-equals contract with a single line test that is trivial to write:
+It checks that a class fulfills the hashcode-equals contract with a single line test that is trivial to write:
 
 ```java
   @Test
