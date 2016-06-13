@@ -28,7 +28,7 @@ Lets see what happens when we apply this advice when no loop is present:
 
 The `concat` version is far clearer.
 
-So the `concat` is cleaner of the two functions. Which is more efficient?
+Is it less efficient?
 
 The eclipse compiler generates the following bytecode for `concat`:
 
