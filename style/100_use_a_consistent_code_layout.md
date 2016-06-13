@@ -63,7 +63,7 @@ class Example {
 }
 ```
 
-However, we suggest that the guidance in the Google guide on when to write Javadoc is ignored in favour of our own.
+However, we suggest that the guidance in the Google guide on when to write Javadoc is ignored in favor of our own.
 
 #### Notable Points About This Style
 
