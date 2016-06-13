@@ -30,7 +30,7 @@ public void shouldIncreaseInSizeWhenItemsAdded() {
 
 A bad solution is to use a static method (such as joda time's `setCurrentMillisFixed`) to set the current date.
 
-A good solution is inject a strategy for retrieving the date/time into your class as a dependency. 
+A good solution is to inject a strategy for retrieving the date/time into your class as a dependency. 
 
 Java 8 provides the `java.time.Clock` class which can be used for this purpose.
 
@@ -46,7 +46,7 @@ This is not a requirement for vanilla JUnit 4 tests, but it is possible that you
 
 ### What's the Difference Between Errors and Failures?
 
-You should try to design your tests to produce **failures** when the code is logically wrong. You tests should only produce errors when something unexpected has happened.
+You should try to design your tests to produce **failures** when the code is logically wrong. Your tests should only produce errors when something unexpected has happened.
 
 ### How Should I Test for Expected Exceptions?
 
