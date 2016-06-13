@@ -28,7 +28,7 @@ We assume a number of things about you and the environment you are working in.
 
 Some of the suggestions may be valid in other contexts, others might constitute terrible advice for those contexts.
 
-It is also just one opinion from many valid alternatives. To be useful it needs to be an opinion that you can agree with and sign up to. If you disagree with its content you are encouraged to make your own thoughts known so the document can be improved.
+It is also just one opinion from many valid alternatives. To be useful it needs to be an opinion that you can agree with and sign up to. If you disagree with something in this book please make your own thoughts known so it can be improved.
 
 Finally, not all the code we work on is perfect. Sometimes we inherit our own mistakes, sometimes we inherit other peoples. 
 
@@ -56,7 +56,7 @@ This book is updated often. The latest changes to the book can be viewed online 
 
 Versioned releases are available for free from [the book's website](http://javabook.ncredinburgh.com).
 
-If you are reading a PDF or print copy of this book the release version will be displayed on the inside cover. If there is no inside cover then you are reading an unrelased version of the book. 
+If you are reading a PDF or print copy of this book the release version will be displayed on the inside cover. If there is no inside cover then you are reading an unreleased version of the book. 
 
 ## History
 
@@ -72,11 +72,11 @@ It is a balancing act in which we must trade off one concern against another and
 
 One of the most common mistakes we've seen experienced programmers make is to blindly consider only one or two concerns (often the ones with catchy acronyms) without thought for others. 
 
-We've very carefully set out the context in which we think the advice in this book will be useful, but the context is still very broad. Slightly different situations might benefit from very different trade offs. What worked well for you in one project might not work so well in the next.
+We've carefully set out the context in which we think the advice in this book will be useful, but the context is still very broad. Slightly different situations might benefit from very different trade offs. What worked well for you in one project might not work so well in the next.
 
-For this reason we will very rarely use words like *always* or *never*.
+For this reason we rarely use words like *always* or *never*.
 
-When we do use them we will have thought carefully before doing so, but what we really mean is almost-always or almost-never.
+When we do use them we have thought carefully before doing so, but what we really mean is almost-always or almost-never.
 
 Having said this if you find yourself discounting any of the recommendations in this book please stop and think first. Don't fall into the trap of thinking certain advice cannot apply to you. We often make our worst mistakes when we believe we are being elegant or clever. The full horror of our ineptitude sometimes does not become apparent for months or years.
 
