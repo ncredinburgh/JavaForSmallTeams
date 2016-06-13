@@ -151,7 +151,7 @@ class InheritanceUpperCaseDecorator extends ConcreteProcessor {
 
 But, again, this solution would be less flexible.
 
-With the composition based version we can decorate any `Processor`. With the inheritance version we would need to re-implement the decorator for each concrete type to which we wished to add the upper case behaviour.
+With the composition based version we can decorate any `Processor`. With the inheritance version we would need to re-implement the decorator for each concrete type to which we wished to add the upper case behavior.
 
 Many common OO patterns rely on the combination of Composition and interface inheritance.
 
