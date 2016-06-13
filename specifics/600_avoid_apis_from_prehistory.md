@@ -2,7 +2,7 @@
 
 ### Summary
 
-Do not use `Vector`, `StringBuffer` and other archaic part of the JDK.
+Do not use `Vector`, `StringBuffer` and other archaic parts of the JDK.
 
 ### Details
 
