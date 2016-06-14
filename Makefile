@@ -38,6 +38,12 @@ publish : inner
 	curl https://www.gitbook.com/download/pdf/book/ncrcoe/java-for-small-teams/v/${hash} > rendered.pdf
 	pdftk A=rendered.pdf B=inner.pdf C=blank.pdf cat A1 B1 C1 A2-end output print_version.pdf
 
+cs : inner
+	mkdir -p printing
+	curl https://www.gitbook.com/download/pdf/book/ncrcoe/java-for-small-teams/v/${hash} > printing/rendered.pdf
+	pdfjam --outfile printing/resized.pdf --papersize '{6.0in,9.0in}'  printing/rendered.pdf
+	pdftk A=printing/resized.pdf B=inner.pdf C=blank.pdf cat B1 C1 A2-end output printing/create_space_version.pdf
+
 clean :
 	rm $(SVGS)
 	rm generated/toc/*.md
