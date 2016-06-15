@@ -24,7 +24,7 @@ tocs :
 	./toc.sh badadvice
 
 cover :
-	inkscape --export-png cover.png cover.svg
+	inkscape --export-dpi=200 --export-png cover.png cover.svg
 	convert cover.png  -background white -flatten cover.jpg
 
 back :
@@ -46,10 +46,8 @@ cs : inner
 
 clean :
 	rm $(SVGS)
-	rm generated/toc/*.md
 	rm back.png
 	rm cover.png
 	rm book.pdf
-	rm inner.pdf
 
 rebuild : clean all
