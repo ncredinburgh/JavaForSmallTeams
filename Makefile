@@ -13,7 +13,7 @@ main : $(SVGS) cover back
 
 # convert svg to png not using -D so exports the page
 $(IMGDIR)/%.png : %.svg
-	inkscape --export-png $@ $<
+	inkscape --export-dpi=300 --export-png $@ $<
 
 # no longer performed as part of build, but can be used to create toc markdown
 tocs :
@@ -24,7 +24,7 @@ tocs :
 	./toc.sh badadvice
 
 cover :
-	inkscape --export-dpi=200 --export-png cover.png cover.svg
+	inkscape --export-png cover.png cover.svg
 	convert cover.png  -background white -flatten cover.jpg
 
 back :
@@ -35,14 +35,13 @@ inner :
 	inkscape inner.svg --export-pdf=inner.pdf
 
 publish : inner
-	curl https://www.gitbook.com/download/pdf/book/ncrcoe/java-for-small-teams/v/${hash} > rendered.pdf
-	pdftk A=rendered.pdf B=inner.pdf C=blank.pdf cat A1 B1 C1 A2-end output print_version.pdf
-
-cs : inner
 	mkdir -p printing
 	curl https://www.gitbook.com/download/pdf/book/ncrcoe/java-for-small-teams/v/${hash} > printing/rendered.pdf
+	pdftk A=printing/rendered.pdf B=inner.pdf C=blank.pdf cat A1 B1 C1 A2-end output printing/epubli_version.pdf
 	pdfjam --outfile printing/resized.pdf --papersize '{6.0in,9.0in}'  printing/rendered.pdf
-	pdftk A=printing/resized.pdf B=inner.pdf C=blank.pdf cat B1 C1 A2-end output printing/create_space_version.pdf
+	pdfjam --outfile printing/inner_resized.pdf --papersize '{6.0in,9.0in}'  inner.pdf
+	pdfjam --outfile printing/blank_resized.pdf --papersize '{6.0in,9.0in}'  blank.pdf
+	pdftk A=printing/resized.pdf B=printing/inner_resized.pdf C=printing/blank_resized.pdf cat B1 C1 A2-end output printing/create_space_version.pdf
 
 clean :
 	rm $(SVGS)
