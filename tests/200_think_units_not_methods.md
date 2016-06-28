@@ -38,7 +38,7 @@ If we start thinking of `java.util.Stack` as our *unit* then tests become much e
 
 ```java
 @Test
-public void shouldRetieveValuesInOrderTheyAreAdded() {
+public void shouldRetrieveValuesInOrderTheyAreAdded() {
   Stack<String> testee = new Stack<String>();
   testee.push("a");
   testee.push("b");
