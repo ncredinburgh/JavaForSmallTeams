@@ -33,7 +33,7 @@ JSR 269 introduced a standard framework for processing annotations at build time
 
 Most use the annotated classes purely as input, from which new classes are generated. Often, the new classes extend or implement the annotated class or interface but remain separate. These are really just a subset of model based boilerplate generators where the model input model is annotated Java classes. 
 
-Some (such as project Lombok) update the annotated classes themselves, adding additional behavior. This is likely to increase both surprise and fiction which are discussed below. 
+Some (such as project Lombok) update the annotated classes themselves, adding additional behavior. This is likely to increase both surprise and friction which are discussed below. 
 <!-- endnopb -->
 
 ### Downsides
