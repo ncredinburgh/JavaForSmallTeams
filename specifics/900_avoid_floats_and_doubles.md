@@ -1,14 +1,17 @@
-## Avoid Floats and Doubles
+## Double or BigDecimal?
 
 ### Summary
 
-Avoid using floats and doubles (both the primitives and their wrappers). 
+Be aware that double can be approximate -- it will round some numbers. 
+If that is a problem -- for example, when handling money -- then try the BigDecimal class.
 
-### Detail
+Avoid using floats -- they're no faster than doubles on a modern computer.
 
-Floats and doubles introduce a minefield of rounding and comparison issues. While they are a sensible choice for some domains where you do not care about rounding errors, integers or `BigDecimal` are usually a better choice for server-side business code.
+### When to Avoid Double
 
-The core issue is that floating point numbers are not able to represent many numbers (e.g. `0.1`).
+Floats and doubles come with rounding issues. If that is a problem, for example when handling money any rounding might be a legal issue, then look at `BigDecimal` instead.
+
+The core issue is that floating point numbers are not able to represent many numbers (e.g. `0.1` or '1/3').
 
 This leads to unexpected results that may not be caught by simple test cases
 
@@ -67,4 +70,35 @@ Note that, although `BigDecimal` can be constructed from a float, this takes us 
    // Gives After 7 transactions 
    // balance is 1.2999999999999999611421941381195210851728916168212890625
 ```
+
+### When to Use Double
+
+Double has some real advantages over BigDecimal. For many use-cases you don't need to worry about rounding, so it's not a core concern. In that case, the more readable code you get with double is better.
+
+Other advantages are:
+
+1. Performance. In some domains, such as machine learning, arithmetic can be a bottleneck. double operations are supported at the hardware level and are considerably faster than BigDecimal.
+
+2. Third party libraries tend to use double. There is little point having your code in BigDecimal, if you're going to pipe it through a double-based library. If anything, by hiding the floating point code, that might give a false impression that rounding errors were impossible.
+
+3. Clear code. Compare the following:
+
+	double x = 3;
+	double y = 2*x + 1;
+
+vs
+
+	BigDecimal a = BigDecimal.valueOf(3);
+	BigDecimal b = a.multiply(BigDecimal.valueOf(2)).add(BigDecimal.valueOf(1));
+
+doubles are a lot more readable!
+
+(On a vaguely related note, it's a shame Java doesn't have a limited form of overloading for the + - * / operators. it would make maths code much more readable.)
+
+4. Robustness. In many cases, handling rounding in the background is the right choice, as opposed to BigDecimal's more cautious error-on-approximation. For example:
+
+	BigDecimal third = BigDecimal.valueOf(1).divide(BigDecimal.valueOf(3));
+
+This code is not just unsightly, it will throw an exception. That's not immediately obvious (note that you can handle by explicitly specifying a rounding mode). The behaviour of 1.0/3.0 -> approximately 1/3 is usually preferable.
+
 
