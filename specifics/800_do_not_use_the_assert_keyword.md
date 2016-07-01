@@ -8,7 +8,7 @@ Assertions are a useful coding technique that can provide many benefits but in m
 
 Assertions written with the assert keyword are only enabled when the `-ea` JVM flag is set. 
 
-The intent of this flag is to allow the assertions to be enabled in development and testing but disabled in production to avoiding the performance overhead of assertion logic. This is usually a premature optimization and increases the opportunity for mistakes as the code will behave differently in development vs production. 
+The intent of this flag is to allow the assertions to be enabled in development and testing but disabled in production to avoid the performance overhead of assertion logic. This is usually a premature optimization and increases the opportunity for mistakes as the code will behave differently in development vs production. 
 
 Switching off assertions in production also greatly dilutes their value. If a coding error has been made assertions ensure that it is reported early, close to the bug. If assertions are turned off in production bugs may propagate silently. This may make their consequences more severe and will certainly make the issue harder to diagnose.
 
