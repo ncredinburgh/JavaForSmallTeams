@@ -2,11 +2,11 @@
 
 ### Summary
 
-Prefer design decisions that will be easy to change. 
+Prefer design decisions that will be easy to change.
 
 ### Details
 
-Many of the decisions you make while designing your code will eventually turn out to be wrong. 
+Many of the decisions you make while designing your code will eventually turn out to be wrong.
 
 If you can make your decisions reversible by containing their consequences and adding abstractions then this future change this will not matter.
 
