@@ -24,13 +24,13 @@ We assume a number of things about you and the environment you are working in.
 * We assume you are writing server side Java in *small* teams.
 * We assume your teams are of mixed experience (some experts, some beginners).
 * We assume you are writing code in a general "business" context.
-* We assume you expect the code to still be in use in five years time.
+* We assume you expect the code to still be in use in five years' time.
 
 Some of the suggestions may be valid in other contexts, others might constitute terrible advice for those contexts.
 
 It is also just one opinion from many valid alternatives. To be useful it needs to be an opinion that you can agree with and sign up to. If you disagree with something in this book please make your own thoughts known so it can be improved.
 
-Finally, not all the code we work on is perfect. Sometimes we inherit our own mistakes, sometimes we inherit other peoples.
+Finally, not all the code we work on is perfect. Sometimes we inherit our own mistakes, sometimes we inherit other people's.
 
 The point of this document is not to say that all code must look like this but to have an agreed destination that we are aiming for.
 
