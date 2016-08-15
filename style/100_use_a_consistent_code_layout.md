@@ -10,7 +10,7 @@ The way in which Java code is formatted and laid out is largely a matter of pers
 
 Some styles (such as omitting braces in conditional statements) can arguably make certain types of bug slightly more likely.
 
-Others might require more work to keep the code compliant (such aligning fields into columns) but, to a first approximation, no particular scheme is greatly superior to any other. 
+Others might require more work to keep the code compliant (such as aligning fields into columns) but, to a first approximation, no particular scheme is greatly superior to any other.
 
 Despite this, programmers tend to have strong opinions on the matter.
 

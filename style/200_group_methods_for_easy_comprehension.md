@@ -17,7 +17,7 @@ To achieve the 2nd goal, methods should be arranged into logical groups, with me
 
 The two goals clearly conflict because grouping the public API methods together at the top of the file prevents grouping them with the implementation methods that they used. If this causes a large problem it may be an indication that the class has too many responsibilities and could be refactored into one or more smaller classes.
 
-Questions of the "correct" location of a method will also occur when a implementation method is called from multiple locations or methods have recursive relationships. There is, of course, no one right answer and any ordering that broadly meets the second goal may be used.
+Questions of the "correct" location of a method will also occur when an implementation method is called from multiple locations or methods have recursive relationships. There is, of course, no one right answer and any ordering that broadly meets the second goal may be used.
 
 Constructors and static factory methods should usually be placed first in the class. The fact that a method is static should not, however, generally influence where it is placed.
 

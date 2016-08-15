@@ -25,7 +25,7 @@ These can be subdivided based on they behave:
 * Dummy object - needs to be present to satisfy a type signature but is never actually used
 * Stub - must be present and may supply *indirect inputs*
 * Mock - verifies that expected interactions take place
-* Fake - like a real thing but less heavy - e.g a in memory database
+* Fake - like a real thing but less heavy - e.g an in memory database
 * Spy  - object that records its interactions with others
 
 Of these only stubs, mocks and spies might be created by a mocking framework.

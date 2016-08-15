@@ -18,4 +18,4 @@ For always-on assertions third party libraries such as Guava's preconditions pro
 
 A separate issue is the use of the `assert` keyword in tests. This is usually the result of a lack of familiarity with Java and JUnit.
 
-In codebases found in the wild where `assert` has been used in tests the `-ea` flag is rarely set, meaning that the tests can never fail. For tests JUnit's built in assertions or modern test focused assertion libraries such AssertJ should always be used.
+In codebases found in the wild where `assert` has been used in tests the `-ea` flag is rarely set, meaning that the tests can never fail. For tests JUnit's built in assertions or modern test focused assertion libraries such as AssertJ should always be used.

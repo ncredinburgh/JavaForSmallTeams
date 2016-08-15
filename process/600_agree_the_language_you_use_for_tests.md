@@ -22,7 +22,7 @@ The number of possible meanings of "integration test" is even greater.
 
 ### Unit Tests
 
-A fairly tight definition of unit test now in common use in the Java community. We recommend that you and your team use this definition. 
+A fairly tight definition of unit tests is now in common use in the Java community. We recommend that you and your team use this definition.
 
 To be a unit test, a test must be:
 
@@ -36,7 +36,7 @@ Note: Although writing your tests first is often a very good idea, a test that m
 
 When we talk about "unit" testing, what constitutes a *unit* isn't necessarily that obvious.
 
-A somewhat circular definition is that a *unit* is the smallest thing makes sense to test independently. 
+A somewhat circular definition is that a *unit* is the smallest thing that makes sense to test independently.
 
 It will often be a single class, but this is not necessarily the case. It may make sense to treat a group of classes as a unit (particularly if most of them are non-public) or occasionally even a method.
 
