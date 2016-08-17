@@ -118,8 +118,8 @@ So first off, would your design look better if the functionality was being re-us
 
 Assuming that you can't improve your design by getting rid of the abstract class you can either:
 
-* Treat it as an implementation detail and check that each of it's clients behaves as expected.
-* Test it in isolation by creating an anonymous concrete class 
+* Treat it as an implementation detail and check that each of its clients behaves as expected.
+* Test it in isolation by creating an anonymous concrete class
 
 The first approach will result in tests that are less tied to the implementation, but there will be repetition between the tests for each subclass.
 

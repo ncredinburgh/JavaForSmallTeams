@@ -34,7 +34,7 @@ We will talk about spies in a moment, but most test doubles can be conceptually 
 
 The important difference between them is that a mock has an expectation that will cause a test to fail if it is not met. i.e. if an expected method is not called on a mock the test will fail.
 
-A stub does not care if it is called or not - it's role is simply to supply values.
+A stub does not care if it is called or not - its role is simply to supply values.
 
 Traditional Mocks present a code readability dilemma. They define an expected outcome (a *then*), but are also part of the fixture required for the test to execute (a *given*).
 

@@ -4,11 +4,11 @@ System under test
 
 #  Direct inputs     
 
-The inputs that a SUT directly receives via it's interface (i.e method parameters)
+The inputs that a SUT directly receives via its interface (i.e method parameters)
 
 # Direct outputs    
 
-The outputs a SUT directly returns via it's interface (i.e method return values)
+The outputs a SUT directly returns via its interface (i.e method return values)
 
 # Indirect inputs   
 

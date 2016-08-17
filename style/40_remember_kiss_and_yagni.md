@@ -37,7 +37,7 @@ Telling accidental complexity apart from inherent complexity is of course also h
 
 Fortunately YAGNI gives us some useful advice on how to keep things simple without having to tell accidental and inherent complexity apart.
 
-The more a system does, the higher it's overall complexity will be. If we make a system that does less, it will be simpler - it will have less *inherent complexity* and less *accidental complexity*
+The more a system does, the higher its overall complexity will be. If we make a system that does less, it will be simpler - it will have less *inherent complexity* and less *accidental complexity*
 
 Your goal is, therefore, to create the minimum amount of functionality that solves the problems you have right **now**.
 

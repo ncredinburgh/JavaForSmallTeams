@@ -27,7 +27,7 @@ Strategies to avoid null include :
 
 The null object pattern is the classic OO approach to avoiding null. You should use it whenever you think you have a dependency that you think is optional.
 
-The pattern is very simple, just provide an implementation of the interface that does "nothing" or has a neutral behavior. This can then be safely referenced by it's clients, with no need to check for null.
+The pattern is very simple, just provide an implementation of the interface that does "nothing" or has a neutral behavior. This can then be safely referenced by its clients, with no need to check for null.
 
 ### Type-Safe Nulls (aka Optional)
 

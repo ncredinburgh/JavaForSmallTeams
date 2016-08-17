@@ -4,7 +4,7 @@
 
 Make sure that the dependencies of a class are clearly visible.
 
-Always inject dependencies into a class using it's constructor. Do not use other methods such as setters or annotations on fields.
+Always inject dependencies into a class using its constructor. Do not use other methods such as setters or annotations on fields.
 
 Never introduce dependencies using hidden routes such as `Singletons` or `ThreadLocals`.
 
