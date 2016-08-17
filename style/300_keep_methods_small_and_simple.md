@@ -10,7 +10,7 @@ Small things are easier to understand than big things. Methods are no different.
 
 One way to measure the size of a method is via the number of lines of code it contains.
 
-As a guide methods should not usually be longer than 7 lines in length. This is not a hard rule - just a guide of when to feel uncomfortable with a method's size. 
+As a guide methods should not usually be longer than 7 lines in length. This is not a hard rule - just a guide of when to feel uncomfortable with a method's size.
 
 Another way to gauge the size of a method is to see how many possible paths there are through it. The *Cyclomatic complexity* of a method gives a measure of this - it will increase as the amount of conditional logic and number of loops grows.
 
@@ -21,7 +21,7 @@ Your code will naturally contain some methods that are larger than others - some
 But most large methods can be made smaller in one of three ways :
 
 * Refactoring into a number of smaller methods
-* Re-expressing the logic  
+* Re-expressing the logic
 * Using appropriate language features
 
 #### Splitting a Method into Smaller Concerns
@@ -109,10 +109,10 @@ public boolean isFnardy(String item) {
 Or with a move to a more declarative style :
 
 ```java
-private final static Set<String> FNARDY_STRINGS 
-  = ImmutableSet.of("AAA", 
-                    "ABA", 
-                    "CC", 
+private final static Set<String> FNARDY_STRINGS
+  = ImmutableSet.of("AAA",
+                    "ABA",
+                    "CC",
                     "FWR");
 
 public boolean isFnardy(String item) {
@@ -128,18 +128,18 @@ It is difficult to guess what this model might look like for our contrived examp
 
 ```java
 enum ADomainConcept {
-  AAA(true), 
-  ABA(true), 
-  CC(true), 
-  FWR(true), 
+  AAA(true),
+  ABA(true),
+  CC(true),
+  FWR(true),
   OTHER(false),
   ANDANOTHER(false);
-  
+
   private final boolean isFnardy;
   private ADomainConcept(boolean isFnardy) {
     this.isFnardy = isFnardy;
   }
-  
+
   boolean  isFnardy() {
     return isFnardy;
   }
@@ -148,7 +148,7 @@ enum ADomainConcept {
 
 #### Using Appropriate Language Features
 
-Methods are sometimes bloated by boilerplate that solves common programming problems. The need for some of this boilerplate has been removed by new language features. 
+Methods are sometimes bloated by boilerplate that solves common programming problems. The need for some of this boilerplate has been removed by new language features.
 
 Some of these *new* features aren't all that new, but code is still written without them:
 

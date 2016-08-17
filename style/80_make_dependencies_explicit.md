@@ -64,19 +64,19 @@ Here, it is clear that we must supply a `Bar` as we are unable to construct the 
 
 #### Field Annotations
 
-While annotations on fields seem convenient they mean that the dependency will not be visible in the public API. They also tie construction of your class to the frameworks that understand them and prevent fields from being made final. 
+While annotations on fields seem convenient they mean that the dependency will not be visible in the public API. They also tie construction of your class to the frameworks that understand them and prevent fields from being made final.
 
 Field annotations should not be used.
 
 If you are working with a dependency injection framework such as Spring, either move construction of your objects into configuration classes or restrict the use on annotations to constructors. Both methods allow your classes to be constructed normally and ensure that all dependencies are visible.
 
-#### Hidden Dependencies 
+#### Hidden Dependencies
 
 Anything that is not injected into a class using a constructor or as a method parameter is a hidden dependency.
 
 These are evil.
 
-They are pulled in from `Singletons`, `ThreadLocals`, static method calls or by simply calling `new`. 
+They are pulled in from `Singletons`, `ThreadLocals`, static method calls or by simply calling `new`.
 
 **Bad**
 ```java
@@ -120,7 +120,7 @@ He defines it as:
 
 > "a place where you can alter behavior in your program without editing in that place."
 
-In the original version of `HiddenDependencies`  if we wanted to replace `Database` with a mock or stub we could only do so if the singleton provided some method to modify the instance it returns. 
+In the original version of `HiddenDependencies`  if we wanted to replace `Database` with a mock or stub we could only do so if the singleton provided some method to modify the instance it returns.
 
 **Not a good approach**
 ````java

@@ -2,23 +2,23 @@
 
 ### Summary
 
-Implementing `hashCode` and `equals` is not straightforward. Do not implement them unless it is necessary to do so. If you do implement them, make sure you know what you are doing. 
+Implementing `hashCode` and `equals` is not straightforward. Do not implement them unless it is necessary to do so. If you do implement them, make sure you know what you are doing.
 
 ### Details
 
-It is well known that if you override equals then you must also override the `hashCode` method (see Effective Java item 9). 
+It is well known that if you override equals then you must also override the `hashCode` method (see Effective Java item 9).
 
-If logically-equal objects do not have the same `hashCode` they will behave in a surprising manner if placed in a hash based collection such as `HashMap`. 
+If logically-equal objects do not have the same `hashCode` they will behave in a surprising manner if placed in a hash based collection such as `HashMap`.
 
 By "surprising", we mean your program will behave incorrectly in a fashion that is very difficult to debug.
 
-Unfortunately, implementing `equals` is surprisingly hard to do correctly. Effective Java item 8 spends about 12 pages discussing the topic.  
+Unfortunately, implementing `equals` is surprisingly hard to do correctly. Effective Java item 8 spends about 12 pages discussing the topic.
 
 The contract for equals is handily stated in the Javadoc of `java.lang.Object`. We will not repeat it here or repeat the discussion of what it means, that can be found in Effective Java and large swathes of the internet. Instead we will look at strategies for implementing it.
 
 Whichever strategy you adopt, it is important that you first write tests for your implementation.
 
-It is easy for an equals method to cause hard-to-diagnose bugs if the code changes (e.g. if fields are added or their type changes). Writing tests for equals methods used to be a painful and time-consuming procedure, but libraries now exist that make it trivial to specify the common cases (see Testing FAQs). 
+It is easy for an equals method to cause hard-to-diagnose bugs if the code changes (e.g. if fields are added or their type changes). Writing tests for equals methods used to be a painful and time-consuming procedure, but libraries now exist that make it trivial to specify the common cases (see Testing FAQs).
 
 ### Don't
 
@@ -28,7 +28,7 @@ Most classes do not need an equals method. Unless your class represents some sor
 
 An irritating gray area are classes where the production code never has a requirement to compare equality but the test code does. The dilemma here is whether to implement the methods purely for the benefit of the tests or to complicate the test code with custom equality checks.
 
-There is, of course, no right answer here; we would suggest first trying the compare-it-in-the test approach before falling back to providing a custom equals method. 
+There is, of course, no right answer here; we would suggest first trying the compare-it-in-the test approach before falling back to providing a custom equals method.
 
 The custom equality checks can be cleanly shared by implementing a custom assertion using a library such as AssertJ or Hamcrest.
 
@@ -39,7 +39,7 @@ Effective Java tentatively suggests having your class throw an error if equals i
   throw new AssertionError(); // Method is never called
 }
 ```
- 
+
 This seems like a good idea but, unfortunately, it will confuse most static analysis tools. On balance, it probably creates more problems than it solves.
 
 ### Auto-Generate With an IDE
@@ -111,7 +111,7 @@ The `Objects` class also simplifies implementing equals a little by pushing most
   }
 ```
 
-The first `if` statement is not logically required and could be safely omitted; it may, however, provide performance benefits. 
+The first `if` statement is not logically required and could be safely omitted; it may, however, provide performance benefits.
 
 Usually, we would recommend that such micro-optimizations are not included unless they have been proven to provide a benefit. In the case of equals methods, we suggest that the optimization is left in place. It is likely to justify itself in at least some of your classes and there is value in having all methods follow an identical template.
 
@@ -120,11 +120,11 @@ The example above uses `getClass` to check that objects are of the same type. An
 ```java
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) 
+    if (this == obj)
       return true;
     if (obj == null)
       return false;
-    if (!(obj instanceof MyClass)) // <- compare with instanceof 
+    if (!(obj instanceof MyClass)) // <- compare with instanceof
       return false;
     MyClass other = (MyClass) obj;
     return Objects.equals(field1, other.field1) &&
@@ -144,7 +144,7 @@ ExtendsMyClassWithCustomEqual b = new ExtendsMyClassWithCustomEqual();
 
 a.equals(b) // true
 b.equals(a) // false, a violation of symmetry
-``` 
+```
 
 If you find yourself in a situation where you need to consider the nuances of whether subclasses are equal to their parents then we strongly suggest you reconsider your design.
 
@@ -152,7 +152,7 @@ Having to think about maintaining the equals contract in a class hierarchy is pa
 
 In the majority of cases, if you think it makes sense for your class to implement `hashCode` and `equals`, we strongly suggest you make your class final so hierarchies do not need to be considered.
 
-If you believe you have a case where it makes sense for subclasses to be treated as equivalent to their parent, use `instanceof` but ensure that the parent equals method is made final. 
+If you believe you have a case where it makes sense for subclasses to be treated as equivalent to their parent, use `instanceof` but ensure that the parent equals method is made final.
 
 Avoid relationships that are more complex than this.
 
@@ -176,7 +176,7 @@ public int hashCode() {
 
 The brevity of these implementations is attractive, but their performance is measurably poor compared to all the implementations discussed so far. If you are confident that you will not pick up real performance bottlenecks with testing and profiling then using these as initial placeholder implementations may be a reasonable approach, but in general we suggest you avoid them.
 
-### Code Generators 
+### Code Generators
 
 A number of projects exist that can auto-generate value objects at build-time. Two of the better known options are :
 
@@ -214,7 +214,7 @@ Here, Google Auto introduces some *friction* as the code shown above will not co
 
 There is also some *surprise*.
 
-Because it is a value, Animal would normally be implemented as a final class - but we have been forced to make it abstract. The team behind *Auto* recommend you add a package-private constructor to prevent other child classes being created. 
+Because it is a value, Animal would normally be implemented as a final class - but we have been forced to make it abstract. The team behind *Auto* recommend you add a package-private constructor to prevent other child classes being created.
 
 Unlike normal Java, the order in which accessors are declared is important because it is used by the generator to define the order of the constructor parameters. Re-ordering the accessors can, therefore, have the surprising effect of introducing a bug.
 
@@ -227,7 +227,7 @@ It takes a different approach to Google auto.
 Given an annotated class such as:
 
 ```java
-@Value 
+@Value
 public class ValueExample {
   String name;
   @NonFinal int age;
@@ -248,19 +248,19 @@ public final class ValueExample {
     this.age = age;
     this.score = score;
    }
-   
+
   public String getName() {
     return this.name;
   }
-   
+
   public int getAge() {
     return this.age;
   }
-   
+
   public double getScore() {
     return this.score;
   }
-   
+
   public boolean equals(Object o) {
    // valid implementation of equality based on all fields
   }

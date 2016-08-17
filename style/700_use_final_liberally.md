@@ -2,7 +2,7 @@
 
 ### Summary
 
-Consider making final any variable or parameter that does not change. 
+Consider making final any variable or parameter that does not change.
 
 ### Details
 

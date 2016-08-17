@@ -2,13 +2,13 @@
 
 ### How Do I Test a Private Method?
 
-You don't test methods (private or public), you test the behavior of a unit as a whole. 
+You don't test methods (private or public), you test the behavior of a unit as a whole.
 
 If you cannot exercise the logic of a private method via the public interface, is that logic actually required? If it is required, and is sufficiently complex that it is causing you testing pain, then perhaps you should extract that concern into a separate unit that can be tested in isolation and injected in via the constructor?.
 
 ### How Do I Test a Void Method?
 
-You don't test methods (void or not), you test the behavior of a unit as a whole. 
+You don't test methods (void or not), you test the behavior of a unit as a whole.
 
 If the method is void, it must be performing some sort of side effect that can be checked by either state testing or interaction testing.
 
@@ -30,13 +30,13 @@ public void shouldIncreaseInSizeWhenItemsAdded() {
 
 A bad solution is to use a static method (such as joda time's `setCurrentMillisFixed`) to set the current date.
 
-A good solution is to inject a strategy for retrieving the date/time into your class as a dependency. 
+A good solution is to inject a strategy for retrieving the date/time into your class as a dependency.
 
 Java 8 provides the `java.time.Clock` class which can be used for this purpose.
 
 The static factory method `fixed` will create an instance that represents a constant time. Other methods provide implementations suitable for production use.
 
-Java 7 does not provide an out of the box class for this purpose so you will need to roll your own. 
+Java 7 does not provide an out of the box class for this purpose so you will need to roll your own.
 
 ### Do I Need to Implement a Teardown Method for my Test?
 
@@ -84,12 +84,12 @@ JUnit now provides an alternate solution in the form of the 'ExpectedException' 
 ```java
 @Rule
 public ExpectedException thrown= ExpectedException.none();
-  
+
 @Test
 public void foo() throws IOException {
   thrown.expect(FooException.class);
   thrown.expectMessage("felt like it");
-    
+
   testee.doStuff();
 }
 ```
@@ -103,7 +103,7 @@ For Java 8 AssertJ provides some custom assertions that can be used without brea
 public void testException() {
   assertThatThrownBy(() -> { testee.doStuff(); })
    .isInstanceOf(Exception.class)
-   .hasMessageContaining("felt like it"); 
+   .hasMessageContaining("felt like it");
 }
 ```
 Although it maintains the flow, the lambda in which the testee is called looks a little ugly.

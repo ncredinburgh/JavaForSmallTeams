@@ -2,19 +2,19 @@
 
 System under test
 
-#  Direct inputs     
+#  Direct inputs
 
 The inputs that a SUT directly receives via its interface (i.e method parameters)
 
-# Direct outputs    
+# Direct outputs
 
 The outputs a SUT directly returns via its interface (i.e method return values)
 
-# Indirect inputs   
+# Indirect inputs
 
 Inputs supplied to the SUT by other components with which it interacts (i.e values supplied by DOCs)
 
-# Indirect outputs  
+# Indirect outputs
 
 Outputs of the SUT that are passed to DOCs but are not visible via the SUT interface
 
@@ -22,7 +22,7 @@ Outputs of the SUT that are passed to DOCs but are not visible via the SUT inter
 
 Generic names for Dummy, Stub, Spy, Fake or Mock
 
-# Dummy            
+# Dummy
 
 Test double that is never used or called but must be present (i.e it could just be null)
 
@@ -30,15 +30,15 @@ Test double that is never used or called but must be present (i.e it could just 
 
 Test double that supplies indirect inputs to SUT (and does nothing else)
 
-# Mock              
+# Mock
 
 Test double that verifies indirect outputs from SUT (may also provide indirect input)
 
-# Spy               
+# Spy
 
 Test double that captures indirect outputs from SUT to allow later verification (may also provide indirect input)
 
-# Fake              
+# Fake
 
 Test double that acts as a lightweight stand in for some other component
 

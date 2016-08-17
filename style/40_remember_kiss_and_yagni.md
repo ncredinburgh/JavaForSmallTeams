@@ -2,7 +2,7 @@
 
 ### Summary
 
-Keep your design as simple as possible. 
+Keep your design as simple as possible.
 
 Create only the functionality you need now - not what you think you might need in the future.
 
@@ -10,7 +10,7 @@ Create only the functionality you need now - not what you think you might need i
 
 The KISS (Keep It Simple, Stupid) and YAGNI (You Ain't Going To Need It) acronyms provide good advice that is worth remembering while coding.
 
-KISS advises that we keep our code and designs as simple as possible.  
+KISS advises that we keep our code and designs as simple as possible.
 
 Few people would disagree with this, but unfortunately it is not always obvious what *simple* means.
 
@@ -25,15 +25,15 @@ Given two solutions to a problem which one is simpler?
 
 All of the above are reasonable definitions of *simple*. None of them is the single definition always makes sense to follow.
 
-Recognizing simple isn't easy and keeping things simple takes a lot of work. 
+Recognizing simple isn't easy and keeping things simple takes a lot of work.
 
-If we could somehow measure the complexity of our software, we would find that there is some minimum value that each piece of software must contain. 
+If we could somehow measure the complexity of our software, we would find that there is some minimum value that each piece of software must contain.
 
-If the software were any simpler, then it would be less functional. 
+If the software were any simpler, then it would be less functional.
 
-Real programs will always contain this *inherent complexity* plus a bit. This extra complexity is the *accidental complexity* we have added because we are less than perfect.  
+Real programs will always contain this *inherent complexity* plus a bit. This extra complexity is the *accidental complexity* we have added because we are less than perfect.
 
-Telling accidental complexity apart from inherent complexity is of course also hard. 
+Telling accidental complexity apart from inherent complexity is of course also hard.
 
 Fortunately YAGNI gives us some useful advice on how to keep things simple without having to tell accidental and inherent complexity apart.
 
