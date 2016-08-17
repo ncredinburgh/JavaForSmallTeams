@@ -60,16 +60,16 @@ protected static Map<String, String> getHttpHeaders(HttpServletRequest request) 
   return extractHeaders(request);
 }
 
+private static boolean isInValidHeader(HttpServletRequest request) {
+  return (request == null || request.getHeaderNames() == null);
+}
+
 private static Map<String, String> extractHeaders(HttpServletRequest request) {
   Map<String, String> httpHeaders = new HashMap<String, String>();
   for ( String name : Collections.list(request.getHeaderNames()) ) {
     httpHeaders.put(name.toLowerCase(), request.getHeader(name));
   }
   return httpHeaders;
-}
-
-private static boolean isInValidHeader(HttpServletRequest request) {
-  return (request == null || request.getHeaderNames() == null);
 }
 ```
 
