@@ -14,6 +14,6 @@ For short methods, whether the benefit outweighs the cost is arguable, but if a 
 
 Each team should agree a policy for making final variables.
 
-At a minimum, everything should be made final within large method. This may also be extended to shorter methods at the team's discretion. A blanket policy has the advantage of being easy to automate/understand. A more nuanced policy is harder to communicate.
+At a minimum, everything should be made final within large methods. This may also be extended to shorter methods at the team's discretion. A blanket policy has the advantage of being easy to automate/understand. A more nuanced policy is harder to communicate.
 
 When working with legacy code, making parameters and variables final is also a useful first step in gaining understanding of the method before re-factoring. Methods that have proved difficult to express in smaller chunks will also become easier to understand when single assignment variables are final.
