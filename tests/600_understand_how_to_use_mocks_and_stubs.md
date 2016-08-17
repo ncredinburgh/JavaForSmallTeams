@@ -6,7 +6,7 @@ There are two sorts of code and they require two different sorts of test.
 
 State based testing is easily recognized as it will use assert statements.
 
-**Manager code** does stuff by co-coordinating others. 
+**Manager code** does stuff by co-coordinating others.
 
 Manager code is harder to test than worker code because we need to make a choice - do we try to infer its behavior from its outputs using state based testing, or do we use **interaction based testing**?
 
@@ -25,14 +25,14 @@ These can be subdivided based on they behave:
 * Dummy object - needs to be present to satisfy a type signature but is never actually used
 * Stub - must be present and may supply *indirect inputs*
 * Mock - verifies that expected interactions take place
-* Fake - like a real thing but less heavy - e.g a in memory database
+* Fake - like a real thing but less heavy - e.g an in memory database
 * Spy  - object that records its interactions with others
 
 Of these only stubs, mocks and spies might be created by a mocking framework.
 
 We will talk about spies in a moment, but most test doubles can be conceptually viewed as being either a stub or a mock.
 
-The important difference between them is that a mock has an expectation that will cause a test to fail if it is not met. i.e. if an expected method is not called on a mock the test will fail. 
+The important difference between them is that a mock has an expectation that will cause a test to fail if it is not met. i.e. if an expected method is not called on a mock the test will fail.
 
 A stub does not care if it is called or not - it's role is simply to supply values.
 
@@ -41,23 +41,23 @@ Traditional Mocks present a code readability dilemma. They define an expected ou
 For example with JMock we would write:
 
 ```java
-  Mockery context = new Mockery(); 
- 
+  Mockery context = new Mockery();
+
   // given / arrange
   Subscriber subscriber = context.mock(Subscriber.class);
   Publisher publisher = new Publisher();
   publisher.add(subscriber);
-        
+
   final String message = "message";
- 
-  // then / assert . . . but we haven't had a when yet      
+
+  // then / assert . . . but we haven't had a when yet
   context.checking(new Expectations() {{
     oneOf (subscriber).receive(message);
   }});
 
   // when / act
   publisher.publish(message);
-       
+
   // then / assert
   context.assertIsSatisfied();
 ```
@@ -80,15 +80,15 @@ For example, using Mockito:
   Publisher publisher = new Publisher();
   publisher.add(subscriber);
   String message = "message";
-  
+
   // when
   publisher.publish(message);
-    
+
   // then
-  Mockito.verify(subscriber).receive(message); 
+  Mockito.verify(subscriber).receive(message);
 ```
 
-For this reason we recommend using a spy framework. 
+For this reason we recommend using a spy framework.
 
 When spies act as mocks that must also supply indirect inputs, it is best to make them as forgiving as possible when supplying values but as specific as possible when verifying.
 
@@ -102,20 +102,20 @@ public interface Subscriber {
 }
 ```
 
-We could ensure our test passed as follows: 
+We could ensure our test passed as follows:
 
 ```java
   String message = "amessage";
   Subscriber subscriber = Mockito.mock(Subscriber.class);
-  // inject indirect value 
+  // inject indirect value
   Mockito.when(subscriber.receive(message)).thenReturn(1);
 
   Publisher publisher = new Publisher();
   publisher.add(subscriber);
-    
+
   publisher.publish(message);
-    
-  Mockito.verify(subscriber).receive(message); 
+
+  Mockito.verify(subscriber).receive(message);
 ```
 
 We will not discuss the Mockito API in any detail here, but this line:
@@ -124,7 +124,7 @@ We will not discuss the Mockito API in any detail here, but this line:
   Mockito.when(subscriber.receive(message)).thenReturn(1);
 ```
 
-Ensures that when the `receive` method is called on the spy with a string that equals the `message` variable, it will return `1`. 
+Ensures that when the `receive` method is called on the spy with a string that equals the `message` variable, it will return `1`.
 
 If this line was not present the spy would do what Mockito does by default, which is to return `0`.
 
@@ -133,7 +133,7 @@ What would our test do if, due to a bug, receive was called with a different str
 The answer is that, instead of failing due to the verification:
 
 ```java
-    Mockito.verify(subscriber).receive(message); 
+    Mockito.verify(subscriber).receive(message);
 ```
 
 It would throw an error before it reached this point because the assertion in our production code would trigger.

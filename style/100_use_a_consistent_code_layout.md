@@ -4,21 +4,21 @@
 
 Agree and enforce a standard code formatting scheme within each codebase.
 
-### Detail 
+### Detail
 
 The way in which Java code is formatted and laid out is largely a matter of personal preference.
 
-Some styles (such as omitting braces in conditional statements) can arguably make certain types of bug slightly more likely. 
+Some styles (such as omitting braces in conditional statements) can arguably make certain types of bug slightly more likely.
 
-Others might require more work to keep the code compliant (such aligning fields into columns) but, to a first approximation, no particular scheme is greatly superior to any other. 
+Others might require more work to keep the code compliant (such as aligning fields into columns) but, to a first approximation, no particular scheme is greatly superior to any other.
 
 Despite this, programmers tend to have strong opinions on the matter.
 
-Every codebase should, however, have a single agreed formatting style which is consistently applied and is understood by everyone working on that codebase. 
+Every codebase should, however, have a single agreed formatting style which is consistently applied and is understood by everyone working on that codebase.
 
-This prevents commit wars in which different team members re-format things to their personal preference. It also  makes code easier to understand as there is a cognitive cost for the reader if formatting changes radically from file to file.
+This prevents commit wars in which different team members re-format things to their personal preference. It also makes code easier to understand as there is a cognitive cost for the reader if formatting changes radically from file to file.
 
-Although there is value in consistency, there is also a cost. 
+Although there is value in consistency, there is also a cost.
 
 Unless there is already broad agreement across teams about how things should be formatted, trying to enforce one official set of rules is likely to create more ill will than benefit.
 
