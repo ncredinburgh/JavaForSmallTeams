@@ -13,9 +13,9 @@ Try to limit the times you or your clients need to write the following:
 ```
 ### Details
 
-Although it is likely that libraries and frameworks you interact with will return null, you should try to ensure that this practice is isolated to third party code. 
+Although it is likely that libraries and frameworks you interact with will return null, you should try to ensure that this practice is isolated to third party code.
 
-The core of your application should assume that it does not have to worry about null values. 
+The core of your application should assume that it does not have to worry about null values.
 
 Strategies to avoid null include :
 
@@ -27,7 +27,7 @@ Strategies to avoid null include :
 
 The null object pattern is the classic OO approach to avoiding null. You should use it whenever you think you have a dependency that you think is optional.
 
-The pattern is very simple, just provide an implementation of the interface that does "nothing" or has a neutral behavior. This can then be safely referenced by it's clients, with no need to check for null.
+The pattern is very simple, just provide an implementation of the interface that does "nothing" or has a neutral behavior. This can then be safely referenced by its clients, with no need to check for null.
 
 ### Type-Safe Nulls (aka Optional)
 
@@ -59,7 +59,7 @@ Static analysis rules exists that can check for code that returns null Optionals
 
 ### Design by Contract
 
-We wish for all code that we control to be able to ignore the existence of null (unless it interfaces with some third party code that forces us to consider it). 
+We wish for all code that we control to be able to ignore the existence of null (unless it interfaces with some third party code that forces us to consider it).
 
 `Objects.requireNonNull` can be used to add a runtime assertion that null has not been passed to a method.
 
@@ -67,7 +67,7 @@ Because your core code should generally assume that null will never be passed ar
 
 We can also check this contract at build time.
 
-JSR-305 provides annotations that can be used to declare where null is acceptable. 
+JSR-305 provides annotations that can be used to declare where null is acceptable.
 
 Although JSR-305 is dormant, and shows no signs of being incorporated into Java in the near future, the annotations are available at the maven co-ordinates :-
 
