@@ -14,7 +14,7 @@ So how should we pick these examples?
 
 One approach is to look at the possible inputs to the component under test. 
 
-We could fully specify our code if we provided the expected output for each possible input. Usually, this is not practical because the possible range of inputs is far too large. Instead, we can look for categories of values within the possible of inputs (e.g *valid* and *invalid*) and pick an example from each one.
+We could fully specify our code if we provided the expected output for each possible input. Usually, this is not practical because the possible range of inputs is far too large. Instead, we can look for categories of values within the possible range of inputs (e.g *valid* and *invalid*) and pick an example from each one.
 
 However, the best approach is usually not to think in terms of possible inputs and examples, but to instead think first of the behaviors we would like our code to exhibit.
 

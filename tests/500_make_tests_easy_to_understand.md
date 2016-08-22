@@ -12,7 +12,7 @@ A test can be viewed as having three parts:
 
 * Given - create the values and objects required for the test
 * When - executes the code under test 
-* Then - verifies the output/behavior as as expected
+* Then - verifies the output/behavior is as expected
 
 These stages are also sometimes called *arrange*, *act* and *assert* by people particularly attached to the letter 'a'.
 
@@ -21,7 +21,7 @@ Although it is important that these three stages are visible, trying to rigorous
 **Bad**
 ```java
   @Test
-  public void shouldRetieveValuesInOrderTheyAreAdded() {
+  public void shouldRetrieveValuesInOrderTheyAreAdded() {
     
     // given
     Stack<String> testee = new Stack<String>();
@@ -43,7 +43,7 @@ Although it is important that these three stages are visible, trying to rigorous
 **Better**
 ```java
   @Test
-  public void shouldRetieveValuesInOrderTheyAreAdded() {
+  public void shouldRetrieveValuesInOrderTheyAreAdded() {
     Stack<String> testee = new Stack<String>();
     testee.push("a");
     testee.push("b");

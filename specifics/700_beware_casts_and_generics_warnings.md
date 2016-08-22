@@ -40,7 +40,7 @@ for (Object each : list) {
 }
 ```
 
-The compiler will not be happy that we have failed to fully declare the type of `List` we are dealing with and will (depending on how its been configured) generate an error or warning on the line where `list` is declared e.g.
+The compiler will not be happy that we have failed to fully declare the type of `List` we are dealing with and will (depending on how it's been configured) generate an error or warning on the line where `list` is declared e.g.
 
 ```
 List is a raw type. References to generic type List<E> should be parameterized
