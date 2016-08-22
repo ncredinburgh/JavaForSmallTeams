@@ -174,7 +174,7 @@ public int hashCode() {
 }
 ```
 
-The brevity of these implementations is attractive, but their performance is measurably poor compared to all the implementations discussed so far. If you are confident that you will pick up real performance bottlenecks with testing and profiling then using these as initial placeholder implementations may be a reasonable approach, but in general we suggest you avoid them. 
+The brevity of these implementations is attractive, but their performance is measurably poorer than others discussed so far. Good performance tests and regular profiling can help determine whether a poorly performing method genuinely leads to performance bottlenecks in your application. If you are confident that you would detect such adverse impacts then using these methods as initial placeholder implementations may be a reasonable approach. But in general we suggest you avoid them.
 
 ### Code Generators
 
