@@ -12,7 +12,7 @@ Where `b` indicates a Boolean type, `n` an integer type and `m_` that the named 
 
 This is a terrible idea.
 
-Such notation *might* be useful if you are reading code printed to paper, but all the information it provides is readily available in a modern IDE. 
+Such notation *might* be useful if you are reading code printed to paper, but all the information it provides is readily available in a modern IDE.
 
 Naming things is hard enough without adding additional concerns that the name must handle.
 

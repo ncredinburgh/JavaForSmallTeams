@@ -46,12 +46,12 @@ public class Example {
   public int multi(int x) {
     if (x == 10) {
       return -value;
-    } 
-    
+    }
+
     if (x > 0) {
       return value + x;
     }
-    
+
     return 0;
   }
 }

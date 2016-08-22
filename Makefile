@@ -1,6 +1,6 @@
 IMGDIR = generated/images
 
-# svgs to be converted to png 
+# svgs to be converted to png
 SVGS := $(patsubst %.svg,$(IMGDIR)/%.png,$(wildcard svg/*.svg))
 
 hash := $(shell git rev-parse HEAD)
@@ -19,7 +19,7 @@ $(IMGDIR)/%.png : %.svg
 tocs :
 	./toc.sh style
 	./toc.sh process
-	./toc.sh specifics 
+	./toc.sh specifics
 	./toc.sh tests
 	./toc.sh badadvice
 

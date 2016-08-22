@@ -1,4 +1,4 @@
-## Pick Examples Carefully 
+## Pick Examples Carefully
 
 Traditional testing is performed with examples.
 
@@ -12,7 +12,7 @@ Our goal is to use examples to
 
 So how should we pick these examples?
 
-One approach is to look at the possible inputs to the component under test. 
+One approach is to look at the possible inputs to the component under test.
 
 We could fully specify our code if we provided the expected output for each possible input. Usually, this is not practical because the possible range of inputs is far too large. Instead, we can look for categories of values within the possible range of inputs (e.g *valid* and *invalid*) and pick an example from each one.
 
@@ -20,16 +20,16 @@ However, the best approach is usually not to think in terms of possible inputs a
 
 Once we have identified the behavior we can then pick examples that demonstrate it. The actual values used are often unimportant - "Make tests easy to understand" discusses some techniques to make unimportant values less prominent in tests and highlight the important ones.
 
-Property-based testing takes this a stage further. 
+Property-based testing takes this a stage further.
 
 Properties are identified that must hold true for all inputs or for a subset of possible inputs that meet certain criteria. The tests do not contain any example values - just a description of how they must be constrained. The examples used to check the properties are generated randomly and only ever seen if the check fails.
 
 There are some compelling advantages to property based testing:
 
 * The tests describe what is important about the input values. In example testing this must be inferred by the reader
-* The tests will automatically find edge cases and bad assumptions made by the programmer 
+* The tests will automatically find edge cases and bad assumptions made by the programmer
 
-There is currently little experience with property-based testing in the Java community, so questions remain on how best to use it. 
+There is currently little experience with property-based testing in the Java community, so questions remain on how best to use it.
 
 One obvious issue is that it introduces randomness, although most frameworks provide some mechanism to control it and repeat test runs.
 
@@ -53,12 +53,12 @@ Multiple assertions within a test may be an indicator that the test is testing m
   @Test
   public void shouldReturnItemsInOrderTheyWereAdded() {
      ArrayDeque<String> testee = new ArrayDeque<String>();
-     
+
      testee.add("foo");
      testee.add("bar");
-     
+
      assertEquals("foo",testee.pop());
-     assertEquals("bar",testee.pop());     
+     assertEquals("bar",testee.pop());
   }
 ```
 
@@ -68,7 +68,7 @@ This test tests only one concern, but uses multiple asserts to do so.
 
 Once you've tested a concern, don't let it leak into other tests - if you do then those tests are no longer testing only one thing.
 
-This is a particularly easy mistake to make with interaction-based testing. If it is vitally important that the method `anImportantSideEffect` is called, it is easy to find yourself verifying that method in each test case. 
+This is a particularly easy mistake to make with interaction-based testing. If it is vitally important that the method `anImportantSideEffect` is called, it is easy to find yourself verifying that method in each test case.
 
 If the contract ever changes so that this side effect is not longer important, all tests will need to be updated.
 

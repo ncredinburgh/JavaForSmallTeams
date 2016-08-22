@@ -6,9 +6,9 @@ Casts dilute the benefit of Java's type system, making code both less readable a
 
 Avoid casts wherever possible.
 
-If you find yourself writing one, stop and ask yourself why you are writing it. 
+If you find yourself writing one, stop and ask yourself why you are writing it.
 
-What would need to be changed in your code so you did not need to write that cast? 
+What would need to be changed in your code so you did not need to write that cast?
 
 Why can't you make that change?
 
@@ -53,7 +53,7 @@ List l = new ArrayList<Number>();
 List<String> ls = l;
 ```
 
-The compiler will issue: 
+The compiler will issue:
 
 ```
 The expression of type List needs unchecked conversion to conform to List<String>
@@ -79,7 +79,7 @@ For example:
 ```java
 List<Widget> widgets = getWidgets();
 List results = process(widgets);
-    
+
 for (Object each : results) {
   if (each instanceof String) {
     // handle failure using data from string
@@ -90,7 +90,7 @@ for (Object each : results) {
 }
 ```
 
-Normally, objects placed into a collection should be of a single type or of multiple types related by a common superclass or interface.   
+Normally, objects placed into a collection should be of a single type or of multiple types related by a common superclass or interface.
 
 Here, unrelated types have been placed into the same list with a String used to communicate some sort of information about how "processing" of a widget has failed.
 
@@ -98,31 +98,31 @@ The classic OO fix for this code would be to introduce a `ProcessResult` interfa
 
 ```java
 interface ProcessResult {
- void doSomething(); 
+ void doSomething();
 }
 
 class Success implements ProcessResult {
-  
+
   private final EnhancedWidget result;
-  
+
   @Override
   public void doSomething() {
     result.doSomething();
   }
-  
+
 }
 
 class Failure implements ProcessResult {
-  
+
   private final String result;
-  
+
   @Override
   public void doSomething() {
     // do something with result string
   }
-  
+
 }
-  
+
 ```
 
 The original code can then be fixed as follows:
@@ -130,7 +130,7 @@ The original code can then be fixed as follows:
 ```java
 List<Widget> widgets = getWidgets();
 List<ProcessResult> results = process(widgets);
-    
+
 for (ProcessResult each : results) {
     each.doSomething();
   }
@@ -141,7 +141,7 @@ Or, more concisely in Java 8:
 
 ```java
  List<ProcessResult> results = process(widgets);
- results.stream().forEach(ProcessResult::doSomething); 
+ results.stream().forEach(ProcessResult::doSomething);
 ```
 
 It may also sometimes make sense to use a disjoint union type aka `Either`.
@@ -154,7 +154,7 @@ Unfortunately, Java does not provide an `Either` type out of the box but at its 
 public class Either<L,R> {
   private final L left;
   private final R right;
-  
+
   private Either(L left, R right) {
     this.left = left;
     this.right = right;
@@ -179,7 +179,7 @@ public class Either<L,R> {
   R right() {
     return right;
   }
-  
+
 }
 ```
 
@@ -190,11 +190,11 @@ Using the simplistic form of `Either` with Java 7 the code could be re-written a
 ```java
 List<Widget> widgets = getWidgets();
 List<Either<ProcessResult,String>> results = process(widgets);
-    
+
 for (Either<ProcessResult,String> each : results) {
   if (each.isLeft()) {
     // handle failure using data from string
-  } else {  
+  } else {
     each.right().doSomething();
   }
 }
@@ -209,11 +209,11 @@ This pattern can help quickly tame a legacy code base that is difficult to compr
 
 #### Limits of the Type System
 
-Sometimes we do reach the limits of Java's type system and need to cast. 
+Sometimes we do reach the limits of Java's type system and need to cast.
 
-Before we do this, we must make certain that the cast is safe and there is no better solution to our problem. 
+Before we do this, we must make certain that the cast is safe and there is no better solution to our problem.
 
-Similarly, we may need to sometimes suppress a Generics warning, this can be done by annotating with `@SuppressWarnings` e.g. 
+Similarly, we may need to sometimes suppress a Generics warning, this can be done by annotating with `@SuppressWarnings` e.g.
 
 ```java
 @SuppressWarnings("unchecked")

@@ -2,7 +2,7 @@
 
 ### Summary
 
-Avoid using floats and doubles (both the primitives and their wrappers). 
+Avoid using floats and doubles (both the primitives and their wrappers).
 
 ### Detail
 
@@ -43,7 +43,7 @@ In situations where floats can't be replaced by integers code can be re-written 
 ```java
     BigDecimal balance = new BigDecimal("2.00");
     BigDecimal transationCost = new BigDecimal("0.10");
-    
+
     BigDecimal numberTransactions = BigDecimal.valueOf(7);
 
     System.out.printf("After %s transactions balance is %s"
@@ -59,14 +59,14 @@ Note that although `BigDecimal` can be constructed from a float this would take 
 ```java
     BigDecimal balance = new BigDecimal("2.00");
     BigDecimal transationCost = new BigDecimal(0.10); // <- float used to construct
-    
+
     BigDecimal numberTransactions = BigDecimal.valueOf(7);
 
     System.out.printf("After %s transactions balance is %s"
                      , numberTransactions
                      , balance.subtract(transationCost.multiply(numberTransactions)));
 
-   // Gives After 7 transactions 
+   // Gives After 7 transactions
    // balance is 1.2999999999999999611421941381195210851728916168212890625
 ```
 

@@ -2,13 +2,13 @@
 
 ### Summary
 
-Don't optimize your code prematurely. 
+Don't optimize your code prematurely.
 
 Concentrate on making it simple and understandable instead.
 
 ### Details
 
-Many new programmers worry about the performance of each method they write, avoid code they expect to be inefficient and write in a style that attempts to minimize object allocations, method calls, assignments or other factors they expect to have a cost. 
+Many new programmers worry about the performance of each method they write, avoid code they expect to be inefficient and write in a style that attempts to minimize object allocations, method calls, assignments or other factors they expect to have a cost.
 
 Although it often decreases readability and increases complexity, most micro-performance optimization provides no performance benefit at all.
 

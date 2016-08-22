@@ -6,7 +6,7 @@ Although a class may provide many constructors, only one should write to fields 
 
 ### Details
 
-Having a single place where fields are assigned during construction makes it easy to understand the states that class can be constructed in. 
+Having a single place where fields are assigned during construction makes it easy to understand the states that class can be constructed in.
 
 Classes should not provide multiple constructors that set fields.
 
@@ -39,9 +39,9 @@ public class Foo {
 ```
 <!-- endnopb -->
 
-The duplication of values in the above code could be removed but it would remain confusing because the concern of initializing the class is spread across three locations. 
+The duplication of values in the above code could be removed but it would remain confusing because the concern of initializing the class is spread across three locations.
 
-If more fields were added it would be easy to forget to initialize them in the existing constructors. 
+If more fields were added it would be easy to forget to initialize them in the existing constructors.
 
 Fortunately, we have made all fields final so this would give a compilation error. If the class was mutable, we would have a bug to discover at runtime.
 

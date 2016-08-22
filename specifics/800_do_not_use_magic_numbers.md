@@ -4,7 +4,7 @@
 
 Magic numbers should be replaced with well-named constants that describe their meaning.
 
-#### Detail 
+#### Detail
 
 Placing numeric or string literals directly into source code causes two problems:
 

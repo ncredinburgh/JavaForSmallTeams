@@ -114,21 +114,21 @@ public final class Foo {
 
 It no longer matters if `Foo` is long or short lived.
 
-It is inherently thread-safe. 
+It is inherently thread-safe.
 
 We know that whatever value we construct it with will remain until it dies. There is only one possible point where data is written so we do not need to search for others.
 
 ##### Annotations
 
-The example uses the JSR3051 `javax.annotation.concurrent.Immutable` annotation. 
+The example uses the JSR3051 `javax.annotation.concurrent.Immutable` annotation.
 
 This does not in any way change the object's functionality but provides a way to communicate the intent of this being an immutable class. Static analysis tools such as [Mutablility Detector](https://github.com/MutabilityDetector/MutabilityDetector) can check if this intent has been violated.
 
-We can tell at a glance that `Foo` is immutable as it has final fields of a well known immutable type. 
+We can tell at a glance that `Foo` is immutable as it has final fields of a well known immutable type.
 
-The `final` keyword ensures only that the reference a field points to will not change. 
+The `final` keyword ensures only that the reference a field points to will not change.
 
-If the field were of type `Bar` then we would not know if it were mutable or not without examining `Bar` to see if it too were immutable. Even if we were not using a static analysis tool the use of the `Immutable` annotation would make this assessment faster. 
+If the field were of type `Bar` then we would not know if it were mutable or not without examining `Bar` to see if it too were immutable. Even if we were not using a static analysis tool the use of the `Immutable` annotation would make this assessment faster.
 
 Instead of updating the state of immutable objects, we create new instances that retain the state we do not wish to modify.
 
@@ -139,13 +139,13 @@ This pattern seems strange to some Java programmers at first, but the programmin
 public final class Bar {
   private int anInt;
   private String aString;
-  
+
   public Bar(int anInt, String aString) {
     this.anInt = anInt;
     this.aString = aString;
   }
 
-  
+
   @CheckReturnValue
   public Bar withAnInt(int anInt) {
     return new Bar(anInt, this.aString);
@@ -158,7 +158,7 @@ public final class Bar {
 }
 ```
 
-Instances of `Bar` with new values can be obtained by calling `withAString` and `withAnInt`. 
+Instances of `Bar` with new values can be obtained by calling `withAString` and `withAnInt`.
 
 The JSR305 `javax.annotation.CheckReturnValue` enables static analysis tools such as [Error Prone](https://github.com/google/error-prone) to issue a warning if a mistake is made such as in the code below.
 
@@ -192,7 +192,7 @@ Options exist to auto-generate both immutable and mutable classes, thereby remov
 
 Mutable objects used to be the norm in Java. As a result, many common frameworks require mutable objects. Persistence and serialization frameworks often require Java beans with no args constructors and setters. Other frameworks might require you to use two-stage construction with a lifecycle method such as init.
 
-It is not always highlighted in the documentation but some long standing frameworks have been updated to support immutable objects. 
+It is not always highlighted in the documentation but some long standing frameworks have been updated to support immutable objects.
 
 Jackson for example now allows constructors and factory methods to be annotated :-
 
@@ -200,7 +200,7 @@ Jackson for example now allows constructors and factory methods to be annotated 
 public class Foo  {
   private final int x
   private final int y;
-  
+
   @JsonCreator
   public Foo(@JsonProperty("x") int x, @JsonProperty("y") int y) {
    this.x = x;
@@ -209,7 +209,7 @@ public class Foo  {
 }
 ```
 
-Other frameworks, such as Hibernate, can only be used with classes that provide a default constructor. Although they can be configured to set fields directly without the need for setters this causes more problems than it solves. 
+Other frameworks, such as Hibernate, can only be used with classes that provide a default constructor. Although they can be configured to set fields directly without the need for setters this causes more problems than it solves.
 
 If you are tied to a framework that requires mutability then you will need to use mutable objects where you interface with that framework.
 

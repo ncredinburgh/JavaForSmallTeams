@@ -1,6 +1,6 @@
 ## Use Coverage as a Tool, not a Target
 
-Code coverage is a useful tool for catching your mistakes. 
+Code coverage is a useful tool for catching your mistakes.
 
 The tool should work for you; you do not work for the tool.
 
@@ -28,6 +28,6 @@ By concentrating on the one property that is easy to measure, the others are de-
 
 It is probably fair to say that there is a problem when code has only 30% unit test coverage. On the other hand, if coverage is achieved by setting a target, code with 80% coverage may be harder to work with than code with a lower figure.
 
-So don't set targets, instead make sure your team is committed to writing good tests. 
+So don't set targets, instead make sure your team is committed to writing good tests.
 
 A good test is one which helps explains the code, catches regression and doesn't get in the way when changes are made. Writing the tests before the code can help encourage good tests and will ensure that code has high coverage.

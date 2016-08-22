@@ -6,7 +6,7 @@ In most cases, there is little value in unit testing:
 * Logging
 * Code whose **sole** concern is integration with another system
 
-The canonical example of code with a pure integration concern is a DAO. 
+The canonical example of code with a pure integration concern is a DAO.
 
 If a compatible in-memory fake database is available then it can be meaningfully unit tested against that. If no fake is available, there is no value in writing tests that mock out the JDBC driver - the first level of testing should instead be integration testing against a real database.
 
