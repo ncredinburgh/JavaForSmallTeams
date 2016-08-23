@@ -2,7 +2,7 @@
 
 ### Summary
 
-Imperative loops hide application logic inside boilerplate code - prefer maps and filters as these separate the logic from the implementation. 
+Imperative loops hide application logic inside boilerplate code - prefer maps and filters as these separate the logic from the implementation.
 
 ### Details
 

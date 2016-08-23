@@ -21,7 +21,7 @@ The `for each` loop introduced with Java 5 avoids the potential out-by-one error
     return filteredStrings;
   }
 ```
-  
+
 *A little better*
 ```java
   public List<String> selectValues(List<Integer> someIntegers) {

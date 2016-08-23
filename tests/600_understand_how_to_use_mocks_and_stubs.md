@@ -20,7 +20,7 @@ Although it is common to refer to all objects created by a mocking framework as 
 
 A more correct generic term for these objects is *test double*.
 
-These can be subdivided based on they behave:
+These can be subdivided based on how they behave:
 
 * Dummy object - needs to be present to satisfy a type signature but is never actually used
 * Stub - must be present and may supply *indirect inputs*
@@ -128,7 +128,7 @@ Ensures that when the `receive` method is called on the spy with a string that e
 
 If this line was not present the spy would do what Mockito does by default, which is to return `0`.
 
-What would our test do if, due to a bug, receive was called with a different string?
+What would our test do if, due to a bug, `receive` was called with a different string?
 
 The answer is that, instead of failing due to the verification:
 

@@ -4,9 +4,9 @@ Both the compile suite and the commit suite should be run on a CI server, normal
 
 In addition to the compile and commit suites, other suites should be created.
 
-These suites may require resources not available on a local machine and/or take large amounts of time to execute. 
+These suites may require resources not available on a local machine and/or take large amounts of time to execute.
 
-They may also re-run the same tests against more realistic dependencies. If an in-memory database is normally used when running integration tests locally, the same tests might be run again against a production database. 
+They may also re-run the same tests against more realistic dependencies. If an in-memory database is normally used when running integration tests locally, the same tests might be run again against a production database.
 
 For a Maven build, these suites are likely to be implemented using profiles or as separate Maven modules.
 

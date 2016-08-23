@@ -1,12 +1,12 @@
-# Bad Advice - Always Use a StringBuffer to Concatenate 
+# Bad Advice - Always Use a StringBuffer to Concatenate
 
-This advice is doubly wrong. 
+This advice is doubly wrong.
 
 Firstly it advocates using the synchronized `StringBuffer` rather than a `StringBuilder`.
 
 Secondly it is an oversimplification or misunderstanding of the more nuanced and reasonable advice to not concatenate Strings in a loop.
 
-Avoiding concatenation in a loop is reasonable. Using a `StringBuilder` is likely to be more efficient if the loop executes a reasonable number of times as it will avoid string allocations. 
+Avoiding concatenation in a loop is reasonable. Using a `StringBuilder` is likely to be more efficient if the loop executes a reasonable number of times as it will avoid string allocations.
 
 The performance difference is unlikely to be significant in most cases, but the resulting code isn't noticeably less-readable - so it is a premature optimization without a cost.
 

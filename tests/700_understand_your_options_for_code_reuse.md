@@ -1,10 +1,10 @@
 ## Understand Your Options for Code Reuse
 
-Reusing code is a good thing. 
+Reusing code is a good thing.
 
 When people start programming in an OO language for the first time they tend to over-use inheritance for this purpose before discovering that composition is generally a better idea.
 
-Unfortunately, it is not easy to use composition to reuse code in JUnit tests and this can lead you to write difficult-to-maintain test class hierarchies. 
+Unfortunately, it is not easy to use composition to reuse code in JUnit tests and this can lead you to write difficult-to-maintain test class hierarchies.
 
 A small amount of duplication may be preferable to introducing a class hierarchy when other options do not exist, but some types of test can be reused without inheritance.
 

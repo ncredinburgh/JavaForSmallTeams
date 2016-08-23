@@ -2,7 +2,7 @@
 
 ### Summary
 
-Composition usually results in more flexible designs. 
+Composition usually results in more flexible designs.
 
 First consider using composition, then fall back to using inheritance only when composition does not seem to be a good fit.
 
@@ -14,7 +14,7 @@ To take a minimal example- If there is a requirement for a class to accept and s
 
 ```java
 class InheritanceAbuse extends ArrayList<String> {
-  
+
   public void performBusinessLogic(int i) {
     // do things with stored strings
   }
@@ -26,21 +26,21 @@ The same functionality can be implemented using composition.
 
 ```java
 class UsesComposition {
-  
+
   private final List<String> values = new ArrayList<String>();
-  
+
   public void performBusinessLogic(int i) {
     // do things with stored strings
   }
-  
+
   public void add(String value) {
     this.values.add(value);
   }
-  
+
 }
 ```
 
-Despite requiring more code, an experienced Java programmer would not even consider the first approach. So why is it that the second version is preferable? 
+Despite requiring more code, an experienced Java programmer would not even consider the first approach. So why is it that the second version is preferable?
 
 There are several overlapping explanations, we'll start with the most abstract and move on to more practical ones.
 
@@ -58,15 +58,15 @@ Using inheritance makes sense when there is an IS-A relationship there but it is
 
 The inheritance implementation fails to encapsulate an implementation detail - that we're storing things in an ArrayList.
 
-The interface to our class includes all sort of methods from ArrayList such as: 
+The interface to our class includes all sort of methods from ArrayList such as:
 
 * clear
 * remove
 * contains
 
-Do these methods make sense for our class? If someone calls them, could it interfere with the logic in `performBusinessLogic`? 
+Do these methods make sense for our class? If someone calls them, could it interfere with the logic in `performBusinessLogic`?
 
-We don't know enough about what our example class is meant to do to answer these questions definitively, but the answer is most likely that we would prefer not to expose these methods. 
+We don't know enough about what our example class is meant to do to answer these questions definitively, but the answer is most likely that we would prefer not to expose these methods.
 
 If we switch from ArrayList to some other list implementation this is visible to the classes clients. Code that previously compiled may now break even if no methods specific to ArrayList are called - the change of type alone might cause compilation failures.
 
@@ -74,7 +74,7 @@ If we switch from ArrayList to some other list implementation this is visible to
 
 Java doesn't support multiple inheritance so we only get to pick one thing to extend. If our class also needed to store Integers then inheritance isn't even an option so we'd have to use composition.
 
-Composition is inherently more flexible in single inheritance languages. 
+Composition is inherently more flexible in single inheritance languages.
 
 #### Composition Aids Testing
 
@@ -83,7 +83,7 @@ This is not relevant to our simple example, but it is trivial to test how classe
 ```java
 class MyUntestableClass extends SomeDependency {
   public void performBusinessLogic(int i) {
-    // do things using methods from SomeDependency 
+    // do things using methods from SomeDependency
   }
 }
 ```
@@ -97,7 +97,7 @@ class MyClass {
   }
 
   public void performBusinessLogic(int i) {
-    // do things with dependency 
+    // do things with dependency
   }
 }
 ```
@@ -105,7 +105,7 @@ It is easy to inject a mock into `MyClass`. Tricks exist to isolate the code in 
 
 #### Inheritance is Static
 
-Inheritance sets a fixed relationship between concrete classes at compile time. With composition it is possible to swap in different concrete classes at runtime. 
+Inheritance sets a fixed relationship between concrete classes at compile time. With composition it is possible to swap in different concrete classes at runtime.
 
 Again composition is inherently more flexible.
 
@@ -123,7 +123,7 @@ For example, the well known composition based Decorator pattern:
 class ProcessorUpperCaseDecorator implements Processor {
 
   private final Processor child;
-  
+
   ProcessorUpperCaseDecorator(Processor child) {
     this.child = child;
   }
@@ -132,7 +132,7 @@ class ProcessorUpperCaseDecorator implements Processor {
   public void process(String someString) {
     child.process(someString.toUpperCase());
   }
-  
+
 }
 ```
 
@@ -140,12 +140,12 @@ Could also be implemented using inheritance
 
 ```java
 class InheritanceUpperCaseDecorator extends ConcreteProcessor {
-  
+
   @Override
   public void process(String someString) {
     super.process(someString.toUpperCase());
   }
-  
+
 }
 ```
 

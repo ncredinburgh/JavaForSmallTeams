@@ -11,28 +11,28 @@ Some techniques that help achieve this are discussed below.
 A test can be viewed as having three parts:
 
 * Given - create the values and objects required for the test
-* When - executes the code under test 
-* Then - verifies the output/behavior as as expected
+* When - executes the code under test
+* Then - verifies the output/behavior is as expected
 
 These stages are also sometimes called *arrange*, *act* and *assert* by people particularly attached to the letter 'a'.
 
-Although it is important that these three stages are visible, trying to rigorously separate them or label them with comments adds noise to a test. 
+Although it is important that these three stages are visible, trying to rigorously separate them or label them with comments adds noise to a test.
 
 **Bad**
 ```java
   @Test
-  public void shouldRetieveValuesInOrderTheyAreAdded() {
-    
+  public void shouldRetrieveValuesInOrderTheyAreAdded() {
+
     // given
     Stack<String> testee = new Stack<String>();
     String expectedFirstValue = "a";
     String expectedSecondValue = "b";
-  
+
     // when
     testee.push(expectedFirstValue);
     testee.push(expectedSecondValue);
-    String actualFirstValue = testee.pop();  
-    String actualSecondValue = testee.pop();  
+    String actualFirstValue = testee.pop();
+    String actualSecondValue = testee.pop();
 
     // then
     assertThat(actualFirstValue).isEqualTo(secondValue);
@@ -43,7 +43,7 @@ Although it is important that these three stages are visible, trying to rigorous
 **Better**
 ```java
   @Test
-  public void shouldRetieveValuesInOrderTheyAreAdded() {
+  public void shouldRetrieveValuesInOrderTheyAreAdded() {
     Stack<String> testee = new Stack<String>();
     testee.push("a");
     testee.push("b");
@@ -62,13 +62,13 @@ If you need to store an expected value in a variable, call it `expected` (but do
 
 If you need to store a result that you will compare against an expected value in variable, name it `actual` (but don't store it in a variable just for the sake of it).
 
-If you have stubbed a participant consider naming it `stubbedFoo`, if it is acting as a mock name it `mockedFoo`. This rule is less hard than the others - decide on a case by case basis whether you think it makes your test more or less readable. 
+If you have stubbed a participant consider naming it `stubbedFoo`, if it is acting as a mock name it `mockedFoo`. This rule is less hard than the others - decide on a case by case basis whether you think it makes your test more or less readable.
 
 ### Highlight What is Important, Hide What is Not
 
 It should be possible to read each test case at a glance - so make things clear by highlighting what is important for that test case and hiding what is not.
 
-If an aspect of the input is important to the test case, highlight it by setting it **explicitly** in the test case - don't rely on that value being set in a generic setup method. 
+If an aspect of the input is important to the test case, highlight it by setting it **explicitly** in the test case - don't rely on that value being set in a generic setup method.
 
 Even if the same value is set by default, it is better to re-supply it in the test so it is clearly visible.
 
@@ -99,10 +99,10 @@ How about this version?
     assertThat(testee.process(anInt(), aString(), invalidValue))
       .isEqualTo(Status.FAIL);
   }
-  
+
 ```
 
-While we need additional context to understand why `3` is an invalid value, it should be clear that the first two parameters to the `process` method are not important to the behavior we are specifying. 
+While we need additional context to understand why `3` is an invalid value, it should be clear that the first two parameters to the `process` method are not important to the behavior we are specifying.
 
 Why is it important that the testee below returns the enum `CONTINUE`?
 
@@ -135,7 +135,7 @@ Other tests might not need to care about what the default state is, but this tes
   }
 ```
 
-As we start to deal with more complex domain objects, it becomes harder to separate the important values from the ones that are required to construct valid objects but not of particular interest to our test. 
+As we start to deal with more complex domain objects, it becomes harder to separate the important values from the ones that are required to construct valid objects but not of particular interest to our test.
 Fortunately, we can use the builder pattern to ease the pain, reduce duplication, and keep the tests readable.
 
 ### Name Values Meaningfully
@@ -160,7 +160,7 @@ Copy and paste coding is bad in tests as well as production code - the more code
 
 Repetition should therefore generally be avoided in test code.
 
-Test code **is** different from production code however. 
+Test code **is** different from production code however.
 
 Test code must tell more of a story - highlighting what is important and hiding what is not. Test code should not be as DRY ( **D**on't **R**epeat **Y**ourself ) as production code. It should be DAMP ( contain **D**escriptive **A**nd **M**eaningful **P**hrases ).
 
@@ -168,7 +168,7 @@ If refactoring a small amount of code out of a test method into a shared method 
 
 ## Choose the Right Assertion Method
 
-When a test fails, a good assertion tells you what is wrong. 
+When a test fails, a good assertion tells you what is wrong.
 
 Although JUnit allows you to supply an assertion message this adds noise to the test. Like comments, these messages should be saved for those occasions when you cannot communicate using code alone.
 

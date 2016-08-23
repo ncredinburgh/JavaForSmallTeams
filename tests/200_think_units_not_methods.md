@@ -1,6 +1,6 @@
 ## Think Units, Not Methods
 
-Each behavior that a unit test describes should normally relate to the overall *unit* rather than the responsibilities of an individual method. 
+Each behavior that a unit test describes should normally relate to the overall *unit* rather than the responsibilities of an individual method.
 
 ### What is a Unit?
 
@@ -57,7 +57,7 @@ As we have seen, for `Stack` it makes far more sense to consider the behavior of
 
 It often does make sense to treat a class as a *unit* so this is a good default definition, but it isn't always the right granularity.
 
-If we were to try to test the `java.util.Collections` class we would find that it is perfectly reasonable to treat the `sort`, `reverse` , `singleton`, etc. methods as separate *units*. Each one represents a self contained logical behavior.  
+If we were to try to test the `java.util.Collections` class we would find that it is perfectly reasonable to treat the `sort`, `reverse` , `singleton`, etc. methods as separate *units*. Each one represents a self contained logical behavior.
 
 So sometimes *units* are as small as methods.
 
@@ -67,9 +67,9 @@ If we were to inherit the code below without any tests what tests might we write
 
 ```java
 public class ThingaMeBob {
-  
+
   private final Iterable<MatchingBinaryOperator> actions;
- 
+
   ThingaMeBob() {
     actions = Arrays.asList(new Addition(), new Subtraction());
   }
@@ -80,10 +80,10 @@ public class ThingaMeBob {
         return each.apply(a,b);
       }
     }
-    
+
     throw new RuntimeException();
   }
-    
+
 }
 
 class Addition implements MatchingBinaryOperator {
@@ -110,21 +110,21 @@ We might write tests for the Addition and Subtraction classes:
 
 ```java
 public class AdditionTest {
-  
+
   Addition testee = new Addition();
-  
+
   @Test
   public void shouldMatchWhenStringIsAdd() {
   }
-  
+
   @Test
   public void shouldNotMatchWhenStringIsNotAdd() {
   }
-  
+
   @Test
   public void shouldAddTwoNumbers() {
   }
-  
+
   // etc
 
 }
@@ -134,19 +134,19 @@ And for the `ThingaMeBob` class:
 
 ```java
 public class ThingaMeBobTest {
-  
+
   ThingaMeBob testee = new ThingaMeBob();
 
   @Test
   public void shouldAddTwoNumbers() {
   }
-  
+
   @Test
   public void shouldSubtractTwoNumbers() {
   }
 
   // etc
-  
+
 }
 
 ```
@@ -160,14 +160,14 @@ public class ThingaMeBob {
     if ("add".equals(s)) {
       return a + b;
     }
-    
+
     if ("minus".equals(s)) {
       return a - b;
     }
-    
+
     throw new RuntimeException();
   }
-    
+
 }
 ```
 
@@ -179,7 +179,7 @@ The answer of course is that the test which exercised all three classes through 
 
 We deleted the ones for `Addition` and `Subtraction`. The smaller units we created were just implementation detail.
 
-Lets re-wind and imagine things happened differently. 
+Lets re-wind and imagine things happened differently.
 
 What if we were asked to test drive the desired behavior from scratch? What would we write?
 
@@ -197,7 +197,7 @@ We would already have tests written in terms of `ThingaMeBob` that describe all 
 
 There is no right answer here, but I hope it is clear that the most useful *unit* that we have identified is `ThingaMeBob`. The smaller *units* are part of just one implementation of the functionality we require.
 
-If we choose to write tests for each extracted class those tests would have some value. 
+If we choose to write tests for each extracted class those tests would have some value.
 
 The test written in terms of `ThingaMeBob` would do a poor job of describing what each of the small extracted units does. If a test was failing it wouldn't be instantly obvious which class the bug was in. If we had to change one of the extracted classes it wouldn't be instantly obvious which test to run.
 
