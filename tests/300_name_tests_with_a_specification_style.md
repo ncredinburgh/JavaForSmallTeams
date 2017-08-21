@@ -11,7 +11,7 @@ The rest of the name should describe a behavior and, optionally, a scenario (ide
 For example, we might start to describe `java.util.Stack` with:
 
 * `shouldBeEmptyWhenCreated`
-* `shouldReturnItemsInOrderTheyWereAdded`
+* `shouldReturnMostRecentlyAddedItemsFirst`
 * `shouldThrowAnErrorWhenItemsRemovedFromEmptyStack`
 
 Contrast this with common naming patterns found in some code bases:
