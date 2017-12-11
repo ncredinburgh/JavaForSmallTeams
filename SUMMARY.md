@@ -40,6 +40,7 @@
    * [Do Not Use The Assert Keyword](specifics/800_do_not_use_the_assert_keyword.md)
    * [Avoid Floats And Doubles](specifics/900_avoid_floats_and_doubles.md)
    * [Do Not Use Reflection](specifics/1000_do_not_use_reflection.md)
+   * [Know The JDK One Liners](specifics/1100_one_liners.md)
 * [Tests](tests.md)
    * [Write Specifications Not Tests](tests/100_write_specifications_not_tests.md)
    * [Think Units Not Methods](tests/200_think_units_not_methods.md)
