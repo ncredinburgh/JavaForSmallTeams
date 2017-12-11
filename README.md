@@ -84,9 +84,9 @@ Advice is here to save us from ourselves.
 
 ## A note on Java Versions
 
-This document is intended to apply to Java 7 and 8, but will be largely applicable to Java 5 and 6.
+This document is intended to apply to Java 7, 8 and 9 but will be largely applicable to Java 5 and 6.
 
-Where there are differences between Java 8 and 7 we will point them out. If you are unlucky enough to be working with an earlier version of Java you will have to discover any differences to Java 7 on your own.
+Where there are differences between recent Java versions we will point them out. If you are unlucky enough to be working with an early version of Java you will have to discover any differences to Java 7 on your own.
 
 ## License
 
