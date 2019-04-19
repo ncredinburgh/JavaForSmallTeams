@@ -9,3 +9,4 @@
 * Gordon Rogers
 * Herve Saint-Amand
 * Ewan Summers
+* Iuliana Cosmina
