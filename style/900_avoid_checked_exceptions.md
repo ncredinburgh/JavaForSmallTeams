@@ -26,15 +26,12 @@ try {
 }
 ```
 
-If you have caught an `Exception` or a `Throwable`, so are unsure of the exact type, you can avoid creating unnecessary wrappers using Guava's `Throwables.propagate`.
+If you need to re-throw multiple checked exceptions that does not share common base other than `Exception`, to avoid unnecessary wrapping of runtime exceptions, you can use Java 7 multi-catch.
 
 ```java
 try {
-  myObject.methodThrowingException();
-} catch (Exception e) {
-  throw Throwables.propagate(e);
+  myObject.methodThrowingExceptions();
+} catch (SomeCheckedException | OtherCheckedException e) {
+  throw new RuntimeException(e);
 }
 ```
-
-This will wrap checked exceptions and re-throw unchecked exception as is.
-
