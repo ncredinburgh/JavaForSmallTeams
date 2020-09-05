@@ -22,7 +22,7 @@ Boilerplate generators are the simplest form of code generation. They can be fur
 * Generators that produce scaffolding that is checked into version control and modified.
 * Generators that produce new classes from a model. The generated code is not normally checked into version control.
 
-We recommend that the first type are using sparingly, if at all. This is discussed further in "Know How to Implement Hashcode and Equals".
+We recommend that the first type are used sparingly, if at all. This is discussed further in "Know How to Implement Hashcode and Equals".
 
 Generating code from a model (such as a schema or grammar) can be a useful approach as long as the generated code is not modified and is packaged separately. If generated and non-generated code are packaged within the same module then this can start to cause friction (see below).
 
